@@ -430,9 +430,149 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Welcome to Entando</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#release-notes-5.0.0">1. Entando 5.0.0 Release Notes</a>
+<ul class="sectlevel2">
+<li><a href="#_abstract">1.1. ABSTRACT</a></li>
+<li><a href="#_preface">1.2. PREFACE</a></li>
+<li><a href="#_goal_of_entando_5">1.3. GOAL OF ENTANDO 5</a></li>
+<li><a href="#_about_entando_5">1.4. ABOUT ENTANDO 5</a></li>
+<li><a href="#_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
+<ul class="sectlevel3">
+<li><a href="#_known_issues">1.5.1. KNOWN ISSUES</a></li>
+<li><a href="#_versioning_information">1.5.2. VERSIONING INFORMATION</a></li>
+<li><a href="#_software_requirements">1.5.3. SOFTWARE REQUIREMENTS</a></li>
+<li><a href="#_legal_notice">1.5.4. LEGAL NOTICE</a></li>
+<li><a href="#_links_and_resources">1.5.5. LINKS AND RESOURCES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#installation">2. INSTALLING ENTANDO APP BUILDER 5.0</a>
+<ul class="sectlevel2">
+<li><a href="#_prerequisites">2.1. PREREQUISITES</a>
+<ul class="sectlevel3">
+<li><a href="#_installed_prerequisites">2.1.1. INSTALLED PREREQUISITES:</a></li>
+<li><a href="#_space_and_hardware_requirements">2.1.2. SPACE AND HARDWARE REQUIREMENTS</a></li>
+</ul>
+</li>
+<li><a href="#_creating_a_new_entando_project">2.2. CREATING A NEW ENTANDO PROJECT</a></li>
+<li><a href="#_launching_the_entando_application">2.3. LAUNCHING THE ENTANDO APPLICATION</a>
+<ul class="sectlevel3">
+<li><a href="#_quick_start_using_derby_and_jetty">2.3.1. QUICK START USING DERBY AND JETTY</a></li>
+</ul>
+</li>
+<li><a href="#_setting_up_a_database">2.4. SETTING UP A DATABASE:</a></li>
+<li><a href="#_deploying_to_docker_using_s2i_source_to_image">2.5. DEPLOYING TO DOCKER USING S2I (SOURCE TO IMAGE)</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisites_2">2.5.1. PREREQUISITES:</a></li>
+</ul>
+</li>
+<li><a href="#_using_openshift">2.6. USING OPENSHIFT</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisite">2.6.1. PREREQUISITE:</a></li>
+</ul>
+</li>
+<li><a href="#_launching_the_app_builder">2.7. LAUNCHING THE APP BUILDER</a>
+<ul class="sectlevel3">
+<li><a href="#_build_from_source">2.7.1. BUILD FROM SOURCE</a>
+<ul class="sectlevel4">
+<li><a href="#_clone_and_set_up">CLONE AND SET UP</a></li>
+<li><a href="#_deploy">DEPLOY</a></li>
+</ul>
+</li>
+<li><a href="#_build_the_mapp_engine_from_source">2.7.2. BUILD THE MAPP ENGINE FROM SOURCE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#getting-started">3. GETTING STARTED WITH ENTANDO APP BUILDER</a>
+<ul class="sectlevel2">
+<li><a href="#_sample_mortgage_application_project">3.1. SAMPLE MORTGAGE APPLICATION PROJECT</a>
+<ul class="sectlevel3">
+<li><a href="#_preface_2">3.1.1. PREFACE</a></li>
+<li><a href="#_configuring_the_applicant_page">3.1.2. CONFIGURING THE APPLICANT PAGE</a>
+<ul class="sectlevel4">
+<li><a href="#_creating_a_new_page_model">CREATING A NEW PAGE MODEL</a></li>
+<li><a href="#_create_the_applicant_page">CREATE THE APPLICANT PAGE</a></li>
+<li><a href="#_add_widgets">ADD WIDGETS</a></li>
+<li><a href="#_integrate_the_bpm_form">INTEGRATE THE BPM FORM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_custom_app_building_with_entando">4. Custom App Building with Entando</a>
+<ul class="sectlevel2">
+<li><a href="#_introducing_the_entando_app_builder">4.1. INTRODUCING THE ENTANDO APP BUILDER</a>
+<ul class="sectlevel3">
+<li><a href="#_entando_admin_console_version_5_0">4.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</a></li>
+</ul>
+</li>
+<li><a href="#_app_builder_overview">4.2. APP BUILDER OVERVIEW</a></li>
+<li><a href="#_dashboard">4.3. DASHBOARD</a></li>
+<li><a href="#_creating_and_managing_pages_with_page_designer">4.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</a>
+<ul class="sectlevel3">
+<li><a href="#_using_the_page_tree">4.4.1. USING THE PAGE TREE</a>
+<ul class="sectlevel4">
+<li><a href="#_creating_a_new_page">CREATING A NEW PAGE</a></li>
+</ul>
+</li>
+<li><a href="#configuring-page">4.4.2. CONFIGURING A PAGE</a></li>
+</ul>
+</li>
+<li><a href="#_ux_patterns_managing_widgets_page_models_and_fragments">4.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</a>
+<ul class="sectlevel3">
+<li><a href="#_using_widgets">4.5.1. USING WIDGETS</a></li>
+<li><a href="#_using_fragments">4.5.2. USING FRAGMENTS</a>
+<ul class="sectlevel4">
+<li><a href="#_adding_a_new_fragment">ADDING A NEW FRAGMENT</a></li>
+</ul>
+</li>
+<li><a href="#page-models">4.5.3. USING PAGE MODELS</a>
+<ul class="sectlevel4">
+<li><a href="#_creating_a_page_model">CREATING A PAGE MODEL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_integrating_with_red_hat_process_automation_manager_pam">4.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</a></li>
+<li><a href="#_managing_users">4.7. MANAGING USERS</a>
+<ul class="sectlevel3">
+<li><a href="#_working_with_users">4.7.1. WORKING WITH USERS</a>
+<ul class="sectlevel4">
+<li><a href="#_creating_a_role">CREATING A ROLE</a></li>
+<li><a href="#_creating_a_group">CREATING A GROUP</a></li>
+<li><a href="#_creating_a_user">CREATING A USER</a></li>
+<li><a href="#_setting_a_users_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
+</ul>
+</li>
+<li><a href="#_restricting_access">4.7.2. RESTRICTING ACCESS</a></li>
+</ul>
+</li>
+<li><a href="#_presenting_data">4.8. PRESENTING DATA</a>
+<ul class="sectlevel3">
+<li><a href="#_structuring_with_data_types">4.8.1. STRUCTURING WITH DATA TYPES</a></li>
+</ul>
+</li>
+<li><a href="#_configuring_entando">4.9. CONFIGURING ENTANDO</a>
+<ul class="sectlevel3">
+<li><a href="#_categories">4.9.1. CATEGORIES</a></li>
+<li><a href="#_labels_and_languages">4.9.2. LABELS AND LANGUAGES</a></li>
+<li><a href="#_database">4.9.3. DATABASE</a></li>
+<li><a href="#_file_browser">4.9.4. FILE BROWSER</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -1774,10 +1914,828 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_custom_app_building_with_entando">4. Custom App Building with Entando</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducing_the_entando_app_builder"><a class="anchor" href="#_introducing_the_entando_app_builder"></a>4.1. INTRODUCING THE ENTANDO APP BUILDER</h3>
+<div class="paragraph">
+<p>The App Builder is Entando’s application to help you integrate, configure and customize any kind of modern web application, regardless of your programming proficiency. The App Builder provides an Admin Console, a visual environment, that collects elements for configuring your web application and managing your activities.</p>
+</div>
+<div class="paragraph">
+<p>The App Builder is a ReactJS-based application that uses REST APIs to communicate with the Entando Core.</p>
+</div>
+<div class="paragraph">
+<p>This document describes the elements and functionalities of the Admin Console.</p>
+</div>
+<div class="sect3">
+<h4 id="_entando_admin_console_version_5_0"><a class="anchor" href="#_entando_admin_console_version_5_0"></a>4.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</h4>
+<div class="paragraph">
+<p>With Entando version 5.0 the Admin Console has been redesigned and renewed with the adoption of the PatternFly framework and guidelines. PatternFly is built on top of Bootstrap3 and provides an enterprise grade UX look and feel based on research and UX best practices.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_app_builder_overview"><a class="anchor" href="#_app_builder_overview"></a>4.2. APP BUILDER OVERVIEW</h3>
+<div class="paragraph">
+<p>The Entando main view is the entry point for every administration activity. On the up side of the screen there is an horizontal menu, which gives access to all Entando’s functionalities, while on the down-side of the screen, the Dashboard provides an overview of Entando status and a quick access to some functionalities.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dashboard"><a class="anchor" href="#_dashboard"></a>4.3. DASHBOARD</h3>
+<div class="paragraph">
+<p>The dashboard is divided into distinct areas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_dashboard.png" alt="custom dashboard">
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Dashboard areas:</div>
+<ol class="arabic">
+<li>
+<p>Page Status (gives an overview of the status of the pages: Online, Online /= Draft and Draft)</p>
+</li>
+<li>
+<p>List of Pages (gives an overview of the list of all Pages: Name, configured Page Model, Number of configured Widgets, Status, Last Modified)</p>
+</li>
+<li>
+<p>Add Page (possibility to add a new Page)</p>
+</li>
+<li>
+<p>User Management (quick access to Users list and Group list)</p>
+</li>
+<li>
+<p>Add User (possibility to add a new User)</p>
+</li>
+<li>
+<p>UX Patterns (gives an overview of the number of configured Widgets and Page Models)</p>
+</li>
+<li>
+<p>Add Widget (possibility to add a new Widget)</p>
+</li>
+<li>
+<p>Integrations (gives an overview of the number of integrated components and APIs)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_and_managing_pages_with_page_designer"><a class="anchor" href="#_creating_and_managing_pages_with_page_designer"></a>4.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</h3>
+<div class="paragraph">
+<p>The Page Designer section deals with all page management-related activities.</p>
+</div>
+<div class="olist arabic">
+<div class="title">The Page Designer section offers the following subsections:</div>
+<ol class="arabic">
+<li>
+<p>Page Tree</p>
+</li>
+<li>
+<p>Page Configuration</p>
+</li>
+<li>
+<p>Page Settings</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_using_the_page_tree"><a class="anchor" href="#_using_the_page_tree"></a>4.4.1. USING THE PAGE TREE</h4>
+<div class="paragraph">
+<p>The Page Tree subsection shows the hierarchical structure of the pages and their statuses, and lets you perform all page management actions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_page_tree.png" alt="custom page tree">
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_a_new_page"><a class="anchor" href="#_creating_a_new_page"></a>CREATING A NEW PAGE</h5>
+<div class="olist arabic">
+<div class="title">To add a new page:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the time, choose the Page Designer &gt; Page Tree &gt; <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a name in both the English and Italian fields.</p>
+</li>
+<li>
+<p>(Optional) Enter a code. By default, Entando generates a code similar to the page title, but you can manually enter a different code. The field accepts alphanumeric characters and underscores, with a character limit of 30.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you save the page, you will no longer be able to edit the page&#8217;s Code field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Select an Owner Group and a Join Group from the drop-down menus in the Page groups section. Owner Group members can administer the page. Join Group members can view the page.</p>
+</li>
+<li>
+<p>Select from the Page Tree section the page or folder that will be the parent of the new page.</p>
+</li>
+<li>
+<p>Select a Page Model from the Page Model drop-down menu. The Page Model determines the layout of your new page. See the <a href="#page-models">Using Page Models</a> section below.</p>
+</li>
+<li>
+<p>Set additional options from the Settings section as needed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Displayed in menu:</strong> toggles the page&#8217;s presence in the menu on or off.</p>
+</li>
+<li>
+<p><strong>SEO:</strong> sets toggles on or off optimization of the page for Search Engine Optimization (SEO)</p>
+</li>
+<li>
+<p><strong>Charset:</strong> specifies the character encoding to use. Selectable between utf8 and iso-88591</p>
+</li>
+<li>
+<p><strong>Mime Type:</strong> identifies the type of content on the page</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>After you have made your selections, click <strong>Save and Configure</strong> to open the Configuration section. Learn more in the <a href="#configuring-page">Configuring a Page</a> section below.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_newpage.png" alt="custom newpage">
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">To edit an existing page:</div>
+<ol class="arabic">
+<li>
+<p>Open the Page Tree and find the page to edit.</p>
+</li>
+<li>
+<p>Click the <strong>Actions</strong> (three vertical dots) button in line with the page and select "Edit."</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-page"><a class="anchor" href="#configuring-page"></a>4.4.2. CONFIGURING A PAGE</h4>
+<div class="paragraph">
+<p>The Page Configuration section is where you assign widgets to the frames defined by the Page Model you applied to your page. The available widgets are in the right pane. Apply widgets by dragging and dropping them to a frame of your choice.</p>
+</div>
+<div class="paragraph">
+<p>This is also where you publish or unpublish the page or preview the layout prior to publishing.</p>
+</div>
+<div class="paragraph">
+<p>Click the <strong>Info</strong> button for a summary of options you assigned when creating the page, e.g., Title and Owner Group.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_configure.png" alt="custom configure">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ux_patterns_managing_widgets_page_models_and_fragments"><a class="anchor" href="#_ux_patterns_managing_widgets_page_models_and_fragments"></a>4.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</h3>
+<div class="paragraph">
+<p>The UX Patterns section provides settings options for your general UX Patterns.</p>
+</div>
+<div class="sect3">
+<h4 id="_using_widgets"><a class="anchor" href="#_using_widgets"></a>4.5.1. USING WIDGETS</h4>
+<div class="paragraph">
+<p>A Widget is an independent software component configured and executed within your application’s page. Widgets provide UX/UI blocks that deliver a specific function.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_widgets.png" alt="custom widgets">
+</div>
+</div>
+<div class="ulist">
+<div class="title">The following are the categories of widgets:</div>
+<ul>
+<li>
+<p><strong>User Widgets:</strong> user-generated widgets created via the Admin Console</p>
+</li>
+<li>
+<p><strong>Custom Widgets:</strong> widgets designed to meet specific applications needs such as Red Hat PAM widgets</p>
+</li>
+<li>
+<p><strong>Stock Widgets:</strong> default widgets provided by the App Builder to perform common tasks</p>
+</li>
+<li>
+<p><strong>Specific Application Widgets:</strong> widgets that apply only to a specific tool in Entando, e.g., the installation of CMS module provides Content Management related widgets</p>
+</li>
+<li>
+<p><strong>Plugins Widgets:</strong> widgets provided by the installed plugins</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Each widget&#8217;s Action menu differs depending on the type, including no available actions at all.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_fragments"><a class="anchor" href="#_using_fragments"></a>4.5.2. USING FRAGMENTS</h4>
+<div class="paragraph">
+<p>Fragments are single portions of front-end interface used in widgets (including plugins) and Page Models. They are are HTML blocks that include Freemarker instructions by using specific tags that you replace with appropriate values each time you use the fragment. Entando then renders the widgets using the fragments. The FRAGMENTS section lets you manage existing fragments or add new ones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_fragments.png" alt="custom fragments">
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_a_new_fragment"><a class="anchor" href="#_adding_a_new_fragment"></a>ADDING A NEW FRAGMENT</h5>
+<div class="olist arabic">
+<div class="title">To add a new fragment:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, choose the UX Patters tab &gt; Fragments &gt; <strong>New</strong>.</p>
+</li>
+<li>
+<p>Enter a Code value. This value represents the fragment&#8217;s unique identifier and appears in the Name column of the Fragments table.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you save the fragment, you will no longer be able to edit its Code field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="page-models"><a class="anchor" href="#page-models"></a>4.5.3. USING PAGE MODELS</h4>
+<div class="paragraph">
+<p>The Page Model is the look and feel of an application&#8217;s page. It defines the structure of the page using frames or areas of the page that contain widgets.</p>
+</div>
+<div class="ulist">
+<div class="title">Page models have two configuration elements:</div>
+<ul>
+<li>
+<p><strong>JSON Configuration:</strong> formatted text that defines the frame structure of the page.</p>
+</li>
+<li>
+<p><strong>Template:</strong> the look and feel and the real layout of the page. In other words, the template defines where to show a frame and how it will be rendered. Templates use Velocity Template Language (VTL) to provide an simple and clean way to incorporate dynamic content into a web page. It supports statements and directives, references and comments, access to exposed java objects, and methods.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_creating_a_page_model"><a class="anchor" href="#_creating_a_page_model"></a>CREATING A PAGE MODEL</h5>
+<div class="olist arabic">
+<div class="title">To create a new page model:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, select UX Patterns &gt; Page Models &gt; <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Assign the page model a code and a name. Codes represent the page model’s unique identifier. The name can be more human readable. For example:<br>
+<strong>Code:</strong> <em>entando-page-purple</em><br>
+<strong>Name:</strong> <em>Purple - BPM</em></p>
+</li>
+<li>
+<p>In the JSON Configuration field, enter JSON content to structure the page. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "frames": [
+    {
+      "pos": 0,
+      "descr": "Top bar 1",
+      "mainFrame": false,
+      "defaultWidget": null,
+      "sketch": {
+        "x1": 0,
+        "y1": 0,
+        "x2": 2,
+        "y2": 0
+      }
+    }</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The JSON content must be a single object defining "frames." In other words, the content you enter must go within the <code>frames: []</code> object.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>See the Getting Started with Entando App Builder document for a complete example.</p>
+</div>
+</li>
+<li>
+<p>In the Template field, enter XML formatting to determine where each defined frame belongs and how to render it. See for a complete example.</p>
+</li>
+<li>
+<p>When finished, click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_pagemodel.png" alt="custom pagemodel">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integrating_with_red_hat_process_automation_manager_pam"><a class="anchor" href="#_integrating_with_red_hat_process_automation_manager_pam"></a>4.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</h3>
+<div class="paragraph">
+<p>Entando integrates with Red Hat&#8217;s Process Automation Manager (formerly Red Hat JBoss BPM Suite), a middleware platform for creating cloud-native business automation applications and microservices. It enables enterprise business and IT users to document, simulate, manage, automate and monitor business processes and policies. It is designed to empower business and IT users to collaborate more effectively, so business applications can be changed more easily and quickly.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_integrations.png" alt="custom integrations">
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">To integrate with Red Hat PAM:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, choose Integrations &gt; Red Hat BPM Config &gt; <strong>Add Integration</strong>.</p>
+</li>
+<li>
+<p>In the Connection section, add all server information. For example:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>General Settings section:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Active:</strong> On</p>
+</li>
+<li>
+<p>(Optional) <strong>Debug:</strong> On</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Connection section:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name:</strong> Ansible Server</p>
+</li>
+<li>
+<p><strong>Host name:</strong> ansible.serv.run</p>
+</li>
+<li>
+<p><strong>Schema:</strong> http</p>
+</li>
+<li>
+<p><strong>Port:</strong> 8080</p>
+</li>
+<li>
+<p><strong>Webapp name:</strong> kie-server</p>
+</li>
+<li>
+<p><strong>Username:</strong> username for the process server administrator</p>
+</li>
+<li>
+<p><strong>Password:</strong> password for the process server administrator</p>
+</li>
+<li>
+<p><strong>Conn. Timeout (in millis):</strong> 500</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Test Connection</strong> to verify a valid the configuration, then click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Open the Page Tree by choosing the Page Designer tab &gt; Page Tree.</p>
+</li>
+<li>
+<p>Find your new page in the Page Tree and click its <strong>More Options</strong> button &gt; Configure.</p>
+</li>
+<li>
+<p>In the right pane, search for the “BPM-form by Data Type” widget and drag it to a frame established by your page model.</p>
+</li>
+<li>
+<p>Click the <strong>Preview</strong> button to verify the correct appearance.</p>
+</li>
+<li>
+<p>Click <strong>Publish</strong> once your page is complete.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_managing_users"><a class="anchor" href="#_managing_users"></a>4.7. MANAGING USERS</h3>
+<div class="paragraph">
+<p>The Entando App Builder assigns access rights using combinations of roles and groups. You can manage all activities and privileges for roles and groups through the User Management tab.</p>
+</div>
+<div class="ulist">
+<div class="title">User management definitions:</div>
+<ul>
+<li>
+<p><strong>Users:</strong> perform operations and access information. Users are characterized by a Profile Type that identifies the individual, such as name and email address. The actions that a user can take in an Entando program derive from combinations of Roles and Groups.</p>
+</li>
+<li>
+<p><strong>Roles:</strong> assigned sets of permissions, e.g., content editing rights, or user profile editing rights. Roles are mutually independent, meaning one user can be associated with multiple roles.</p>
+</li>
+<li>
+<p><strong>Groups:</strong> assigned sets of users, with each user given a role within the group. One user can belong to multiple groups. For example, Lynne is a member of the Content Editing group and has the role of Administrator, giving her the ability to perform any task on pages that the Content Editing group is assigned to. She’s also a member of the Newsletter group with the role of Editor, meaning she can edit content, but does not have full access to the pages the Newsletter group is assigned to.</p>
+</li>
+<li>
+<p><strong>User Restrictions:</strong> perform access restrictions on the users, e.g., months availability since the last access, or months validity of the user password, etc.</p>
+</li>
+<li>
+<p><strong>Profiles Types:</strong> perform different user’s profile types and  creation of the new profile types.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For first time projects, consider creating profiles from largest to smallest. For example:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Groups:</strong> are containers of users. Groups grant or restrict access to information and services independently from the Roles of the single Users. For example, all members of the Page Editors group would have access to pages assigned to Page Editors<br></p>
+</li>
+<li>
+<p><strong>Roles:</strong> assign responsibilities within the group, e.g., group Administrators of the Page Editors group have full administrative access to the page, while Newsletter Managers in the Page Editors group can only manage newsletter functions<br></p>
+</li>
+<li>
+<p><strong>Users:</strong> represent an entity with the ability to perform operations and access information. The actions allowed for a certain user are given by the combination of the Roles and Groups.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_working_with_users"><a class="anchor" href="#_working_with_users"></a>4.7.1. WORKING WITH USERS</h4>
+<div class="sect4">
+<h5 id="_creating_a_role"><a class="anchor" href="#_creating_a_role"></a>CREATING A ROLE</h5>
+<div class="olist arabic">
+<div class="title">To create a new role:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, select User Management &gt; Roles &gt; <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>(Optional) Enter a code. The code is the Role&#8217;s unique identifier. By default, Entando generates a code similar to the page title, but you can manually enter a different code. The field accepts alphanumeric characters and underscores, with a character limit of 30.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you save the role, you will no longer be able to edit the page&#8217;s Code field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>In the Permissions section, toggle to "On" the access rights all users assigned to this role will possess. For example, public users may have no options toggled while power users may have the "All Permissions" option toggled to On.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.
+To edit a Role after saving, return to the Roles screen. In the Roles table, select the Actions menu (three vertical dots) for the role to change and select "Edit."</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_roles.png" alt="custom roles">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_a_group"><a class="anchor" href="#_creating_a_group"></a>CREATING A GROUP</h5>
+<div class="olist arabic">
+<div class="title">To create a new group:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, select User Management &gt; Groups &gt; <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>(Optional) Enter a code. The code is the Group&#8217;s unique identifier. By default, Entando generates a code similar to the page title, but you can manually enter a different code. The field accepts alphanumeric characters and underscores, with a character limit of 30.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Once you save the group, you will no longer be able to edit the group&#8217;s Code field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To edit a Group after saving, return to the Groups screen. In the Groups table, select the Actions menu (three vertical dots) for the group to change and select "Edit."</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_groups.png" alt="custom groups">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_a_user"><a class="anchor" href="#_creating_a_user"></a>CREATING A USER</h5>
+<div class="olist arabic">
+<div class="title">To create a new user:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, choose User Management &gt; Users &gt; <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the Username field, enter</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The username must be between 8-20 characters. You can use numbers, underscores, special characters, and upper or lowercase letters.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Enter a password.</p>
+</li>
+<li>
+<p>From the Profile Type drop-down menu, select “Default User Profile.”</p>
+</li>
+<li>
+<p>Toggle the Status to “On” to ensure that individuals can sign in with this user&#8217;s credentials.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to create the user and return to the Users screen.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_users.png" alt="custom users">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_setting_a_users_authorizations"><a class="anchor" href="#_setting_a_users_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the table on the Users screen, find your new user profile and click <strong>More Options</strong> &gt; Manage authorizations for: <em>your profile name</em>. Set the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User Group:</strong> select a group to assign this user to. You can assign a user to as many groups as you want.</p>
+</li>
+<li>
+<p><strong>User Role:</strong> select the role this user should have in the group. You can only assign a user to one role per user group.<br></p>
+<div class="paragraph">
+<p>The User Group/Role pairing will appear in the Authorizations table at the top of the screen.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Add</strong> and then click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_restricting_access"><a class="anchor" href="#_restricting_access"></a>4.7.2. RESTRICTING ACCESS</h4>
+<div class="paragraph">
+<p>Entando lets you set restrictions on users (see Figure below), specifically a shelf life for passwords and a maximum time between log ins before the password expires.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Setting user restrictions:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, choose User Management &gt; User Restrictions.</p>
+</li>
+<li>
+<p>Toggle the Password Always Active option.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On - the password never expires and users have unlimited time between logins</p>
+</li>
+<li>
+<p>Off - activates the password limitation fields, allowing you to set expirations</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Toggle the Enable Gravatar integration (Avatar of users) option.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On - enables management of the user’s avatar</p>
+</li>
+<li>
+<p>Off - disables Gravatar integration</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_userrestrictions.png" alt="custom userrestrictions">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_presenting_data"><a class="anchor" href="#_presenting_data"></a>4.8. PRESENTING DATA</h3>
+<div class="paragraph">
+<p>Data Types are collections of attributes. They are used to gather and manage data coming from external sources, like APIs or the IoT. This abstraction layer allows Entando to perform core features like searching on external data.</p>
+</div>
+<div class="paragraph">
+<p>Data Models are used to agnostically render data coming from data types, ensuring that the same data can be represented differently, such as with forms, tables, or graphs. By separating the definition and presentation of data, the Entando App Builder gives you the ability to display the same data in a context- and user-aware way without requiring a data source or integration.</p>
+</div>
+<div class="olist arabic">
+<div class="title">To manage Data Types:</div>
+<ol class="arabic">
+<li>
+<p>Create a Data Type.</p>
+</li>
+<li>
+<p>Create one or more Data Models per Data Type.</p>
+</li>
+<li>
+<p>Publish the data on web pages with one or more widgets.
+The Data section allows you to manage the Data.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_structuring_with_data_types"><a class="anchor" href="#_structuring_with_data_types"></a>4.8.1. STRUCTURING WITH DATA TYPES</h4>
+<div class="paragraph">
+<p>The Data Types section lists all available Data Types, their attributes, and is where you can create a new data structure.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/custom_datatype.png" alt="custom datatype">
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">To create a new data type:</div>
+<ol class="arabic">
+<li>
+<p>From the tabs along the top, choose Data &gt; Data Type &gt; <strong>New</strong>.</p>
+</li>
+<li>
+<p>Enter a Code. The code must be three letters.</p>
+</li>
+<li>
+<p>Enter a Name.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>. This opens the Attributes section where you specify OGNL validation.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_entando"><a class="anchor" href="#_configuring_entando"></a>4.9. CONFIGURING ENTANDO</h3>
+<div class="paragraph">
+<p>The Configuration section (far right of the toolbar, gives you access to Entando general duty functionalities, such as configuring Categories, Labels, Configuration Reload, Database backup, file browsing and groups management.</p>
+</div>
+<div class="sect3">
+<h4 id="_categories"><a class="anchor" href="#_categories"></a>4.9.1. CATEGORIES</h4>
+<div class="paragraph">
+<p>Categories are dividers and parent folders for pages in your Entando page tree. Add a new category by clicking the <strong>Add</strong> button.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_labels_and_languages"><a class="anchor" href="#_labels_and_languages"></a>4.9.2. LABELS AND LANGUAGES</h4>
+<div class="paragraph">
+<p>The Languages tab displays a list of all configured languages in the system. You can add as many different languages to the system as you need by selecting a language from the Select Language drop down menu and clicking <strong>Add</strong>. You can then include the appropriate vocabulary for any term in the System Labels section.</p>
+</div>
+<div class="paragraph">
+<p>The System Labels tab displays system labels that apply to the entire Entando application. By default, system labels are available in English and Italian. If you add additional languages in the Languages tab, you can enter the appropriate word for a label in your choice language.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_database"><a class="anchor" href="#_database"></a>4.9.3. DATABASE</h4>
+<div class="paragraph">
+<p>The Database section lets you back up your entire Entando’s database by clicking the <strong>Create Backup</strong> button. The backed up files become available from the Protected folder of the File Browser section once the backup process completes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_file_browser"><a class="anchor" href="#_file_browser"></a>4.9.4. FILE BROWSER</h4>
+<div class="paragraph">
+<p>The File Browser section lets you browse files, upload, create text files and folders, and access database backups from two distinct areas of the file-system:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Public:</strong> /project_name/src/main/webapp/resources</p>
+</li>
+<li>
+<p><strong>Protected:</strong> /project_name/src/main/webapp/protected</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Backed up database files are in the Protected section by default.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-31 14:58:05 EDT
+Last updated 2018-06-01 10:09:49 EDT
 </div>
 </div>
 </body>
