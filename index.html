@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>WELCOME TO ENTANDO</title>
+<meta name="generator" content="Asciidoctor 1.5.6.2">
+<title>Welcome to Entando</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-/* Uncomment @import statement below to use as custom stylesheet */
+/* Remove comment around @import statement below when using as a custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 a{background:transparent}
@@ -43,10 +44,12 @@ button,select{text-transform:none}
 button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
 button[disabled],html input[disabled]{cursor:default}
 input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
-*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
 body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
@@ -64,7 +67,8 @@ img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
 .center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
@@ -98,24 +102,24 @@ abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-
 abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
 blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
+blockquote cite:before{content:"\2014 \0020"}
 blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
-@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
 table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
-table thead,table tfoot{background:#f7f8f7}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
-.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
-.clearfix::after,.float-group::after{clear:both}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
 *:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
 *:not(pre)>code.nobreak{word-wrap:normal}
 *:not(pre)>code.nowrap{white-space:nowrap}
@@ -131,15 +135,15 @@ kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-bl
 .menuseq{word-spacing:-.02em}
 .menuseq b.caret{font-size:1.25em;line-height:.8}
 .menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
-b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
-b.button::before{content:"[";padding:0 3px 0 2px}
-b.button::after{content:"]";padding:0 2px 0 3px}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
 p a>code:hover{color:rgba(0,0,0,.9)}
 #header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
-#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
-#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
 #content{margin-top:1.25em}
-#content::before{content:none}
+#content:before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
 #header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
@@ -147,11 +151,11 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
 #header .details br{display:none}
-#header .details br+span::before{content:"\00a0\2013\00a0"}
-#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
-#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
 #header #revnumber{text-transform:capitalize}
-#header #revnumber::after{content:"\00a0"}
+#header #revnumber:after{content:"\00a0"}
 #content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
 #toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
 #toc>ul{margin-left:.125em}
@@ -162,7 +166,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toc a{text-decoration:none}
 #toc a:active{text-decoration:underline}
 #toctitle{color:#7a2518;font-size:1.2em}
-@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
 #toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
@@ -171,7 +175,7 @@ body.toc2{padding-left:15em;padding-right:0}
 #toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
 body.toc2.toc-right{padding-left:0;padding-right:15em}
 body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
-@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
 #toc.toc2{width:20em}
 #toc.toc2 #toctitle{font-size:1.375em}
 #toc.toc2>ul{font-size:.95em}
@@ -182,25 +186,22 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc>:last-child{margin-bottom:0}
 #footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
-#content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
-@media screen and (min-width:768px){#content{margin-bottom:1.25em}
-.sect1{padding-bottom:1.25em}}
-.sect1:last-child{padding-bottom:0}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
 .sect1+.sect1{border-top:1px solid #efefed}
 #content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
-#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
 #content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
 #content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 .audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
-table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
-.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
-table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -216,17 +217,17 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
 .literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
 .literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
-@media screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
-@media screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
 .literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
 .listingblock pre.highlightjs{padding:0}
 .listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
 .listingblock>.content{position:relative}
-.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
-.listingblock:hover code[data-lang]::before{display:block}
-.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:#999}
-.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
 table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
 table.pyhltable td.code{padding-left:.75em;padding-right:0}
@@ -237,39 +238,35 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 .quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
-.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
 .quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
 .quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
 .quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
 .quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
-.quoteblock .quoteblock blockquote::before{display:none}
-.verseblock{margin:0 1em 1.25em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
 .verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
 .verseblock pre strong{font-weight:400}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
 .quoteblock .attribution br,.verseblock .attribution br{display:none}
 .quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
-.quoteblock.abstract{margin:0 1em 1.25em;display:block}
-.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{word-spacing:0;line-height:1.6}
-.quoteblock.abstract blockquote::before,.quoteblock.abstract p::before{display:none}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
 table.tableblock{max-width:100%;border-collapse:separate}
-p.tableblock:last-child{margin-bottom:0}
-td.tableblock>.content{margin-bottom:-1.25em}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
 table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
 table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
 table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
 table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
 table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd){background:#f8f8f7}
-table.stripes-none tr,table.stripes-odd tr:nth-of-type(even){background:none}
+table.frame-topbot{border-width:1px 0}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -293,8 +290,9 @@ ul.unstyled,ol.unstyled{margin-left:0}
 ul.checklist{margin-left:.625em}
 ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
-ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
-ul.inline>li{margin-left:1.25em}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
 .unstyled dl dt{font-weight:400;font-style:normal}
 ol.arabic{list-style-type:decimal}
 ol.decimal{list-style-type:decimal-leading-zero}
@@ -308,9 +306,9 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
-.colist td:not([class]):first-child img{max-width:none}
-.colist td:not([class]):last-child{padding:.25em 0}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
+.colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
 .imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
@@ -326,9 +324,9 @@ sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:sup
 sup.footnote a,sup.footnoteref a{text-decoration:none}
 sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
-#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
-#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
-#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
 .gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
@@ -374,15 +372,15 @@ div.unbreakable{page-break-inside:avoid}
 span.icon>.fa{cursor:default}
 a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
-.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
-.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
-.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
-.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
-.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
 .conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
-.conum[data-value]::after{content:attr(data-value)}
+.conum[data-value]:after{content:attr(data-value)}
 pre .conum[data-value]{position:relative;top:-.125em}
 b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
@@ -394,13 +392,12 @@ p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
 .print-only{display:none!important}
-@page{margin:1.25cm .75cm}
-@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
-html{font-size:80%}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
 a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
-a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
-abbr[title]::after{content:" (" attr(title) ")"}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
 pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
 svg{max-width:100%}
@@ -408,95 +405,55 @@ p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
 body.book #header{text-align:center}
-body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
 body.book #header .details{border:0!important;display:block;padding:0!important}
 body.book #header .details span:first-child{margin-left:0!important}
 body.book #header .details br{display:block}
-body.book #header .details br+span::before{content:none!important}
+body.book #header .details br+span:before{content:none!important}
 body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
 body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
-.listingblock code[data-lang]::before{display:block}
-#footer{padding:0 .9375em}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
 .hide-on-print{display:none!important}
 .print-only{display:block!important}
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
-@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
-.sect1{padding:0!important}
-.sect1+.sect1{border:0}
-#footer{background:none}
-#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
-@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>WELCOME TO ENTANDO</h1>
+<h1>Welcome to Entando</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#release-notes-5.0.0">1. ENTANDO 5.0.0 RELEASE NOTES</a>
+<li><a href="#release-notes-5.0.0">Entando 5.0.0 Release Notes</a>
 <ul class="sectlevel2">
-<li><a href="#_abstract">1.1. ABSTRACT</a></li>
-<li><a href="#_preface">1.2. PREFACE</a></li>
-<li><a href="#_goal_of_entando_5">1.3. GOAL OF ENTANDO 5</a></li>
-<li><a href="#_about_entando_5">1.4. ABOUT ENTANDO 5</a></li>
-<li><a href="#_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
+<li><a href="#_abstract">Abstract</a></li>
+<li><a href="#_preface">Preface</a></li>
+<li><a href="#_goal_of_entando_5">Goal of Entando 5</a></li>
+<li><a href="#_about_entando_5">About Entando 5</a></li>
+<li><a href="#_what_s_new_with_entando_5">What&#8217;s New with Entando 5</a>
 <ul class="sectlevel3">
-<li><a href="#_known_issues">1.5.1. KNOWN ISSUES</a></li>
-<li><a href="#_versioning_information">1.5.2. VERSIONING INFORMATION</a></li>
-<li><a href="#_software_requirements">1.5.3. SOFTWARE REQUIREMENTS</a></li>
-<li><a href="#_legal_notice">1.5.4. LEGAL NOTICE</a></li>
-<li><a href="#_links_and_resources">1.5.5. LINKS AND RESOURCES</a></li>
+<li><a href="#_known_issues">Known Issues</a></li>
+<li><a href="#_versioning_information">Versioning Information</a></li>
+<li><a href="#_software_requirements">Software requirements</a></li>
+<li><a href="#_legal_notice">Legal notice</a></li>
+<li><a href="#_links_and_resources">Links and resources</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#installation">2. INSTALLING ENTANDO APP BUILDER 5.0</a>
+<li><a href="#getting-started">GETTING STARTED WITH ENTANDO APP BUILDER</a>
 <ul class="sectlevel2">
-<li><a href="#_prerequisites">2.1. PREREQUISITES</a>
+<li><a href="#_sample_mortgage_application_project">SAMPLE MORTGAGE APPLICATION PROJECT</a>
 <ul class="sectlevel3">
-<li><a href="#_installed_prerequisites">2.1.1. INSTALLED PREREQUISITES:</a></li>
-<li><a href="#_space_and_hardware_requirements">2.1.2. SPACE AND HARDWARE REQUIREMENTS</a></li>
-</ul>
-</li>
-<li><a href="#_creating_a_new_entando_project">2.2. CREATING A NEW ENTANDO PROJECT</a></li>
-<li><a href="#_launching_the_entando_application">2.3. LAUNCHING THE ENTANDO APPLICATION</a>
-<ul class="sectlevel3">
-<li><a href="#_quick_start_using_derby_and_jetty">2.3.1. QUICK START USING DERBY AND JETTY</a></li>
-</ul>
-</li>
-<li><a href="#_setting_up_a_database">2.4. SETTING UP A DATABASE:</a></li>
-<li><a href="#_deploying_to_docker_using_s2i_source_to_image">2.5. DEPLOYING TO DOCKER USING S2I (SOURCE TO IMAGE)</a>
-<ul class="sectlevel3">
-<li><a href="#_prerequisites_2">2.5.1. PREREQUISITES:</a></li>
-</ul>
-</li>
-<li><a href="#_using_openshift">2.6. USING OPENSHIFT</a>
-<ul class="sectlevel3">
-<li><a href="#_prerequisite">2.6.1. PREREQUISITE:</a></li>
-</ul>
-</li>
-<li><a href="#_launching_the_app_builder">2.7. LAUNCHING THE APP BUILDER</a>
-<ul class="sectlevel3">
-<li><a href="#_build_from_source">2.7.1. BUILD FROM SOURCE</a>
-<ul class="sectlevel4">
-<li><a href="#_clone_and_set_up">CLONE AND SET UP</a></li>
-<li><a href="#_deploy">DEPLOY</a></li>
-</ul>
-</li>
-<li><a href="#_build_the_mapp_engine_from_source">2.7.2. BUILD THE MAPP ENGINE FROM SOURCE</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#getting-started">3. GETTING STARTED WITH ENTANDO APP BUILDER</a>
-<ul class="sectlevel2">
-<li><a href="#_sample_mortgage_application_project">3.1. SAMPLE MORTGAGE APPLICATION PROJECT</a>
-<ul class="sectlevel3">
-<li><a href="#_preface_2">3.1.1. PREFACE</a></li>
-<li><a href="#_configuring_the_applicant_page">3.1.2. CONFIGURING THE APPLICANT PAGE</a>
+<li><a href="#_preface_2">PREFACE</a></li>
+<li><a href="#_configuring_the_applicant_page">CONFIGURING THE APPLICANT PAGE</a>
 <ul class="sectlevel4">
 <li><a href="#_creating_a_new_page_model">CREATING A NEW PAGE MODEL</a></li>
 <li><a href="#_create_the_applicant_page">CREATE THE APPLICANT PAGE</a></li>
@@ -508,65 +465,98 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_custom_app_building_with_entando">4. CUSTOM APP BUILDING WITH ENTANDO</a>
+<li><a href="#installation">Installing Entando App Builder 5.0</a>
 <ul class="sectlevel2">
-<li><a href="#_introducing_the_entando_app_builder">4.1. INTRODUCING THE ENTANDO APP BUILDER</a>
+<li><a href="#_prerequisites">Prerequisites</a>
 <ul class="sectlevel3">
-<li><a href="#_entando_admin_console_version_5_0">4.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</a></li>
+<li><a href="#_installed_prerequisites">Installed Prerequisites:</a></li>
+<li><a href="#_space_and_hardware_requirements">Space and Hardware Requirements</a></li>
 </ul>
 </li>
-<li><a href="#_app_builder_overview">4.2. APP BUILDER OVERVIEW</a></li>
-<li><a href="#_dashboard">4.3. DASHBOARD</a></li>
-<li><a href="#_creating_and_managing_pages_with_page_designer">4.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</a>
+<li><a href="#_creating_a_new_entando_project">Creating a new Entando Project</a></li>
+<li><a href="#_launching_the_entando_application">Launching the Entando Application</a>
 <ul class="sectlevel3">
-<li><a href="#_using_the_page_tree">4.4.1. USING THE PAGE TREE</a>
+<li><a href="#_quick_start_using_derby_and_jetty">Quick Start Using Derby and Jetty</a></li>
+</ul>
+</li>
+<li><a href="#_setting_up_a_database">Setting up a Database:</a></li>
+<li><a href="#_deploying_to_docker_using_s2i_source_to_image">Deploying to Docker using s2i (Source to Image)</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisites_2">Prerequisites:</a></li>
+</ul>
+</li>
+<li><a href="#_launching_the_app_builder">Launching the App Builder</a>
+<ul class="sectlevel3">
+<li><a href="#_build_from_source">Build from Source</a>
+<ul class="sectlevel4">
+<li><a href="#_clone_and_set_up">Clone and set up</a></li>
+<li><a href="#_deploy">Deploy</a></li>
+</ul>
+</li>
+<li><a href="#_build_the_mapp_engine_from_source">Build the MApp Engine from Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_custom_app_building_with_entando">Custom App Building with Entando</a>
+<ul class="sectlevel2">
+<li><a href="#_introducing_the_entando_app_builder">1.1. INTRODUCING THE ENTANDO APP BUILDER</a>
+<ul class="sectlevel3">
+<li><a href="#_entando_admin_console_version_5_0">1.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</a></li>
+</ul>
+</li>
+<li><a href="#_app_builder_overview">1.2. APP BUILDER OVERVIEW</a></li>
+<li><a href="#_dashboard">1.3. DASHBOARD</a></li>
+<li><a href="#_creating_and_managing_pages_with_page_designer">1.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</a>
+<ul class="sectlevel3">
+<li><a href="#_using_the_page_tree">1.4.1. USING THE PAGE TREE</a>
 <ul class="sectlevel4">
 <li><a href="#_creating_a_new_page">CREATING A NEW PAGE</a></li>
 </ul>
 </li>
-<li><a href="#configuring-page">4.4.2. CONFIGURING A PAGE</a></li>
+<li><a href="#configuring-page">1.4.2. CONFIGURING A PAGE</a></li>
 </ul>
 </li>
-<li><a href="#_ux_patterns_managing_widgets_page_models_and_fragments">4.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</a>
+<li><a href="#_ux_patterns_managing_widgets_page_models_and_fragments">1.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</a>
 <ul class="sectlevel3">
-<li><a href="#_using_widgets">4.5.1. USING WIDGETS</a></li>
-<li><a href="#_using_fragments">4.5.2. USING FRAGMENTS</a>
+<li><a href="#_using_widgets">1.5.1. USING WIDGETS</a></li>
+<li><a href="#_using_fragments">1.5.2. USING FRAGMENTS</a>
 <ul class="sectlevel4">
 <li><a href="#_adding_a_new_fragment">ADDING A NEW FRAGMENT</a></li>
 </ul>
 </li>
-<li><a href="#page-models">4.5.3. USING PAGE MODELS</a>
+<li><a href="#page-models">1.5.3. USING PAGE MODELS</a>
 <ul class="sectlevel4">
 <li><a href="#_creating_a_page_model">CREATING A PAGE MODEL</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_integrating_with_red_hat_process_automation_manager_pam">4.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</a></li>
-<li><a href="#_managing_users">4.7. MANAGING USERS</a>
+<li><a href="#_integrating_with_red_hat_process_automation_manager_pam">1.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</a></li>
+<li><a href="#_managing_users">1.7. MANAGING USERS</a>
 <ul class="sectlevel3">
-<li><a href="#_working_with_users">4.7.1. WORKING WITH USERS</a>
+<li><a href="#_working_with_users">1.7.1. WORKING WITH USERS</a>
 <ul class="sectlevel4">
 <li><a href="#_creating_a_role">CREATING A ROLE</a></li>
 <li><a href="#_creating_a_group">CREATING A GROUP</a></li>
 <li><a href="#_creating_a_user">CREATING A USER</a></li>
-<li><a href="#_setting_a_users_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
+<li><a href="#_setting_a_user_s_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
 </ul>
 </li>
-<li><a href="#_restricting_access">4.7.2. RESTRICTING ACCESS</a></li>
+<li><a href="#_restricting_access">1.7.2. RESTRICTING ACCESS</a></li>
 </ul>
 </li>
-<li><a href="#_presenting_data">4.8. PRESENTING DATA</a>
+<li><a href="#_presenting_data">1.8. PRESENTING DATA</a>
 <ul class="sectlevel3">
-<li><a href="#_structuring_with_data_types">4.8.1. STRUCTURING WITH DATA TYPES</a></li>
+<li><a href="#_structuring_with_data_types">1.8.1. STRUCTURING WITH DATA TYPES</a></li>
 </ul>
 </li>
-<li><a href="#_configuring_entando">4.9. CONFIGURING ENTANDO</a>
+<li><a href="#_configuring_entando">1.9. CONFIGURING ENTANDO</a>
 <ul class="sectlevel3">
-<li><a href="#_categories">4.9.1. CATEGORIES</a></li>
-<li><a href="#_labels_and_languages">4.9.2. LABELS AND LANGUAGES</a></li>
-<li><a href="#_database">4.9.3. DATABASE</a></li>
-<li><a href="#_file_browser">4.9.4. FILE BROWSER</a></li>
+<li><a href="#_categories">1.9.1. CATEGORIES</a></li>
+<li><a href="#_labels_and_languages">1.9.2. LABELS AND LANGUAGES</a></li>
+<li><a href="#_database">1.9.3. DATABASE</a></li>
+<li><a href="#_file_browser">1.9.4. FILE BROWSER</a></li>
 </ul>
 </li>
 </ul>
@@ -576,28 +566,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="release-notes-5.0.0">1. ENTANDO 5.0.0 RELEASE NOTES</h2>
+<h2 id="release-notes-5.0.0">Entando 5.0.0 Release Notes</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_abstract">1.1. ABSTRACT</h3>
+<h3 id="_abstract">Abstract</h3>
 <div class="paragraph">
 <p>This document contains release notes for Entando 5.0.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_preface">1.2. PREFACE</h3>
+<h3 id="_preface">Preface</h3>
 <div class="paragraph">
 <p>These release notes highlight new features in Entando 5.0, list features that are in technical preview, and include any known issues.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_goal_of_entando_5">1.3. GOAL OF ENTANDO 5</h3>
+<h3 id="_goal_of_entando_5">Goal of Entando 5</h3>
 <div class="paragraph">
 <p>The goal of Entando 5.0 is to fully engage our platform with the Modern Applications revolution by designing for a cloud-based infrastructure, adapting our architecture to be more distributed, and fully supporting DevOps methodologies.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_about_entando_5">1.4. ABOUT ENTANDO 5</h3>
+<h3 id="_about_entando_5">About Entando 5</h3>
 <div class="paragraph">
 <p>Entando 5 represents a fundamental update to the Entando infrastructure to support modern application development processes including: new options for clustering, cloud native deployment, out of the box support for deploying apps in OpenShift, new UI technologies, and an updated widget development process.</p>
 </div>
@@ -606,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</h3>
+<h3 id="_what_s_new_with_entando_5">What&#8217;s New with Entando 5</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -755,7 +745,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_known_issues">1.5.1. KNOWN ISSUES</h4>
+<h4 id="_known_issues">Known Issues</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -801,8 +791,8 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_versioning_information">1.5.2. VERSIONING INFORMATION</h4>
-<table class="tableblock frame-all grid-all stretch">
+<h4 id="_versioning_information">Versioning Information</h4>
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Jars and artifacts included in this release:</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -843,7 +833,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </table>
 </div>
 <div class="sect3">
-<h4 id="_software_requirements">1.5.3. SOFTWARE REQUIREMENTS</h4>
+<h4 id="_software_requirements">Software requirements</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -862,7 +852,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_legal_notice">1.5.4. LEGAL NOTICE</h4>
+<h4 id="_legal_notice">Legal notice</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -875,7 +865,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_and_resources">1.5.5. LINKS AND RESOURCES</h4>
+<h4 id="_links_and_resources">Links and resources</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -897,411 +887,12 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation">2. INSTALLING ENTANDO APP BUILDER 5.0</h2>
+<h2 id="getting-started">GETTING STARTED WITH ENTANDO APP BUILDER</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_prerequisites">2.1. PREREQUISITES</h3>
+<h3 id="_sample_mortgage_application_project">SAMPLE MORTGAGE APPLICATION PROJECT</h3>
 <div class="sect3">
-<h4 id="_installed_prerequisites">2.1.1. INSTALLED PREREQUISITES:</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Java 1.8+ or later required</p>
-</li>
-<li>
-<p>npm 5.6.0+ (for ReactJS front ends)</p>
-</li>
-<li>
-<p>Maven 3.0.5+ (including Maven Central)</p>
-</li>
-<li>
-<p>Ant 1.8.0+</p>
-</li>
-<li>
-<p>git (to build from source)</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_space_and_hardware_requirements">2.1.2. SPACE AND HARDWARE REQUIREMENTS</h4>
-<div class="paragraph">
-<p>Entando is a built to be a very light framework requiring limited runtime resources. A deployment of Entando can have a footprint as small as 58 megabytes. When extending Entando in a development setting, sizing for development environments that add to an Entando install is up to individual user requirements.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_creating_a_new_entando_project">2.2. CREATING A NEW ENTANDO PROJECT</h3>
-<div class="paragraph">
-<p>You can set up an Entando application via a Maven archetype that will create the project and structure needed to develop and add to an application.</p>
-</div>
-<div class="paragraph">
-<p><strong>Steps:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open your command line and navigate to the directory that will house your new project.</p>
-</li>
-<li>
-<p>Run the following command:<br>
-<code>mvn archetype:generate -Dfilter=entando-archetype-webapp-generic</code></p>
-</li>
-<li>
-<p>Select Option 1, displayed as follows:<br>
-1: remote &#8594; org.entando.entando:entando-archetype-webapp-generic (Generic web app Archetype for Entando: an agile, modern and user-centric open source web app like platform.)</p>
-</li>
-<li>
-<p>If prompted for a version, select 5.0.0.</p>
-</li>
-<li>
-<p>Enter values for groupId, artifactId, version, and package. These values go into the Maven setup in the new project.</p>
-</li>
-<li>
-<p>Open the directory created by the Maven archetype in Step 2. The directory will have the same name as the value you entered for artifactId in Step 5. This directory contains all of the structure necessary to start the Entando MApp-Engine and execute the application. See Launching the Application section below for instructions on starting the newly created project.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_launching_the_entando_application">2.3. LAUNCHING THE ENTANDO APPLICATION</h3>
-<div class="sect3">
-<h4 id="_quick_start_using_derby_and_jetty">2.3.1. QUICK START USING DERBY AND JETTY</h4>
-<div class="paragraph">
-<p>Once you have created an Entando Application, you can launch it using Jetty and an embedded Derby database.</p>
-</div>
-<div class="paragraph">
-<p>To do so, run the following command inside your project:<br>
-<code>mvn clean jetty:run</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Once started the logs will print the following messages:</strong><br>
-  [INFO] Started SelectChannelConnector@0.0.0.0:8080<br>
-  [INFO] Started Jetty Server<br>
-  [INFO] Starting scanner at interval of 5 seconds</p>
-</div>
-<div class="paragraph">
-<p>The logs will indicate that your application is running. Follow the steps in Launching the App Builder section to launch the App Builder.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_setting_up_a_database">2.4. SETTING UP A DATABASE:</h3>
-<div class="paragraph">
-<p>You can configure a newly created Entando application to connect to a database as its backing store. Derby is the default configuration in archetype-created applications, but you can change the default to a different value. Open the Filter Properties file in src/main/filters and enter the appropriate environment and database configuration.</p>
-</div>
-<div class="paragraph">
-<p><strong>To connect the MApp Engine to a database server:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>In your database server, create a user for the application.</p>
-</li>
-<li>
-<p>Create two databases. Give the user from Step 1 permission to create, read, and write.</p>
-</li>
-<li>
-<p>Update the appropriate Filter Properties file in src/main/filters to use the configuration for the database properties. For example, on a macOS, you would update + <em>filter-development-unix.properties</em>.</p>
-</li>
-<li>
-<p>Set the user, database, and password for the values created in Steps 1 and 2.</p>
-</li>
-<li>
-<p>Launch the application.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When launching with the mvn jetty:run command, Jetty Entando will automatically create the table structure required to run the application. This can be used to instantiate an empty database when the target deployment is an app server such as JBoss or Tomcat.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_deploying_to_docker_using_s2i_source_to_image">2.5. DEPLOYING TO DOCKER USING S2I (SOURCE TO IMAGE)</h3>
-<div class="sect3">
-<h4 id="_prerequisites_2">2.5.1. PREREQUISITES:</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Installed and running docker instance</p>
-</li>
-<li>
-<p>s2i command installed (<a href="https://github.com/openshift/source-to-image" class="bare">https://github.com/openshift/source-to-image</a>)</p>
-</li>
-<li>
-<p>An Entando App created using the steps in Creating a New Entando Project can be run directly in Docker using the Entando s2i images. Images are provided for Wildfly 11, JBoss EAP X, and Tomcat.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To use the Docker s2i images, you must have already set up a database. See the Setting up a Database section for details.</p>
-</div>
-<div class="paragraph">
-<p>By default, the app deployed in Docker will connect to a Postgres database to persist resources created using the App Builder and by the MApp Engine. In the app created from the archetype, update the properties in:
-<strong>&lt;your application&gt;/.s2i/environment</strong> to point to the user and databases created in the Setting up a Database section.</p>
-</div>
-<div class="paragraph">
-<p><strong>After configuring the database:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Pull in the Docker image using the following command:<br>
-<code>docker pull entando_wildfly_s2i_5.0.0</code></p>
-</li>
-<li>
-<p>Build the image using s2i using the command to build and deploy a Docker app in Docker:<br>
-<code>s2i build &lt;path or URL of your project&gt; entando_wildfly_s2i_5.0.0 &lt;your  image name&gt;</code><br>
-Where:<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>&lt;path or URL of your project&gt;</strong> is the path to your project or a URL to access the code. The build for this project will be invoked and the resulting war file deployed to the app server in the image</p>
-</li>
-<li>
-<p><strong>Entando_wildfly_s2i_5.0.0</strong> is the name of the base docker image provided by Entando</p>
-</li>
-<li>
-<p><strong>&lt;your image name&gt;</strong> is the name for this docker image</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_using_openshift">2.6. USING OPENSHIFT</h3>
-<div class="sect3">
-<h4 id="_prerequisite">2.6.1. PREREQUISITE:</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Installed minishift environment</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>You can configure an Entando app to launch directly into OpenShift using a pre-configured archetype. Create an OpenShift-ready project using the following command:<br>
-<code>mvn archetype:generate -Dfilter=entando-archetype-webapp-openshift</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_launching_the_app_builder">2.7. LAUNCHING THE APP BUILDER</h3>
-<div class="sect3">
-<h4 id="_build_from_source">2.7.1. BUILD FROM SOURCE</h4>
-<div class="paragraph">
-<p><strong>Prerequisites:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>git</p>
-</li>
-<li>
-<p>npm</p>
-</li>
-<li>
-<p>node</p>
-</li>
-</ul>
-</div>
-<div class="sect4">
-<h5 id="_clone_and_set_up">CLONE AND SET UP</h5>
-<div class="paragraph">
-<p><strong>Enter the following commands in your command line:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>git clone https://github.com/entando/frontend-common-components.git</code></p>
-</li>
-<li>
-<p><code>cd frontend-common-components.git</code></p>
-</li>
-<li>
-<p><code>npm install</code><br></p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The npm install command installs npm dependencies</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_deploy">DEPLOY</h5>
-<div class="paragraph">
-<p><strong>Enter the following commands in your command line:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>npm run lint</code><br>
-Runs the linter. It fails if linting rules are not matched.</p>
-</li>
-<li>
-<p><code>npm run coverage</code><br>
-Runs unit tests. It fails if a unit test fails, or if the minimum coverage threshold is not met.</p>
-</li>
-<li>
-<p><code>npm run import-plugins</code><br>
-Compiles and imports Entando plugins.</p>
-</li>
-<li>
-<p><code>npm run build</code><br>
-Compiles the project and creates the build directory.</p>
-</li>
-<li>
-<p><code>npm run build-full</code><br>
-Runs npm run lint, npm run coverage, npm run import-plugins and npm run build</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Development</strong></p>
-</div>
-<div class="paragraph">
-<p><code>npm start</code><br>
-Starts the application in dev mode (local web server).</p>
-</div>
-<div class="paragraph">
-<p><strong>Using Docker</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Pull in the docker image:<br>
-<code>docker pull entando/app-builder-5.0.0</code></p>
-</li>
-<li>
-<p>Run the image. Example docker command:<br>
-<code>docker run -it --rm -d -p 5000:5000 -e DOMAIN=http://localhost:8000/my-app appbuilder-5.0.0</code><br>
-Where:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>DOMAIN=</strong> is the url of a running instance of the MApp Engine. The App Builder uses the REST APIs in the engine to create and manage the application</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_build_the_mapp_engine_from_source">2.7.2. BUILD THE MAPP ENGINE FROM SOURCE</h4>
-<div class="paragraph">
-<p><strong>To download the latest source code:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open your terminal and create an empty directory for your project:<br>
-<code>mkdir ~/my_new_project</code></p>
-</li>
-<li>
-<p>Move to the new directory<br>
-<code>cd ~/my_new_project</code></p>
-</li>
-<li>
-<p>Clone the following repositories IN ORDER: entando-core, entando-components, entando-archetypes, entando-ux-packages projects:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Entando-core:<br>
-<code>git clone https://github.com/entando/entando-core</code></p>
-</li>
-<li>
-<p>Entando-components:<br>
-<code>git clone https://github.com/entando/entando-components</code></p>
-</li>
-<li>
-<p>Entando-archetypes:<br>
-<code>git clone https://github.com/entando/entando-archetypes</code></p>
-</li>
-<li>
-<p>(Optional) Entando-ux-packages:<br>
-<code>git clone https://github.com/entando/entando-ux-packages</code><br>
-The Entando UX Packages repository contains samples of pre-made Entando-based applications.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Install, IN ORDER, the entando-core, entando-components, entando-archetypes projects:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>cd entando-core<br>
-<code>mvn clean install -DskipTests</code></p>
-</li>
-<li>
-<p>cd entando-components<br>
-<code>mvn clean install -DskipTests</code></p>
-</li>
-<li>
-<p>cd entando-archetypes<br>
-<code>mvn clean install -DskipTests</code></p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Complete the download by following the steps from the Creating a New Entando Project section.<br></p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The command to use the artifacts you have installed locally with an additional switch on the archetype command is:<br>
-<code>mvn archetype:generate -Dfilter=entando-archetype-webapp-generic -DarchetypeCatalog=local</code></p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="getting-started">3. GETTING STARTED WITH ENTANDO APP BUILDER</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_sample_mortgage_application_project">3.1. SAMPLE MORTGAGE APPLICATION PROJECT</h3>
-<div class="sect3">
-<h4 id="_preface_2">3.1.1. PREFACE</h4>
+<h4 id="_preface_2">PREFACE</h4>
 <div class="paragraph">
 <p>The Entando App Builder helps you create a variety of applications and integrate them with Red Hat BPM. It uses an intuitive UI, reusable templates, and drag-and-drop functionality that allows you to participate in every stage of the application design process regardless of your level of coding knowledge.</p>
 </div>
@@ -1320,7 +911,7 @@ The Entando UX Packages repository contains samples of pre-made Entando-based ap
 </div>
 </div>
 <div class="sect3">
-<h4 id="_configuring_the_applicant_page">3.1.2. CONFIGURING THE APPLICANT PAGE</h4>
+<h4 id="_configuring_the_applicant_page">CONFIGURING THE APPLICANT PAGE</h4>
 <div class="paragraph">
 <p>The Applicant page is a public-facing webpage.</p>
 </div>
@@ -1915,10 +1506,400 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect1">
-<h2 id="_custom_app_building_with_entando">4. CUSTOM APP BUILDING WITH ENTANDO</h2>
+<h2 id="installation">Installing Entando App Builder 5.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_introducing_the_entando_app_builder"><a class="anchor" href="#_introducing_the_entando_app_builder"></a>4.1. INTRODUCING THE ENTANDO APP BUILDER</h3>
+<h3 id="_prerequisites">Prerequisites</h3>
+<div class="sect3">
+<h4 id="_installed_prerequisites">Installed Prerequisites:</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 1.8+ or later required</p>
+</li>
+<li>
+<p>npm 5.6.0+ (for ReactJS front ends)</p>
+</li>
+<li>
+<p>Maven 3.0.5+ (including Maven Central)</p>
+</li>
+<li>
+<p>Ant 1.8.0+</p>
+</li>
+<li>
+<p>git (to build from source)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_space_and_hardware_requirements">Space and Hardware Requirements</h4>
+<div class="paragraph">
+<p>Entando is a built to be a very light framework requiring limited runtime resources. A deployment of Entando can have a footprint as small as 58 megabytes. When extending Entando in a development setting, sizing for development environments that add to an Entando install is up to individual user requirements.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_new_entando_project">Creating a new Entando Project</h3>
+<div class="paragraph">
+<p>You can set up an Entando application via a Maven archetype that will create the project and structure needed to develop and add to an application.</p>
+</div>
+<div class="paragraph">
+<p><strong>Steps:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your command line and navigate to the directory that will house your new project.</p>
+</li>
+<li>
+<p>Run the following command:<br>
+<code>mvn archetype:generate -Dfilter=entando-archetype-webapp-generic</code></p>
+</li>
+<li>
+<p>Select Option 1, displayed as follows:<br>
+1: remote &#8594; org.entando.entando:entando-archetype-webapp-generic (Generic web app Archetype for Entando: an agile, modern and user-centric open source web app like platform.)</p>
+</li>
+<li>
+<p>If prompted for a version, select 5.0.0.</p>
+</li>
+<li>
+<p>Enter values for groupId, artifactId, version, and package. These values go into the Maven setup in the new project.</p>
+</li>
+<li>
+<p>Open the directory created by the Maven archetype in Step 2. The directory will have the same name as the value you entered for artifactId in Step 5. This directory contains all of the structure necessary to start the Entando MApp-Engine and execute the application. See Launching the Application section below for instructions on starting the newly created project.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_launching_the_entando_application">Launching the Entando Application</h3>
+<div class="sect3">
+<h4 id="_quick_start_using_derby_and_jetty">Quick Start Using Derby and Jetty</h4>
+<div class="paragraph">
+<p>Once you have created an Entando Application, you can launch it using Jetty and an embedded Derby database.</p>
+</div>
+<div class="paragraph">
+<p>To do so, run the following command inside your project:<br>
+<code>mvn clean jetty:run</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Once started the logs will print the following messages:</strong><br>
+  [INFO] Started SelectChannelConnector@0.0.0.0:8080<br>
+  [INFO] Started Jetty Server<br>
+  [INFO] Starting scanner at interval of 5 seconds</p>
+</div>
+<div class="paragraph">
+<p>The logs will indicate that your application is running. Follow the steps in Launching the App Builder section to launch the App Builder.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_a_database">Setting up a Database:</h3>
+<div class="paragraph">
+<p>You can configure a newly created Entando application to connect to a database as its backing store. Derby is the default configuration in archetype-created applications, but you can change the default to a different value. Open the Filter Properties file in src/main/filters and enter the appropriate environment and database configuration.</p>
+</div>
+<div class="paragraph">
+<p><strong>To connect the MApp Engine to a database server:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In your database server, create a user for the application.</p>
+</li>
+<li>
+<p>Create two databases. Give the user from Step 1 permission to create, read, and write.</p>
+</li>
+<li>
+<p>Update the appropriate Filter Properties file in src/main/filters to use the configuration for the database properties. For example, on a macOS, you would update + <em>filter-development-unix.properties</em>.</p>
+</li>
+<li>
+<p>Set the user, database, and password for the values created in Steps 1 and 2.</p>
+</li>
+<li>
+<p>Launch the application.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When launching with the mvn jetty:run command, Jetty Entando will automatically create the table structure required to run the application. This can be used to instantiate an empty database when the target deployment is an app server such as JBoss or Tomcat.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deploying_to_docker_using_s2i_source_to_image">Deploying to Docker using s2i (Source to Image)</h3>
+<div class="sect3">
+<h4 id="_prerequisites_2">Prerequisites:</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Installed and running docker instance</p>
+</li>
+<li>
+<p>s2i command installed (<a href="https://github.com/openshift/source-to-image" class="bare">https://github.com/openshift/source-to-image</a>)</p>
+</li>
+<li>
+<p>An Entando App created using the steps in Creating a New Entando
+Project can be run directly in Docker using the Entando s2i images.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To use the Docker s2i images, you must have already set up a database. See the Setting up a Database section for details.</p>
+</div>
+<div class="paragraph">
+<p>By default, the app deployed in Docker will connect to a Postgres database to persist resources created using the App Builder and by the MApp Engine. In the app created from the archetype, update the properties in:
+<strong>&lt;your application&gt;/.s2i/environment</strong> to point to the user and databases created in the Setting up a Database section.</p>
+</div>
+<div class="paragraph">
+<p><strong>After configuring the database:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pull in the Docker image using the following command:<br>
+<code>docker pull entando/builder-s2i</code> (Demo image using jetty)</p>
+</li>
+<li>
+<p>Build the image using s2i using the command to build and deploy a Docker app in Docker:<br>
+<code>s2i build &lt;path or URL of your project&gt; entando/builder-s2i &lt;your  image name&gt;</code><br>
+Where:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;path or URL of your project&gt;</strong> is the path to your project or a URL to access the code. The build for this project will be invoked and the resulting war file deployed to the app server in the image</p>
+</li>
+<li>
+<p><strong>entando/builder-s2i</strong> is the name of the base s2i docker image provided by Entando</p>
+</li>
+<li>
+<p><strong>&lt;your image name&gt;</strong> is the name for this docker image</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Run the Image</strong>
+<code>docker run -d -p 8080:8080 &lt;your image name&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>The app may take some time to start. It is downloading maven dependencies at startup.  Your app will be available on <a href="http://localhost:8080/&lt;your_project_name&gt" class="bare">http://localhost:8080/&lt;your_project_name&gt</a>; after startup is complete.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_launching_the_app_builder">Launching the App Builder</h3>
+<div class="sect3">
+<h4 id="_build_from_source">Build from Source</h4>
+<div class="paragraph">
+<p><strong>Prerequisites:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>npm</p>
+</li>
+<li>
+<p>node</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_clone_and_set_up">Clone and set up</h5>
+<div class="paragraph">
+<p><strong>Enter the following commands in your command line:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>git clone https://github.com/entando/frontend-common-components.git</code></p>
+</li>
+<li>
+<p><code>cd frontend-common-components.git</code></p>
+</li>
+<li>
+<p><code>npm install</code><br></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The npm install command installs npm dependencies</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_deploy">Deploy</h5>
+<div class="paragraph">
+<p><strong>Enter the following commands in your command line:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>npm run lint</code><br>
+Runs the linter. It fails if linting rules are not matched.</p>
+</li>
+<li>
+<p><code>npm run coverage</code><br>
+Runs unit tests. It fails if a unit test fails, or if the minimum coverage threshold is not met.</p>
+</li>
+<li>
+<p><code>npm run import-plugins</code><br>
+Compiles and imports Entando plugins.</p>
+</li>
+<li>
+<p><code>npm run build</code><br>
+Compiles the project and creates the build directory.</p>
+</li>
+<li>
+<p><code>npm run build-full</code><br>
+Runs npm run lint, npm run coverage, npm run import-plugins and npm run build</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Development</strong></p>
+</div>
+<div class="paragraph">
+<p><code>npm start</code><br>
+Starts the application in dev mode (local web server).</p>
+</div>
+<div class="paragraph">
+<p><strong>Using Docker</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pull in the docker image:<br>
+<code>docker pull entando/app-builder-5.0.0</code></p>
+</li>
+<li>
+<p>Run the image. Example docker command:<br>
+<code>docker run -it --rm -d -p 5000:5000 -e DOMAIN=http://localhost:8000/my-app appbuilder-5.0.0</code><br>
+Where:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>DOMAIN=</strong> is the url of a running instance of the MApp Engine. The App Builder uses the REST APIs in the engine to create and manage the application</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_build_the_mapp_engine_from_source">Build the MApp Engine from Source</h4>
+<div class="paragraph">
+<p><strong>To download the latest source code:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your terminal and create an empty directory for your project:<br>
+<code>mkdir ~/my_new_project</code></p>
+</li>
+<li>
+<p>Move to the new directory<br>
+<em>cd ~/my_new_project</em></p>
+</li>
+<li>
+<p>Clone the following repositories IN ORDER: entando-core, entando-components, entando-archetypes, entando-ux-packages projects:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Entando-core:<br>
+<code>git clone https://github.com/entando/entando-core</code></p>
+</li>
+<li>
+<p>Entando-components:<br>
+<code>git clone https://github.com/entando/entando-components</code></p>
+</li>
+<li>
+<p>Entando-archetypes:<br>
+<code>git clone https://github.com/entando/entando-archetypes</code></p>
+</li>
+<li>
+<p>(Optional) Entando-ux-packages:<br>
+<code>git clone https://github.com/entando/entando-ux-packages</code><br>
+The Entando UX Packages repository contains samples of pre-made Entando-based applications.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Install, IN ORDER, the entando-core, entando-components, entando-archetypes projects:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>cd entando-core<br>
+<code>mvn clean install -DskipTests</code></p>
+</li>
+<li>
+<p>cd entando-components<br>
+<code>mvn clean install -DskipTests</code></p>
+</li>
+<li>
+<p>cd entando-archetypes<br>
+<code>mvn clean install -DskipTests</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Complete the download by following the steps from the Creating a New Entando Project section.<br></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The command to use the artifacts you have installed locally with an additional switch on the archetype command is:<br>
+<code>mvn archetype:generate -Dfilter=entando-archetype-webapp-generic -DarchetypeCatalog=local</code></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_custom_app_building_with_entando">Custom App Building with Entando</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducing_the_entando_app_builder"><a class="anchor" href="#_introducing_the_entando_app_builder"></a>1.1. INTRODUCING THE ENTANDO APP BUILDER</h3>
 <div class="paragraph">
 <p>The App Builder is Entando’s application to help you integrate, configure and customize any kind of modern web application, regardless of your programming proficiency. The App Builder provides an Admin Console, a visual environment, that collects elements for configuring your web application and managing your activities.</p>
 </div>
@@ -1929,20 +1910,20 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 <p>This document describes the elements and functionalities of the Admin Console.</p>
 </div>
 <div class="sect3">
-<h4 id="_entando_admin_console_version_5_0"><a class="anchor" href="#_entando_admin_console_version_5_0"></a>4.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</h4>
+<h4 id="_entando_admin_console_version_5_0"><a class="anchor" href="#_entando_admin_console_version_5_0"></a>1.1.1. ENTANDO ADMIN CONSOLE VERSION 5.0</h4>
 <div class="paragraph">
 <p>With Entando version 5.0 the Admin Console has been redesigned and renewed with the adoption of the PatternFly framework and guidelines. PatternFly is built on top of Bootstrap3 and provides an enterprise grade UX look and feel based on research and UX best practices.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_app_builder_overview"><a class="anchor" href="#_app_builder_overview"></a>4.2. APP BUILDER OVERVIEW</h3>
+<h3 id="_app_builder_overview"><a class="anchor" href="#_app_builder_overview"></a>1.2. APP BUILDER OVERVIEW</h3>
 <div class="paragraph">
 <p>The Entando main view is the entry point for every administration activity. On the up side of the screen there is an horizontal menu, which gives access to all Entando’s functionalities, while on the down-side of the screen, the Dashboard provides an overview of Entando status and a quick access to some functionalities.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dashboard"><a class="anchor" href="#_dashboard"></a>4.3. DASHBOARD</h3>
+<h3 id="_dashboard"><a class="anchor" href="#_dashboard"></a>1.3. DASHBOARD</h3>
 <div class="paragraph">
 <p>The dashboard is divided into distinct areas.</p>
 </div>
@@ -1982,7 +1963,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect2">
-<h3 id="_creating_and_managing_pages_with_page_designer"><a class="anchor" href="#_creating_and_managing_pages_with_page_designer"></a>4.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</h3>
+<h3 id="_creating_and_managing_pages_with_page_designer"><a class="anchor" href="#_creating_and_managing_pages_with_page_designer"></a>1.4. CREATING AND MANAGING PAGES WITH PAGE DESIGNER</h3>
 <div class="paragraph">
 <p>The Page Designer section deals with all page management-related activities.</p>
 </div>
@@ -2001,7 +1982,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_using_the_page_tree"><a class="anchor" href="#_using_the_page_tree"></a>4.4.1. USING THE PAGE TREE</h4>
+<h4 id="_using_the_page_tree"><a class="anchor" href="#_using_the_page_tree"></a>1.4.1. USING THE PAGE TREE</h4>
 <div class="paragraph">
 <p>The Page Tree subsection shows the hierarchical structure of the pages and their statuses, and lets you perform all page management actions.</p>
 </div>
@@ -2090,7 +2071,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect3">
-<h4 id="configuring-page"><a class="anchor" href="#configuring-page"></a>4.4.2. CONFIGURING A PAGE</h4>
+<h4 id="configuring-page"><a class="anchor" href="#configuring-page"></a>1.4.2. CONFIGURING A PAGE</h4>
 <div class="paragraph">
 <p>The Page Configuration section is where you assign widgets to the frames defined by the Page Model you applied to your page. The available widgets are in the right pane. Apply widgets by dragging and dropping them to a frame of your choice.</p>
 </div>
@@ -2108,12 +2089,12 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ux_patterns_managing_widgets_page_models_and_fragments"><a class="anchor" href="#_ux_patterns_managing_widgets_page_models_and_fragments"></a>4.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</h3>
+<h3 id="_ux_patterns_managing_widgets_page_models_and_fragments"><a class="anchor" href="#_ux_patterns_managing_widgets_page_models_and_fragments"></a>1.5. UX PATTERNS: MANAGING WIDGETS, PAGE MODELS, AND FRAGMENTS</h3>
 <div class="paragraph">
 <p>The UX Patterns section provides settings options for your general UX Patterns.</p>
 </div>
 <div class="sect3">
-<h4 id="_using_widgets"><a class="anchor" href="#_using_widgets"></a>4.5.1. USING WIDGETS</h4>
+<h4 id="_using_widgets"><a class="anchor" href="#_using_widgets"></a>1.5.1. USING WIDGETS</h4>
 <div class="paragraph">
 <p>A Widget is an independent software component configured and executed within your application’s page. Widgets provide UX/UI blocks that deliver a specific function.</p>
 </div>
@@ -2158,7 +2139,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect3">
-<h4 id="_using_fragments"><a class="anchor" href="#_using_fragments"></a>4.5.2. USING FRAGMENTS</h4>
+<h4 id="_using_fragments"><a class="anchor" href="#_using_fragments"></a>1.5.2. USING FRAGMENTS</h4>
 <div class="paragraph">
 <p>Fragments are single portions of front-end interface used in widgets (including plugins) and Page Models. They are are HTML blocks that include Freemarker instructions by using specific tags that you replace with appropriate values each time you use the fragment. Entando then renders the widgets using the fragments. The FRAGMENTS section lets you manage existing fragments or add new ones.</p>
 </div>
@@ -2197,7 +2178,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect3">
-<h4 id="page-models"><a class="anchor" href="#page-models"></a>4.5.3. USING PAGE MODELS</h4>
+<h4 id="page-models"><a class="anchor" href="#page-models"></a>1.5.3. USING PAGE MODELS</h4>
 <div class="paragraph">
 <p>The Page Model is the look and feel of an application&#8217;s page. It defines the structure of the page using frames or areas of the page that contain widgets.</p>
 </div>
@@ -2280,7 +2261,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect2">
-<h3 id="_integrating_with_red_hat_process_automation_manager_pam"><a class="anchor" href="#_integrating_with_red_hat_process_automation_manager_pam"></a>4.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</h3>
+<h3 id="_integrating_with_red_hat_process_automation_manager_pam"><a class="anchor" href="#_integrating_with_red_hat_process_automation_manager_pam"></a>1.6. INTEGRATING WITH RED HAT PROCESS AUTOMATION MANAGER (PAM)</h3>
 <div class="paragraph">
 <p>Entando integrates with Red Hat&#8217;s Process Automation Manager (formerly Red Hat JBoss BPM Suite), a middleware platform for creating cloud-native business automation applications and microservices. It enables enterprise business and IT users to document, simulate, manage, automate and monitor business processes and policies. It is designed to empower business and IT users to collaborate more effectively, so business applications can be changed more easily and quickly.</p>
 </div>
@@ -2368,7 +2349,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </div>
 </div>
 <div class="sect2">
-<h3 id="_managing_users"><a class="anchor" href="#_managing_users"></a>4.7. MANAGING USERS</h3>
+<h3 id="_managing_users"><a class="anchor" href="#_managing_users"></a>1.7. MANAGING USERS</h3>
 <div class="paragraph">
 <p>The Entando App Builder assigns access rights using combinations of roles and groups. You can manage all activities and privileges for roles and groups through the User Management tab.</p>
 </div>
@@ -2420,7 +2401,7 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </table>
 </div>
 <div class="sect3">
-<h4 id="_working_with_users"><a class="anchor" href="#_working_with_users"></a>4.7.1. WORKING WITH USERS</h4>
+<h4 id="_working_with_users"><a class="anchor" href="#_working_with_users"></a>1.7.1. WORKING WITH USERS</h4>
 <div class="sect4">
 <h5 id="_creating_a_role"><a class="anchor" href="#_creating_a_role"></a>CREATING A ROLE</h5>
 <div class="olist arabic">
@@ -2549,7 +2530,7 @@ To edit a Role after saving, return to the Roles screen. In the Roles table, sel
 </div>
 </div>
 <div class="sect4">
-<h5 id="_setting_a_users_authorizations"><a class="anchor" href="#_setting_a_users_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
+<h5 id="_setting_a_user_s_authorizations"><a class="anchor" href="#_setting_a_user_s_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2576,7 +2557,7 @@ To edit a Role after saving, return to the Roles screen. In the Roles table, sel
 </div>
 </div>
 <div class="sect3">
-<h4 id="_restricting_access"><a class="anchor" href="#_restricting_access"></a>4.7.2. RESTRICTING ACCESS</h4>
+<h4 id="_restricting_access"><a class="anchor" href="#_restricting_access"></a>1.7.2. RESTRICTING ACCESS</h4>
 <div class="paragraph">
 <p>Entando lets you set restrictions on users (see Figure below), specifically a shelf life for passwords and a maximum time between log ins before the password expires.</p>
 </div>
@@ -2622,7 +2603,7 @@ To edit a Role after saving, return to the Roles screen. In the Roles table, sel
 </div>
 </div>
 <div class="sect2">
-<h3 id="_presenting_data"><a class="anchor" href="#_presenting_data"></a>4.8. PRESENTING DATA</h3>
+<h3 id="_presenting_data"><a class="anchor" href="#_presenting_data"></a>1.8. PRESENTING DATA</h3>
 <div class="paragraph">
 <p>Data Types are collections of attributes. They are used to gather and manage data coming from external sources, like APIs or the IoT. This abstraction layer allows Entando to perform core features like searching on external data.</p>
 </div>
@@ -2645,7 +2626,7 @@ The Data section allows you to manage the Data.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_structuring_with_data_types"><a class="anchor" href="#_structuring_with_data_types"></a>4.8.1. STRUCTURING WITH DATA TYPES</h4>
+<h4 id="_structuring_with_data_types"><a class="anchor" href="#_structuring_with_data_types"></a>1.8.1. STRUCTURING WITH DATA TYPES</h4>
 <div class="paragraph">
 <p>The Data Types section lists all available Data Types, their attributes, and is where you can create a new data structure.</p>
 </div>
@@ -2674,18 +2655,18 @@ The Data section allows you to manage the Data.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_configuring_entando"><a class="anchor" href="#_configuring_entando"></a>4.9. CONFIGURING ENTANDO</h3>
+<h3 id="_configuring_entando"><a class="anchor" href="#_configuring_entando"></a>1.9. CONFIGURING ENTANDO</h3>
 <div class="paragraph">
 <p>The Configuration section (far right of the toolbar, gives you access to Entando general duty functionalities, such as configuring Categories, Labels, Configuration Reload, Database backup, file browsing and groups management.</p>
 </div>
 <div class="sect3">
-<h4 id="_categories"><a class="anchor" href="#_categories"></a>4.9.1. CATEGORIES</h4>
+<h4 id="_categories"><a class="anchor" href="#_categories"></a>1.9.1. CATEGORIES</h4>
 <div class="paragraph">
 <p>Categories are dividers and parent folders for pages in your Entando page tree. Add a new category by clicking the <strong>Add</strong> button.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_labels_and_languages"><a class="anchor" href="#_labels_and_languages"></a>4.9.2. LABELS AND LANGUAGES</h4>
+<h4 id="_labels_and_languages"><a class="anchor" href="#_labels_and_languages"></a>1.9.2. LABELS AND LANGUAGES</h4>
 <div class="paragraph">
 <p>The Languages tab displays a list of all configured languages in the system. You can add as many different languages to the system as you need by selecting a language from the Select Language drop down menu and clicking <strong>Add</strong>. You can then include the appropriate vocabulary for any term in the System Labels section.</p>
 </div>
@@ -2694,13 +2675,13 @@ The Data section allows you to manage the Data.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_database"><a class="anchor" href="#_database"></a>4.9.3. DATABASE</h4>
+<h4 id="_database"><a class="anchor" href="#_database"></a>1.9.3. DATABASE</h4>
 <div class="paragraph">
 <p>The Database section lets you back up your entire Entando’s database by clicking the <strong>Create Backup</strong> button. The backed up files become available from the Protected folder of the File Browser section once the backup process completes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_file_browser"><a class="anchor" href="#_file_browser"></a>4.9.4. FILE BROWSER</h4>
+<h4 id="_file_browser"><a class="anchor" href="#_file_browser"></a>1.9.4. FILE BROWSER</h4>
 <div class="paragraph">
 <p>The File Browser section lets you browse files, upload, create text files and folders, and access database backups from two distinct areas of the file-system:</p>
 </div>
@@ -2735,7 +2716,7 @@ The Data section allows you to manage the Data.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-01 10:23:31 EDT
+Last updated 2018-05-29 23:22:02 CEST
 </div>
 </div>
 </body>
