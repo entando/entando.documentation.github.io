@@ -450,9 +450,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#installation">2. INSTALLING ENTANDO 5.0</a>
 <ul class="sectlevel2">
-<li><a href="#_prerequisites">2.1. Prerequisites</a>
+<li><a href="#_prerequisites">2.1. PREREQUISITES</a>
 <ul class="sectlevel3">
-<li><a href="#_installed_prerequisites">2.1.1. Installed Prerequisites:</a></li>
+<li><a href="#_tools_and_libraries">2.1.1. TOOLS AND LIBRARIES:</a></li>
 <li><a href="#_space_and_hardware_requirements">2.1.2. SPACE AND HARDWARE REQUIREMENTS</a></li>
 </ul>
 </li>
@@ -463,20 +463,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_setting_up_a_database">2.4. SETTING UP A DATABASE</a></li>
-<li><a href="#_deployting_to_docker_using_s2i">2.5. DEPLOYTING TO DOCKER USING s2i</a>
+<li><a href="#_launching_the_app_builder">2.5. LAUNCHING THE APP BUILDER</a>
 <ul class="sectlevel3">
-<li><a href="#_prerequisites_2">2.5.1. PREREQUISITES:</a></li>
-</ul>
-</li>
-<li><a href="#_launching_the_app_builder">2.6. LAUNCHING THE APP BUILDER</a>
-<ul class="sectlevel3">
-<li><a href="#_building_from_source">2.6.1. BUILDING FROM SOURCE</a>
+<li><a href="#_building_from_source">2.5.1. BUILDING FROM SOURCE</a>
 <ul class="sectlevel4">
 <li><a href="#_clone_and_setup">CLONE AND SETUP</a></li>
-<li><a href="#_deploy">DEPLOY</a></li>
+<li><a href="#_other_commands">OTHER COMMANDS</a></li>
 </ul>
 </li>
-<li><a href="#_build_the_mapp_enging_from_source">2.6.2. BUILD THE MAPP ENGING FROM SOURCE</a></li>
+<li><a href="#_docker">2.5.2. DOCKER</a></li>
+<li><a href="#_build_the_mapp_enging_from_source">2.5.3. BUILD THE MAPP ENGING FROM SOURCE</a></li>
 </ul>
 </li>
 </ul>
@@ -890,9 +886,9 @@ We have performed security scans as part of the Entando 5 software release to en
 <h2 id="installation">2. INSTALLING ENTANDO 5.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_prerequisites">2.1. Prerequisites</h3>
+<h3 id="_prerequisites">2.1. PREREQUISITES</h3>
 <div class="sect3">
-<h4 id="_installed_prerequisites">2.1.1. Installed Prerequisites:</h4>
+<h4 id="_tools_and_libraries">2.1.1. TOOLS AND LIBRARIES:</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -902,7 +898,7 @@ We have performed security scans as part of the Entando 5 software release to en
 <p>npm 5.6.0+ (for ReactJS front ends)</p>
 </li>
 <li>
-<p>Maven 3.0.5+ (including Maven Central)</p>
+<p>Maven 3.0.5+</p>
 </li>
 <li>
 <p>Ant 1.8.0+</p>
@@ -1064,28 +1060,166 @@ for future use when the target deployment is an app server such as JBoss or Tomc
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deployting_to_docker_using_s2i">2.5. DEPLOYTING TO DOCKER USING s2i</h3>
+<h3 id="_launching_the_app_builder">2.5. LAUNCHING THE APP BUILDER</h3>
 <div class="sect3">
-<h4 id="_prerequisites_2">2.5.1. PREREQUISITES:</h4>
+<h4 id="_building_from_source">2.5.1. BUILDING FROM SOURCE</h4>
+<div class="paragraph">
+<p><strong>Prerequisites:</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Installed and running docker instance</p>
+<p>git</p>
 </li>
 <li>
-<p>s2i command installed (<a href="https://github.com/openshift/source-to-image" class="bare">https://github.com/openshift/source-to-image</a>)</p>
+<p>npm</p>
 </li>
 <li>
-<p>An Entando App created using the steps in Creating a New Entando
-Project can be run directly in Docker using the Entando s2i images.</p>
+<p>node</p>
 </li>
 </ul>
+</div>
+<div class="sect4">
+<h5 id="_clone_and_setup">CLONE AND SETUP</h5>
+<div class="paragraph">
+<p><strong>Enter the following commands in your command line:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>git clone https://github.com/entando/app-builder.git</code></p>
+</li>
+<li>
+<p><code>cd app-builder</code></p>
+</li>
+<li>
+<p><code>npm install</code></p>
+</li>
+<li>
+<p><code>npm start</code>&#8201;&#8212;&#8201;Starts the application in dev mode (local web server).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The npm install command installs npm dependencies inside the node_modules folder</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This will give you a running app-builder instance using mock data. In the configuration section below
+we cover connecting your app-builder to a running MApp engine</p>
+</div>
+<div class="sect5">
+<h6 id="_configuration">CONFIGURATION</h6>
+<div class="paragraph">
+<p>The application uses .env files to set up some environment variables.</p>
+</div>
+<div class="paragraph">
+<p>Dev instances should be using the .env.development.local file while production instances use .env.production</p>
+</div>
+<div class="paragraph">
+<p><strong>Configurable properties</strong></p>
+</div>
+<div class="paragraph">
+<p>USE_MOCKS (boolean, default: true)
+a boolean used to determine whether the API calls will be against a real Entando Core or if they are just being mocked internally.</p>
+</div>
+<div class="paragraph">
+<p>DOMAIN (string, default: null)
+a string representing the domain name of the Entando Core instance. The protocol is optional and it is possible to specify a subdirectory of the domain. Trailing slashes are not valid and it only vaildates up to 3rd level domains.</p>
+</div>
+<div class="paragraph">
+<p><strong>To connect the MApp Engine</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a file at the root of the app-builder called .env.development.local</p>
+</li>
+<li>
+<p>Add USE_MOCKS=false</p>
+</li>
+<li>
+<p>Add DOMAIN=&lt;url of running MApp Engine&gt;</p>
+</li>
+<li>
+<p>Run <code>npm start</code> in your app-builder</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_other_commands">OTHER COMMANDS</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>npm run lint</code><br>
+Runs the linter to check code style. It fails if linting rules are not matched.</p>
+</li>
+<li>
+<p><code>npm run coverage</code><br>
+Runs unit tests. It fails if a unit test fails, or if the minimum coverage threshold is not met.</p>
+</li>
+<li>
+<p><code>npm run import-plugins</code><br>
+Compiles and imports Entando plugins.</p>
+</li>
+<li>
+<p><code>npm run build</code><br>
+Compiles the project and creates the a production build</p>
+</li>
+<li>
+<p><code>npm run build-full</code><br>
+Runs npm run lint, npm run coverage, npm run import-plugins and npm run build</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_docker">2.5.2. DOCKER</h4>
+<div class="paragraph">
+<p><strong>Full Stack Example Images</strong></p>
+</div>
+<div class="paragraph">
+<p>The project below includes scripts and example images that will boot up a full stack of Entando apps in Docker.
+<a href="https://github.com/entando/entando-ops/tree/master/Docker/Production/entando-full-stack" class="bare">https://github.com/entando/entando-ops/tree/master/Docker/Production/entando-full-stack</a></p>
+</div>
+<div class="paragraph">
+<p>These projects are useful to quickly boot up an Entando environment in Docker.
+Can be forked/cloned for extension and updates as needed as well. Scripts and image names
+can be seen in the repository</p>
+</div>
+<div class="paragraph">
+<p><strong>Base Image</strong></p>
+</div>
+<div class="paragraph">
+<p>This base image provides a base Dockerfile that can be extended to create and manage an Entando application.
+The base image downloads all of the maven dependencies required for an application to run so the initial run can take some time however
+after that edits to a child Dockerfile will run fast. The base example in the Readme uses a jetty/derby combination for execution</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/entando/entando-ops/tree/master/Docker/Production/builder-images/docker-builder-5" class="bare">https://github.com/entando/entando-ops/tree/master/Docker/Production/builder-images/docker-builder-5</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Using s2i to Build Docker Images</strong></p>
 </div>
 <div class="paragraph">
 <p>To use the Docker s2i images, you must have already set up a database. See the Setting up a Database section for details.</p>
 </div>
 <div class="paragraph">
-<p>By default, the app deployed in Docker will connect to a Postgres database to persist resources created using the App Builder and by the MApp Engine. In the app created from the archetype, update the properties in:
+<p>By default, the app deployed in Docker will connect to a Postgres database to persist resources created using the App Builder and by the MApp Engine.
+In the app created from the archetype, update the properties in:
 <strong>&lt;your application&gt;/.s2i/environment</strong> to point to the user and databases created in the Setting up a Database section.</p>
 </div>
 <div class="paragraph">
@@ -1118,130 +1252,22 @@ Where:<br></p>
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Run the Image</strong>
-<code>docker run -d -p 8080:8080 &lt;your image name&gt;</code></p>
+<p><strong>Run the Image</strong></p>
 </div>
 <div class="paragraph">
-<p>The app may take some time to start. It is downloading maven dependencies at startup.  Your app will be available on <a href="http://localhost:8080/&lt;your_project_name&gt" class="bare">http://localhost:8080/&lt;your_project_name&gt</a>; after startup is complete.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_launching_the_app_builder">2.6. LAUNCHING THE APP BUILDER</h3>
-<div class="sect3">
-<h4 id="_building_from_source">2.6.1. BUILDING FROM SOURCE</h4>
-<div class="paragraph">
-<p><strong>Prerequisites:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>git</p>
-</li>
-<li>
-<p>npm</p>
-</li>
-<li>
-<p>node</p>
-</li>
-</ul>
-</div>
-<div class="sect4">
-<h5 id="_clone_and_setup">CLONE AND SETUP</h5>
-<div class="paragraph">
-<p><strong>Enter the following commands in your command line:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>git clone https://github.com/entando/frontend-common-components.git</code></p>
-</li>
-<li>
-<p><code>cd frontend-common-components.git</code></p>
-</li>
-<li>
-<p><code>npm install</code><br></p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The npm install command installs npm dependencies inside the node_modules folder</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_deploy">DEPLOY</h5>
-<div class="paragraph">
-<p><strong>Enter the following commands in your command line:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>npm run lint</code><br>
-Runs the linter. It fails if linting rules are not matched.</p>
-</li>
-<li>
-<p><code>npm run coverage</code><br>
-Runs unit tests. It fails if a unit test fails, or if the minimum coverage threshold is not met.</p>
-</li>
-<li>
-<p><code>npm run import-plugins</code><br>
-Compiles and imports Entando plugins.</p>
-</li>
-<li>
-<p><code>npm run build</code><br>
-Compiles the project and creates the build directory.</p>
-</li>
-<li>
-<p><code>npm run build-full</code><br>
-Runs npm run lint, npm run coverage, npm run import-plugins and npm run build</p>
-</li>
-</ol>
+<p><code>docker run -d -p 8080:8080 &lt;your image name&gt;</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Development</strong></p>
+<p>The app may take some time to start. It is downloading maven dependencies at startup.
+Your app will be available on <a href="http://localhost:8080/&lt;your_project_name&gt" class="bare">http://localhost:8080/&lt;your_project_name&gt</a>; after startup is complete.</p>
 </div>
 <div class="paragraph">
-<p><code>npm start</code><br>
-Starts the application in dev mode (local web server).</p>
-</div>
-<div class="paragraph">
-<p><strong>Using Docker</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Pull in the docker image:<br>
-<code>docker pull entando/appbuilder</code></p>
-</li>
-<li>
-<p>Run the image. Example docker command:<br>
-<code>docker run -it --rm -d -p 5000:5000 -e DOMAIN=http://localhost:8000/my-app appbuilder-5.0.0</code><br>
-Where:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>DOMAIN=</strong> is the url of a running instance of the MApp Engine. The App Builder uses the REST APIs in the engine to create and manage the application</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
+<p>By default the image exposes port 8080 however you can change the local port mapped to that value
+by editing the first instance of 8080 in the docker run command above.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_build_the_mapp_enging_from_source">2.6.2. BUILD THE MAPP ENGING FROM SOURCE</h4>
+<h4 id="_build_the_mapp_enging_from_source">2.5.3. BUILD THE MAPP ENGING FROM SOURCE</h4>
 <div class="paragraph">
 <p><strong>To download the latest source code:</strong></p>
 </div>
@@ -1299,9 +1325,12 @@ The Entando UX Packages repository contains samples of pre-made Entando-based ap
 </div>
 </li>
 <li>
-<p>Complete the download by following the steps from the Creating a New Entando Project section.<br></p>
+<p>Complete the download by following the steps from the Creating a New Entando Project section.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>At this point you have installed all of the dependencies required to build a new MApp Engine instance.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1311,7 +1340,7 @@ The Entando UX Packages repository contains samples of pre-made Entando-based ap
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The command to use the artifacts you have installed locally with an additional switch on the archetype command is:<br>
+<p>The command to use the artifacts you have installed locally with an additional switch on the archetype command to use local values only is:<br>
 <code>mvn archetype:generate -Dfilter=entando-archetype-webapp-generic -DarchetypeCatalog=local</code></p>
 </div>
 </td>
