@@ -892,7 +892,7 @@ We have performed security scans as part of the Entando 5 software release to en
 <div class="ulist">
 <ul>
 <li>
-<p>Java 1.8+ or later required</p>
+<p>Java 1.8</p>
 </li>
 <li>
 <p>npm 5.6.0+ (for ReactJS front ends)</p>
@@ -1058,9 +1058,55 @@ for future use when the target deployment is an app server such as JBoss or Tomc
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>To use the Docker s2i images, you must have already set up a database. See the Setting up a Database section for details.</p>
+</div>
+<div class="paragraph">
+<p>By default, the app deployed in Docker will connect to a Postgres database to persist resources created using the App Builder and by the MApp Engine. In the app created from the archetype, update the properties in:
+<strong>&lt;your application&gt;/.s2i/environment</strong> to point to the user and databases created in the Setting up a Database section.</p>
+</div>
+<div class="paragraph">
+<p><strong>After configuring the database:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pull in the Docker image using the following command:<br>
+<code>docker pull entando/builder-s2i</code> (Demo image using jetty)</p>
+</li>
+<li>
+<p>Build the image using s2i using the command to build and deploy a Docker app in Docker:<br>
+<code>s2i build &lt;path or URL of your project&gt; entando/builder-s2i &lt;your  image name&gt;</code><br>
+Where:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;path or URL of your project&gt;</strong> is the path to your project or a URL to access the code. The build for this project will be invoked and the resulting war file deployed to the app server in the image</p>
+</li>
+<li>
+<p><strong>entando/builder-s2i</strong> is the name of the base s2i docker image provided by Entando</p>
+</li>
+<li>
+<p><strong>&lt;your image name&gt;</strong> is the name for this docker image</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Run the Image</strong>
+<code>docker run -d -p 8080:8080 &lt;your image name&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>The app may take some time to start. It is downloading maven dependencies at startup.  Your app will be available on <a href="http://localhost:8080/your_project_name" class="bare">http://localhost:8080/your_project_name</a> after startup is complete.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_launching_the_app_builder">2.5. LAUNCHING THE APP BUILDER</h3>
+<div class="paragraph">
+<p>This section provides several options for launching the App Builder which is used to manage a separately running Mapp Engine instance.  The App Builder is completely stateless and relies on the Engine to store the application configuration.  If no Mapp engine is specified, the App Builder will default to providing mock data so that the functionality can be demonstrated.</p>
+</div>
 <div class="sect3">
 <h4 id="_building_from_source">2.5.1. BUILDING FROM SOURCE</h4>
 <div class="paragraph">
@@ -2791,7 +2837,7 @@ The Data section allows you to manage the Data.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-25 12:29:50 PDT
+Last updated 2018-06-25 21:29:50 CEST
 </div>
 </div>
 </body>
