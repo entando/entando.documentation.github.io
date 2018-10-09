@@ -219,6 +219,24 @@
 </li>
 </ul>
 </li>
+<li><a href="#_working_with_entando_widgets">8. WORKING WITH ENTANDO WIDGETS</a>
+<ul class="sectlevel2">
+<li><a href="#_widget_catalog">8.1. WIDGET CATALOG</a></li>
+<li><a href="#_widget_catalog_examples">8.2. WIDGET CATALOG EXAMPLES</a></li>
+<li><a href="#_basic_widgets">8.3. BASIC WIDGETS</a>
+<ul class="sectlevel3">
+<li><a href="#_example">8.3.1. EXAMPLE</a></li>
+</ul>
+</li>
+<li><a href="#_configuring_widgets">8.4. CONFIGURING WIDGETS</a></li>
+<li><a href="#_struts2_based_widgets">8.5. STRUTS2-BASED WIDGETS</a>
+<ul class="sectlevel3">
+<li><a href="#_example_of_database_definition">8.5.1. EXAMPLE OF DATABASE DEFINITION</a></li>
+<li><a href="#_widget_configuration">8.5.2. WIDGET CONFIGURATION</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -3407,10 +3425,331 @@ The Data section allows you to manage the Data.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_working_with_entando_widgets"><a class="anchor" href="#_working_with_entando_widgets"></a>8. WORKING WITH ENTANDO WIDGETS</h2>
+<div class="sectionbody">
+<div id="widgets" class="paragraph">
+<p>Widgets are how Entando interacts with users through the front end of a web application. CMS contents, input forms, and sign-in fields are examples of widgets. In short, everything in the front end of the webapp happens through widgets.</p>
+</div>
+<div class="paragraph">
+<p><strong>Widgets have several defining characteristics:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>They do not contain business logic. The only logic present in a widget is relative to the presentation. The data a widget always comes from lower layers, either through a REST API or using a standard, custom tag.</p>
+</li>
+<li>
+<p>They do not communicate. This is an Entando decision against using Portlets to make widgets leaner, more exportable, and easily modifiable. However, technologies are available on both the client and server sides to pass data between widgets, depending on the scenario.</p>
+</li>
+<li>
+<p>They are technology agnostic, which is another Entando choice. We believe that developers must be free to create widgets using the technology they already know or are most proficient with.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_widget_catalog"><a class="anchor" href="#_widget_catalog"></a>8.1. WIDGET CATALOG</h3>
+<div class="paragraph">
+<p>Every widget has a single entry in the widgetcatalog table of the <em>*Port</em> database. Beginning with Entando 5, the widget table has the following schema:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Structure of the widgetcatalog table</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQL Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">character varying(40) NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Primary key<br></p>
+<p class="tableblock">* unique ID (code) of the widget<br></p>
+<p class="tableblock">* for simpler widgets, this is the name of the widget’s JSP file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">titles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML containing the human readable name of the widget for each language of the admin console</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* For widgets requiring configuration<br>
+XML containing the parameters necessary for configuring the widget, and the Struts2 name of custom action to call for persisting the configuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plugincode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">character varying(30)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* For widgets bundled with a plugin<br></p>
+<p class="tableblock">* unique code of the plugin belonging to this widget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parenttypecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">character varying(40)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* For widgets that are a specialization of an existing widget<br></p>
+<p class="tableblock">* the id of the original widget used as a base for the current entry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultconfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For widgets that are a modification of an existing widget<br></p>
+<p class="tableblock">* XML containing the permanent configuration of the current entry</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smallint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Express the ability to delete the widget. A value of 1 means the widget cannot be deleted, even by an administrator. A value of 0 means you can delete the widget.<br></p>
+<p class="tableblock">* Possible values [0,1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maingroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group ID of the widget’s owner</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_widget_catalog_examples"><a class="anchor" href="#_widget_catalog_examples"></a>8.2. WIDGET CATALOG EXAMPLES</h3>
+<div class="paragraph">
+<p>The table below presents example values for each column, and their related meanings. The example values are unrelated to each other unless otherwise noted.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Example values for the widgetcalaog table</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">value / notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_viewer<br>
+<em>Note: this is the unique name of the widget. The system looks for:</em><br></p>
+<p class="tableblock">* a FreeMarker script associated with this widget in the <em>guiframent.widgettypecode</em> table<br></p>
+<p class="tableblock">* if the FreeMarker script is not found, then it looks for <em>webapp/WEB-INF/plugins/aps/jsp/content_viewer.jsp</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">titles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+ &lt;properties&gt;</strong><br>
+ <strong>&lt;property key="en"&gt;Contents - Publish a List of Contents&lt;/property&gt;</strong><br>
+ <strong>&lt;property key="it"&gt;Contenuti - Pubblica una Lista di Contenuti&lt;/property&gt;</strong><br>
+<strong>&lt;/properties&gt;</strong><br></p>
+<p class="tableblock"><em>Note: this XML contains the human readable names of the widgets available in the languages of the admin console</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+&lt;config&gt;<br>
+&lt;parameter name="contentId"&gt;Content ID&lt;/parameter&gt;
+   &lt;parameter name="modelId"&gt;Content Model ID&lt;/parameter&gt;<br>
+   *&lt;action name="viewerConfig" /&gt;<br>
+&lt;/config&gt;</strong></p>
+<p class="tableblock"><em>Note: when configuring a widget on a page, the system will ask for the values of contentId and modelId; it will use the action viewerConfig to manage the configuration logic</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plugincode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>jacms</strong></p>
+<p class="tableblock"><em>Note: this is the code (unique ID) of the plugin this widget belongs to. This information determines the path of the underlying widget JSP (if any)</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parenttypecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>entando-widget-navigation_bar</strong></p>
+<p class="tableblock"><em>Note: this example shows that the current entry is a specialization of the entando-widget-navigation_bar widget. This widget’s configuration file is found in the following (defaultconfig) column</em></p>
+<p class="tableblock">Widgets based on the Struts2 framework use the value <strong>formAction</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultconfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+  &lt;properties&gt;<br>
+   &lt;property key="navSpec"&gt;code(homepage)&lt;/property&gt;<br>
+&lt;/properties&gt;</strong></p>
+<p class="tableblock"><em>Note: this widget uses the setup above and is not configurable</em></p>
+<p class="tableblock">Widgets based on the Struts2 framework have here the declaration of the action called when the widget is rendered in a page</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1</strong></p>
+<p class="tableblock">A value of 1 indicates that the widget is locked and cannot be deleted. A value of 0 allows administrators to delete the widget.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maingroup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>free</strong></p>
+<p class="tableblock"><em>Note: this widget is freely accessible but must be placed on an accessible page to be used</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_basic_widgets"><a class="anchor" href="#_basic_widgets"></a>8.3. BASIC WIDGETS</h3>
+<div class="paragraph">
+<p>Basic widgets in Entando are composed of two objects: a JSP file and a record in the widgetcatalog table.</p>
+</div>
+<div class="paragraph">
+<p>In basic widgets, JSTL custom tags interact directly with the Entando core to generate dynamic data. Widgets that publish content (e.g., the “Publish a Content” widget (code: content_viewer)) or publish lists of content (e.g., “Publish a List of Contents” widget (code: content_viewer_list)) as well as the <a href="https://github.com/entando/entando-components/blob/v5.0.0/ui-bundles/widgets/entando-widget-language_choose/src/main/webapp/WEB-INF/aps/jsp/widgets/entando-widget-language_choose.jsp">language selector</a> and the <a href="https://github.com/entando/entando-components/blob/v5.0.0/ui-bundles/widgets/entando-widget-login_form/src/main/webapp/WEB-INF/aps/jsp/widgets/entando-widget-login_form.jsp">login widget</a> fall under this category.</p>
+</div>
+<div class="sect3">
+<h4 id="_example"><a class="anchor" href="#_example"></a>8.3.1. EXAMPLE</h4>
+<div class="paragraph">
+<p><strong>To create a basic widget:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create the following file in your project:<br>
+<em>src/main/webapp/WEB-INF/aps/jsp/widgets/hello_world.jsp</em></p>
+</li>
+<li>
+<p>Copy the following HTML into the file you just created:<br>
+<code>&lt;h3&gt;Hello world&lt;/h3&gt;</code></p>
+</li>
+<li>
+<p>Execute the following query in the *Port database:<br>
+<code>INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('hello_world', '&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;properties&gt;
+&lt;property key="en"&gt;Hello World Widget&lt;/property&gt;
+&lt;property key="it"&gt;Widget Ciao Mondo&lt;/property&gt;
+&lt;/properties&gt;', NULL, NULL , NULL, NULL, 1, 'free');</code></p>
+</li>
+<li>
+<p>Restart the Entando application. After restarting, the “Hello World" widget appears in the list of the available system widgets.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuring_widgets"><a class="anchor" href="#_configuring_widgets"></a>8.4. CONFIGURING WIDGETS</h3>
+<div class="paragraph">
+<p>Configurable basic widgets contain XML with a list of the parameters that needs to be configured and the action that handles the process of configuration. The action for the configuration varies by widget, but each has an abstraction layer that makes developing such actions easier.</p>
+</div>
+<div class="paragraph">
+<p>The <em>widgetcatalog.parameters</em> column in the *Port database lists all basic widgets with configurable fields and what those fields are.</p>
+</div>
+<div class="paragraph">
+<p>You can also retrieve configured parameters using the tag:<br>
+<code>&lt;wp:currentWidget param=”config” configParan=”NAME_OF_THE_PARAMETER” /&gt;</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_struts2_based_widgets"><a class="anchor" href="#_struts2_based_widgets"></a>8.5. STRUTS2-BASED WIDGETS</h3>
+<div class="paragraph">
+<p>Entando leverages the Struts2 framework to implement actions within certain widgets. These actions transfer data and help determine which result to render in the view. For more information about Struts2 widgets, see the Entando Developer Primer.</p>
+</div>
+<div class="paragraph">
+<p>Struts2-based widgets require additional set up, so Entando recommends having the Entando Component Generator (formerly known as EDO) generate all the files. You can access the Component Generator here:
+<a href="https://github.com/entando/component-generator/tree/v5.0.0-release" class="bare">https://github.com/entando/component-generator/tree/v5.0.0-release</a></p>
+</div>
+<div class="paragraph">
+<p><strong>When working with Struts2-based widgets, Entando applications follow two steps:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The system detects that a Struts2-based widget needs to be rendered so it executes
+the action specified in the record of the widget in the <em>widgetcatalog</em> table.</p>
+</li>
+<li>
+<p>The application executes the action and renders a JSP as a result.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>One important difference between Basic and Struts2-based widgets is that Struts2 widgets are generally composed of multiple JSP files.</p>
+</div>
+<div class="paragraph">
+<p>The exact details of how to build an action for a widget are in the Entando Developer Primer, but the key points are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Action paths are declared in the file:<br>
+<em>./src/main/resources/entando-struts-plugin</em></p>
+</li>
+<li>
+<p>The java class(es) implementing the action, the XML declaring the action itself, and the optional XML used for validation are found in the following path:<br>
+<em>./src/main/java/&lt;reverse_domain_package&gt;/aps/internalservlet/</em></p>
+</li>
+<li>
+<p>The XML declaring the actions references the JSP files in:<br>
+<em>src/main/webapp/WEB-INF/aps/jsp/internalservlet/</em></p>
+</li>
+<li>
+<p>The Spring bean underlying the action Java class is declared in:<br>
+<em>src/main/resources/spring/apsadmin</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Struts2 makes available all properties and public methods declared in the Java class that implements the action. Mixing JSTL and Struts2 tags is also possible. Entando uses OGNL expression language to get and set properties of Java objects.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_of_database_definition"><a class="anchor" href="#_example_of_database_definition"></a>8.5.1. EXAMPLE OF DATABASE DEFINITION</h4>
+<div class="paragraph">
+<p><strong>Struts2-based widgets use the following configuration:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">column</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parenttypecode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">formAction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultconfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br>
+&lt;properties&gt;<br>
+   &lt;property key="actionPath"&gt;/ExtStr2/do/FrontEnd/jpzoo/Animal/list.action&lt;/property&gt;<br>
+&lt;/properties&gt;</strong></p>
+<p class="tableblock"><em>Note: the action path always starts with /ExtStr2/, but /ExtStr2/ is not used in the action declaration</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_widget_configuration"><a class="anchor" href="#_widget_configuration"></a>8.5.2. WIDGET CONFIGURATION</h4>
+<div class="paragraph">
+<p>Configuration for a Struts2-based widget configuration is different from that of basic widgets. <em>In this case the XML containing the configuration parameters does not work as expected.</em></p>
+</div>
+<div class="paragraph">
+<p><strong>You can overcome this by doing the following:</strong>
+* Creating a basic widget with a standard configuration
+* Using a Struts2 tag to trigger a standard action, e.g.,<br>
+<em>&lt;wp:internalServlet actionPath=”/ExtStr2/do/ACTION_NAMESPACE/MY_ACTION” /&gt;</em></p>
+</div>
+<div class="paragraph">
+<p>Using this method, the JSP created for the basic widget is a trigger for the next action that renders the proper JSP.</p>
+</div>
+<div class="paragraph">
+<p>In this scenario, you can retrieve the configuration parameters inside the action class.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-09 10:44:30 EDT
+Last updated 2018-10-09 16:07:51 EDT
 </div>
 </div>
 </body>
