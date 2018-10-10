@@ -3134,21 +3134,17 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>MySQL</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>module add --name=<strong>mysql</strong> --resources=<strong>mysql-connector-java-6.0.6.jar</strong> --dependencies=javax.api,javax.transaction.api</p>
-</div>
+<pre>module add --name=<strong>mysql</strong> --resources=<strong>mysql-connector-java-6.0.6.jar</strong> --dependencies=javax.api,javax.transaction.api</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Postgres</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>module add --name=<strong>postgres</strong> --resources=<strong>postgres-9.1.jdbc4.jar</strong> --dependencies=javax.api,javax.transaction.api</p>
-</div>
+<pre>module add --name=<strong>postgres</strong> --resources=<strong>postgres-9.1.jdbc4.jar</strong> --dependencies=javax.api,javax.transaction.api</pre>
 </div>
 </div>
 </div>
@@ -3160,21 +3156,17 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>MySQL</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>/subsystem=datasources/jdbc-driver=<strong>mysql</strong>:add(driver-module-name=<strong>mysql</strong>, driver-name=<strong>mysql</strong>, driver-class-name=<strong>com.mysql.jdbc.Driver</strong>)</p>
-</div>
+<pre>/subsystem=datasources/jdbc-driver=<strong>mysql</strong>:add(driver-module-name=<strong>mysql</strong>, driver-name=<strong>mysql</strong>, driver-class-name=<strong>com.mysql.jdbc.Driver</strong>)</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Postgres</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>/subsystem=datasources/jdbc-driver=<strong>postgres</strong>:add(driver-module-name=<strong>postgres</strong>, driver-name=<strong>postgres</strong>, driver-class-name=<strong>org.postgresql.Driver</strong>)</p>
-</div>
+<pre>/subsystem=datasources/jdbc-driver=<strong>postgres</strong>:add(driver-module-name=<strong>postgres</strong>, driver-name=<strong>postgres</strong>, driver-class-name=<strong>org.postgresql.Driver</strong>)</pre>
 </div>
 </div>
 </div>
@@ -3186,27 +3178,21 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>MySQL</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>/subsystem=datasources/data-source=EntandoPortDS:add(jndi-name=java:jboss/datasources/EntandoPortDS, driver-name=mysql, connection-url=jdbc:mysql://<strong>host:3306/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</p>
-</div>
-<div class="paragraph">
-<p>/subsystem=datasources/data-source=EntandoServDS:add(jndi-name=java:jboss/datasources/EntandoServDS, driver-name=mysql, connection-url=jdbc:mysql://<strong>host:3306/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</p>
-</div>
+<pre>/subsystem=datasources/data-source=EntandoPortDS:add(jndi-name=java:jboss/datasources/EntandoPortDS, driver-name=mysql, connection-url=jdbc:mysql://<strong>host:3306/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)
+
+/subsystem=datasources/data-source=EntandoServDS:add(jndi-name=java:jboss/datasources/EntandoServDS, driver-name=mysql, connection-url=jdbc:mysql://<strong>host:3306/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Postgres</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>/subsystem=datasources/data-source=EntandoPortDS:add(jndi-name=java:jboss/datasources/EntandoPortDS, driver-name=postgres, connection-url=jdbc:postgresql://<strong>host:5432/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</p>
-</div>
-<div class="paragraph">
-<p>/subsystem=datasources/data-source=EntandoServDS:add(jndi-name=java:jboss/datasources/EntandoServDS, driver-name=postgres, connection-url=jdbc:postgresql://<strong>host:5432/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</p>
-</div>
+<pre>/subsystem=datasources/data-source=EntandoPortDS:add(jndi-name=java:jboss/datasources/EntandoPortDS, driver-name=postgres, connection-url=jdbc:postgresql://<strong>host:5432/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)
+
+/subsystem=datasources/data-source=EntandoServDS:add(jndi-name=java:jboss/datasources/EntandoServDS, driver-name=postgres, connection-url=jdbc:postgresql://<strong>host:5432/dbname</strong>,user-name=<strong>user</strong>,password=<strong>password</strong>)</pre>
 </div>
 </div>
 </div>
@@ -3221,15 +3207,13 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>Open the <em>src/config/jboss/jbossBaseSystemConfig.xml</em> file, and make sure that the lookup names match the values in the JBoss datasource configuration:</p>
 </div>
-<div class="exampleblock">
+<div class="literalblock">
 <div class="content">
-<div class="paragraph">
-<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;beans&gt;
     &lt;jee:jndi-lookup id="portDataSource" jndi-name="<strong>java:jboss/datasources/EntandoPortDS</strong>"/&gt;
     &lt;jee:jndi-lookup id="servDataSource" jndi-name="<strong>java:jboss/datasources/EntandoServDS</strong>"/&gt;
-&lt;/beans&gt;</p>
-</div>
+&lt;/beans&gt;</pre>
 </div>
 </div>
 </div>
@@ -3731,10 +3715,18 @@ the action specified in the record of the widget in the <em>widgetcatalog</em> t
 <p>Configuration for a Struts2-based widget configuration is different from that of basic widgets. <em>In this case the XML containing the configuration parameters does not work as expected.</em></p>
 </div>
 <div class="paragraph">
-<p><strong>You can overcome this by doing the following:</strong>
-* Creating a basic widget with a standard configuration
-* Using a Struts2 tag to trigger a standard action, e.g.,<br>
-<em>&lt;wp:internalServlet actionPath=”/ExtStr2/do/ACTION_NAMESPACE/MY_ACTION” /&gt;</em></p>
+<p><strong>You can overcome this by doing the following:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creating a basic widget with a standard configuration</p>
+</li>
+<li>
+<p>Using a Struts2 tag to trigger a standard action, e.g.,<br>
+<code>&lt;wp:internalServlet actionPath=”/ExtStr2/do/ACTION_NAMESPACE/MY_ACTION” /&gt;</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Using this method, the JSP created for the basic widget is a trigger for the next action that renders the proper JSP.</p>
