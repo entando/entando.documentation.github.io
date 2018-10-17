@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.7.1">
+<meta name="generator" content="Asciidoctor 1.5.6.2">
 <title>Welcome to Entando</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
@@ -28,7 +28,7 @@
 <li><a href="#_preface">1.2. PREFACE</a></li>
 <li><a href="#_goal_of_entando_5">1.3. GOAL OF ENTANDO 5</a></li>
 <li><a href="#_about_entando_5">1.4. ABOUT ENTANDO 5</a></li>
-<li><a href="#_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
+<li><a href="#_what_s_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
 <ul class="sectlevel3">
 <li><a href="#_known_issues">1.5.1. KNOWN ISSUES</a></li>
 <li><a href="#_versioning_information">1.5.2. VERSIONING INFORMATION</a></li>
@@ -105,13 +105,13 @@
 <li><a href="#_filter_setup">5.4.3. FILTER SETUP</a></li>
 <li><a href="#_network_setup">5.4.4. NETWORK SETUP</a></li>
 <li><a href="#_servlet_container_setup_tomcat">5.4.5. SERVLET CONTAINER SETUP - TOMCAT</a></li>
-<li><a href="#_application_server_setup_jbosswildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</a></li>
+<li><a href="#_application_server_setup_jboss_wildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</a></li>
 <li><a href="#_database_setup">5.4.7. DATABASE SETUP</a></li>
 </ul>
 </li>
 <li><a href="#_imagemagick_setup">5.5. IMAGEMAGICK SETUP</a>
 <ul class="sectlevel3">
-<li><a href="#_linuxmac_setup">5.5.1. LINUX/MAC SETUP</a>
+<li><a href="#_linux_mac_setup">5.5.1. LINUX/MAC SETUP</a>
 <ul class="sectlevel4">
 <li><a href="#_toggling_thumbnail_creation_on_and_off">TOGGLING THUMBNAIL CREATION ON AND OFF</a></li>
 </ul>
@@ -163,7 +163,7 @@
 <li><a href="#_creating_a_role">CREATING A ROLE</a></li>
 <li><a href="#_creating_a_group">CREATING A GROUP</a></li>
 <li><a href="#_creating_a_user">CREATING A USER</a></li>
-<li><a href="#_setting_a_users_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
+<li><a href="#_setting_a_user_s_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
 </ul>
 </li>
 <li><a href="#_restricting_access">6.7.2. RESTRICTING ACCESS</a></li>
@@ -281,7 +281,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</h3>
+<h3 id="_what_s_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -473,7 +473,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 <div class="sect3">
 <h4 id="_versioning_information">1.5.2. VERSIONING INFORMATION</h4>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Jars and artifacts included in this release:</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -2029,7 +2029,7 @@ profile.application.baseurl.port.separator</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_application_server_setup_jbosswildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</h4>
+<h4 id="_application_server_setup_jboss_wildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</h4>
 <div class="paragraph">
 <p>Edit the <em>profile.jboss.home</em> property to reflect the path JBoss or Wildfly installation directory.</p>
 </div>
@@ -2081,7 +2081,7 @@ profile.database.password=agile</pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_linuxmac_setup">5.5.1. LINUX/MAC SETUP</h4>
+<h4 id="_linux_mac_setup">5.5.1. LINUX/MAC SETUP</h4>
 <div class="paragraph">
 <p>Open the file systemParams.properties in the directory ./src/main/config of the Entando project.</p>
 </div>
@@ -2762,7 +2762,7 @@ To edit a Role after saving, return to the Roles screen. In the Roles table, sel
 </div>
 </div>
 <div class="sect4">
-<h5 id="_setting_a_users_authorizations"><a class="anchor" href="#_setting_a_users_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
+<h5 id="_setting_a_user_s_authorizations"><a class="anchor" href="#_setting_a_user_s_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2972,7 +2972,7 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>Every widget has a single entry in the widgetcatalog table of the <em>*Port</em> database. Beginning with Entando 5, the widget table has the following schema:</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Structure of the widgetcatalog table</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -3040,7 +3040,7 @@ XML containing the parameters necessary for configuring the widget, and the Stru
 <div class="paragraph">
 <p>The table below presents example values for each column, and their related meanings. The example values are unrelated to each other unless otherwise noted.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all spread">
 <caption class="title">Example values for the widgetcalaog table</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3220,7 +3220,7 @@ the action specified in the record of the widget in the <em>widgetcatalog</em> t
 <div class="paragraph">
 <p><strong>Struts2-based widgets use the following configuration:</strong></p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3470,7 +3470,7 @@ console.log("${Session.currentUser.accessToken}");
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RHJED_common_structure.png" alt="346" width="435">
+<img src="images/RHJED_common_structure.png" alt="346" width="435">
 </div>
 </div>
 </div>
@@ -3700,7 +3700,7 @@ console.log("${Session.currentUser.accessToken}");
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RHJED_filter_config.png" alt="RHJED filter config">
+<img src="images/RHJED_filter_config.png" alt="RHJED filter config">
 </div>
 </div>
 <div class="sect4">
@@ -3713,7 +3713,7 @@ console.log("${Session.currentUser.accessToken}");
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RHJED_JBoss_config.png" alt="RHJED JBoss config">
+<img src="images/RHJED_JBoss_config.png" alt="RHJED JBoss config">
 </div>
 </div>
 <div class="paragraph">
@@ -3881,7 +3881,7 @@ console.log("${Session.currentUser.accessToken}");
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-10 11:44:04 EDT
+Last updated 2018-10-17 11:13:41 CEST
 </div>
 </div>
 </body>
