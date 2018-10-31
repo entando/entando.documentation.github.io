@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.6.2">
+<meta name="generator" content="Asciidoctor 1.5.7.1">
 <title>Welcome to Entando</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <link rel="stylesheet" href="./asciidoctor.css">
@@ -28,7 +28,7 @@
 <li><a href="#_preface">1.2. PREFACE</a></li>
 <li><a href="#_goal_of_entando_5">1.3. GOAL OF ENTANDO 5</a></li>
 <li><a href="#_about_entando_5">1.4. ABOUT ENTANDO 5</a></li>
-<li><a href="#_what_s_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
+<li><a href="#_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
 <ul class="sectlevel3">
 <li><a href="#_known_issues">1.5.1. KNOWN ISSUES</a></li>
 <li><a href="#_versioning_information">1.5.2. VERSIONING INFORMATION</a></li>
@@ -65,7 +65,13 @@
 </ul>
 </li>
 <li><a href="#_setting_up_a_database_optional">2.4. SETTING UP A DATABASE (OPTIONAL)</a></li>
-<li><a href="#_building_the_mapp_engine_from_source_code_optional">2.5. BUILDING THE MAPP ENGINE FROM SOURCE CODE (OPTIONAL)</a></li>
+<li><a href="#_configuring_swagger_optional">2.5. CONFIGURING SWAGGER (OPTIONAL)</a>
+<ul class="sectlevel3">
+<li><a href="#_enabling_swagger_in_a_development_environment">2.5.1. ENABLING SWAGGER IN A DEVELOPMENT ENVIRONMENT</a></li>
+<li><a href="#_how_does_the_integration_work">2.5.2. HOW DOES THE INTEGRATION WORK?</a></li>
+</ul>
+</li>
+<li><a href="#_building_the_mapp_engine_from_source_code_optional">2.6. BUILDING THE MAPP ENGINE FROM SOURCE CODE (OPTIONAL)</a></li>
 </ul>
 </li>
 <li><a href="#docker">3. RUNNING ENTANDO WITH DOCKER</a></li>
@@ -105,13 +111,13 @@
 <li><a href="#_filter_setup">5.4.3. FILTER SETUP</a></li>
 <li><a href="#_network_setup">5.4.4. NETWORK SETUP</a></li>
 <li><a href="#_servlet_container_setup_tomcat">5.4.5. SERVLET CONTAINER SETUP - TOMCAT</a></li>
-<li><a href="#_application_server_setup_jboss_wildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</a></li>
+<li><a href="#_application_server_setup_jbosswildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</a></li>
 <li><a href="#_database_setup">5.4.7. DATABASE SETUP</a></li>
 </ul>
 </li>
 <li><a href="#_imagemagick_setup">5.5. IMAGEMAGICK SETUP</a>
 <ul class="sectlevel3">
-<li><a href="#_linux_mac_setup">5.5.1. LINUX/MAC SETUP</a>
+<li><a href="#_linuxmac_setup">5.5.1. LINUX/MAC SETUP</a>
 <ul class="sectlevel4">
 <li><a href="#_toggling_thumbnail_creation_on_and_off">TOGGLING THUMBNAIL CREATION ON AND OFF</a></li>
 </ul>
@@ -163,7 +169,7 @@
 <li><a href="#_creating_a_role">CREATING A ROLE</a></li>
 <li><a href="#_creating_a_group">CREATING A GROUP</a></li>
 <li><a href="#_creating_a_user">CREATING A USER</a></li>
-<li><a href="#_setting_a_user_s_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
+<li><a href="#_setting_a_users_authorizations">SETTING A USER&#8217;S AUTHORIZATIONS</a></li>
 </ul>
 </li>
 <li><a href="#_restricting_access">6.7.2. RESTRICTING ACCESS</a></li>
@@ -281,7 +287,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_what_s_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</h3>
+<h3 id="_whats_new_with_entando_5">1.5. WHAT&#8217;S NEW WITH ENTANDO 5</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -473,7 +479,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 <div class="sect3">
 <h4 id="_versioning_information">1.5.2. VERSIONING INFORMATION</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Jars and artifacts included in this release:</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -896,7 +902,79 @@ for future use when the target deployment is an app server such as JBoss or Tomc
 </div>
 </div>
 <div class="sect2">
-<h3 id="_building_the_mapp_engine_from_source_code_optional">2.5. BUILDING THE MAPP ENGINE FROM SOURCE CODE (OPTIONAL)</h3>
+<h3 id="_configuring_swagger_optional">2.5. CONFIGURING SWAGGER (OPTIONAL)</h3>
+<div class="paragraph">
+<p>When generating an application, Entando automatically includes an instance of Swagger, a tool that lets you describe the structure of your APIs to make them easier for other machines to read. Configuring Swagger for use only takes a few steps.</p>
+</div>
+<div class="olist arabic">
+<div class="title">To access the Swagger interface:</div>
+<ol class="arabic">
+<li>
+<p>In a browser, navigate to your application’s URL (e.g., <a href="http://localhost:8080/appname" class="bare">http://localhost:8080/appname</a>).</p>
+</li>
+<li>
+<p>Append the URL with api/swagger-ui.html. Again, for example, <a href="http://localhost:8080/appname/api/swagger-ui.html" class="bare">http://localhost:8080/appname/api/swagger-ui.html</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For security purposes, you should only run this in a development environment. Doing so in production would expose all the endpoints of your application. See the following section for details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_enabling_swagger_in_a_development_environment">2.5.1. ENABLING SWAGGER IN A DEVELOPMENT ENVIRONMENT</h4>
+<div class="paragraph">
+<p>To enable swagger in your development environment, you need to run your application with an enabled Swagger profile. There are two options. Run ONE of the following from the  root of your generated project&#8217;s directory:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start the container with a JVM parameter using the following command:<br>
+<code>mvn clean jetty:run -Dspring.profiles.active=swagger</code></p>
+</li>
+<li>
+<p>Add an environment variable by using the following commands:<br>
+<code>export spring_profiles_active=swagger</code><br>
+<code>mvn clean jetty:run</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_does_the_integration_work">2.5.2. HOW DOES THE INTEGRATION WORK?</h4>
+<div class="paragraph">
+<p>The Swagger integration is based on three components and is activated by a Spring profile. The components are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>SwaggerConfig</strong> - responsible for configuring most of the Swagger UI behavior (or the library Springfox that provides Swagger UI functionality). It configures which paths to scan, where to find the oAuth endpoints, and other essentials</p>
+</li>
+<li>
+<p><strong>SwaggerMvcAdapter</strong> - makes the Swagger UI&#8217;s human-friendly HTML page and its resources available for the application</p>
+</li>
+<li>
+<p><strong>SwaggerInitializer</strong> - assists the Swagger UI with talking to your new application. Swagger UI needs to talk to the application backend, which require oAuth authentication to communicate back to the Swagger UI. The backend uses standard oAuth authentication, requiring an oAuth client_id and secret, and also that any requested redirect matches a specific URL. SwaggerInitializer is also responsible for adding the oAuth consumer details for Swagger in the database. If Swagger is enabled when the application starts, SwaggerInitializer will check for an existing configuration for a Swagger consumer in the database and adds one if necessary</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the <em>swagger</em> Spring profile is active, Spring will initialize and wire all three components during application startup. If inactive, Entando ignores the components.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_the_mapp_engine_from_source_code_optional">2.6. BUILDING THE MAPP ENGINE FROM SOURCE CODE (OPTIONAL)</h3>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -2029,7 +2107,7 @@ profile.application.baseurl.port.separator</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_application_server_setup_jboss_wildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</h4>
+<h4 id="_application_server_setup_jbosswildfly">5.4.6. APPLICATION SERVER SETUP - JBOSS/WILDFLY</h4>
 <div class="paragraph">
 <p>Edit the <em>profile.jboss.home</em> property to reflect the path JBoss or Wildfly installation directory.</p>
 </div>
@@ -2081,7 +2159,7 @@ profile.database.password=agile</pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_linux_mac_setup">5.5.1. LINUX/MAC SETUP</h4>
+<h4 id="_linuxmac_setup">5.5.1. LINUX/MAC SETUP</h4>
 <div class="paragraph">
 <p>Open the file systemParams.properties in the directory ./src/main/config of the Entando project.</p>
 </div>
@@ -2762,7 +2840,7 @@ To edit a Role after saving, return to the Roles screen. In the Roles table, sel
 </div>
 </div>
 <div class="sect4">
-<h5 id="_setting_a_user_s_authorizations"><a class="anchor" href="#_setting_a_user_s_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
+<h5 id="_setting_a_users_authorizations"><a class="anchor" href="#_setting_a_users_authorizations"></a>SETTING A USER&#8217;S AUTHORIZATIONS</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2972,7 +3050,7 @@ The Data section allows you to manage the Data.</p>
 <div class="paragraph">
 <p>Every widget has a single entry in the widgetcatalog table of the <em>*Port</em> database. Beginning with Entando 5, the widget table has the following schema:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Structure of the widgetcatalog table</caption>
 <colgroup>
 <col style="width: 33.3333%;">
@@ -3040,7 +3118,7 @@ XML containing the parameters necessary for configuring the widget, and the Stru
 <div class="paragraph">
 <p>The table below presents example values for each column, and their related meanings. The example values are unrelated to each other unless otherwise noted.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Example values for the widgetcalaog table</caption>
 <colgroup>
 <col style="width: 50%;">
@@ -3220,7 +3298,7 @@ the action specified in the record of the widget in the <em>widgetcatalog</em> t
 <div class="paragraph">
 <p><strong>Struts2-based widgets use the following configuration:</strong></p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3881,7 +3959,7 @@ console.log("${Session.currentUser.accessToken}");
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-17 11:13:41 CEST
+Last updated 2018-10-10 11:44:04 EDT
 </div>
 </div>
 </body>
