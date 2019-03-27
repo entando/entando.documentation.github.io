@@ -176,9 +176,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#getting-started-app-builder">5. GETTING STARTED WITH ENTANDO APP BUILDER</a>
+<li><a href="#getting-started-app-builder">5. GETTING STARTED WITH ENTANDO</a>
 <ul class="sectlevel2">
-<li><a href="#_sample_mortgage_application_project">5.1. SAMPLE MORTGAGE APPLICATION PROJECT</a>
+<li><a href="#_sample_mortgage_application">5.1. SAMPLE MORTGAGE APPLICATION</a>
 <ul class="sectlevel3">
 <li><a href="#_preface">5.1.1. PREFACE</a></li>
 <li><a href="#_configuring_the_applicant_page">5.1.2. CONFIGURING THE APPLICANT PAGE</a>
@@ -189,6 +189,19 @@
 <li><a href="#_integrate_the_bpm_form">INTEGRATE THE BPM FORM</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#rh-getting-started">5.2. GETTING STARTED WITH ENTANDO AND PAM</a>
+<ul class="sectlevel3">
+<li><a href="#_overview">5.2.1. Overview</a>
+<ul class="sectlevel4">
+<li><a href="#_launch_the_template_application">Launch the Template Application</a></li>
+<li><a href="#_add_the_kie_server_configuration">Add the KIE server configuration</a></li>
+<li><a href="#_configure_the_widgets_to_use_your_pam_connection">- Configure the Widgets to Use your PAM Connection</a></li>
+</ul>
+</li>
+<li><a href="#_update_the_home_screen_of_your_application">5.2.2. Update the Home Screen of your Application</a></li>
+<li><a href="#_view_your_application">5.2.3. View your Application</a></li>
 </ul>
 </li>
 </ul>
@@ -4472,10 +4485,10 @@ it tags the image as 'latest'</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="getting-started-app-builder"><a class="anchor" href="#getting-started-app-builder"></a>5. GETTING STARTED WITH ENTANDO APP BUILDER</h2>
+<h2 id="getting-started-app-builder"><a class="anchor" href="#getting-started-app-builder"></a>5. GETTING STARTED WITH ENTANDO</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_sample_mortgage_application_project"><a class="anchor" href="#_sample_mortgage_application_project"></a>5.1. SAMPLE MORTGAGE APPLICATION PROJECT</h3>
+<h3 id="_sample_mortgage_application"><a class="anchor" href="#_sample_mortgage_application"></a>5.1. SAMPLE MORTGAGE APPLICATION</h3>
 <div class="sect3">
 <h4 id="_preface"><a class="anchor" href="#_preface"></a>5.1.1. PREFACE</h4>
 <div class="paragraph">
@@ -5085,6 +5098,315 @@ Only click <strong>Publish</strong> after confirming that each widget has been c
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rh-getting-started"><a class="anchor" href="#rh-getting-started"></a>5.2. GETTING STARTED WITH ENTANDO AND PAM</h3>
+<div class="sect3">
+<h4 id="_overview"><a class="anchor" href="#_overview"></a>5.2.1. Overview</h4>
+<div class="paragraph">
+<p>This document provides an introduction to using the Entando App Builder integrated with Red Hat Process Application Manager. This template application provides a page with a task list, task details, case comments (optional), and case management widgets (optional). The provided application can then be extended and customized using the App Builder functionality.</p>
+</div>
+<div class="sect4">
+<h5 id="_launch_the_template_application"><a class="anchor" href="#_launch_the_template_application"></a>Launch the Template Application</h5>
+<div class="paragraph">
+<p>Unzip the provided project (entando-pam-app-5.0.3.zip)</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On a command line cd into the application (for example cd entando-pam-demo-app)</p>
+</li>
+<li>
+<p>Start the project with this command:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>mvn jetty:run -Djetty.reload=manual -Djetty.port=8083 -Dspring.profiles.active=swagger</code></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Notes on this command and the environment</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><strong>mvn jetty:run</strong>&#8201;&#8212;&#8201; Run in jetty for quick start and development</p>
+</li>
+<li>
+<p><strong>jetty.reload=manual</strong>&#8201;&#8212;&#8201;to prevent jetty from reloading changes in your project</p>
+</li>
+<li>
+<p><strong>-Djetty.port=8083</strong> &#8201;&#8212;&#8201;Change the default port to 8083. Without this jetty will start on 8080 and usually conflict with something else in the environment</p>
+</li>
+<li>
+<p><strong>-Dspring.profiles.active=swagger</strong>&#8201;&#8212;&#8201;Enable swagger on the project so we can look at the APIs and API documentation. Disabled by default. This can also be exported as an environment variable: export spring_profiles_active=swagger</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wait for the project to start. Look for: Started Jetty Server.  Console Reloading is Enabled</p>
+</li>
+<li>
+<p>In a browser navigate to: <a href="http://localhost:8083/entando-pam-app-5.0.3" class="bare">http://localhost:8083/entando-pam-app-5.0.3</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_the_kie_server_configuration"><a class="anchor" href="#_add_the_kie_server_configuration"></a>Add the KIE server configuration</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to  <a href="http://localhost:8083/entando-pam-app-5.0.3/do/login" class="bare">http://localhost:8083/entando-pam-app-5.0.3/do/login</a></p>
+</li>
+<li>
+<p>Login with</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>User: admin</p>
+</li>
+<li>
+<p>Password: adminadmin</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>On the left pane select Integrations → Components → Red Hat PAM Config</p>
+</li>
+<li>
+<p>In the upper right select Add Configuration</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Name - Enter the name of your choice for the configuration</p>
+</li>
+<li>
+<p>Hostname - The host where your KIE server is running. For example (localhost). Do not include http:// or ports</p>
+</li>
+<li>
+<p>Schema: One of http or https depending on where your KIE server is running</p>
+</li>
+<li>
+<p>Port - Enter the port of the http interface of your KIE server. If any. Can be left blank. For example 8080 is common if KIE is running locally</p>
+</li>
+<li>
+<p>WebApp Name - The value that comes after the port in your KIE URL. If any. Can be left blank. A common value is kie-server when running KIE locally</p>
+</li>
+<li>
+<p>Username - PAM Admin username. Common value is pamAdmin</p>
+</li>
+<li>
+<p>Password - The password for the KIE user</p>
+</li>
+<li>
+<p>Conn. Timeout (in millis) - Millisecond timeout for connecting to KIE. Can be blank
+An example configuration:</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pam_config.png" alt="pam config" width="50%">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Hit Test connection and you’ll get a green banner if the connection is valid</p>
+</li>
+<li>
+<p>Select Save <em>(don’t forget this)</em></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_configure_the_widgets_to_use_your_pam_connection"><a class="anchor" href="#_configure_the_widgets_to_use_your_pam_connection"></a>- Configure the Widgets to Use your PAM Connection</h5>
+<div class="paragraph">
+<p>The demo app comes with a collection of widgets pre-applied in the pages but they need to be configured to use the new KIE configuration created in Part 2 above.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the left nave select Page Designer → Page Tree</p>
+</li>
+<li>
+<p>In the page tree in the kebab menu on the right select the menu for the page named Task List</p>
+</li>
+<li>
+<p>Select Configure (see screenshot for location of elements for steps 2 and 3)</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/task_list_config.png" alt="task list config" width="50%">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On this page the widget in the middle of the screen called PAM-Datatable Task List holds the task list for our application. Select the kebab menu on the right and select settings</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/task_widget_settings.png" alt="task widget settings" width="50%">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On this page fill out the configuration for you new PAM instance</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Knowledge Source - this will be the name of the PAM integration you selected and configured above</p>
+</li>
+<li>
+<p>Process - The process you want to fetch tasks for</p>
+</li>
+<li>
+<p>Open new page on table row click - Select ON</p>
+</li>
+<li>
+<p>Show Claim button - Select ON</p>
+</li>
+<li>
+<p>Show Complete Button  - Select ON</p>
+</li>
+<li>
+<p>Under BPM Groups - Select ON for all of the provided groups</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Note: If modelling a process with different groups you need to add those groups to Entando under the left menu Setting → Groups and enter the names to match exactly the groups used in PAM</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Override Fields</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>These are the columns that will show up in your table. They are fetched from Task and Process variables. You can provide a different column header under Override fields and remove columns using the check boxes</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Select Save at the bottom of the screen</p>
+</li>
+<li>
+<p>Hit the green Publish button at the top of the page</p>
+</li>
+<li>
+<p>In the upper right select Pages</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pages_button.png" alt="pages button" width="50%">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the row that says task-details click on the row and then on the right and select the kebab button</p>
+</li>
+<li>
+<p>Select configure</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/page_config_task.png" alt="page config task" width="50%">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the kebab button on the widget labeled PAM-Task Form by Data Type</p>
+</li>
+<li>
+<p>Select settings</p>
+</li>
+<li>
+<p>Select the Knowledge Source and Process</p>
+</li>
+<li>
+<p>Click Save</p>
+</li>
+<li>
+<p>Click the green publish button</p>
+</li>
+<li>
+<p>Optional step</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the application you are building is using Case Management functionality you can also add the PAM Case Comments widget to the box labeled Widget 4 by searching for the widget on the right and dragging it to the page. Then configure that widget with the Knowledge Source and Process</p>
+</li>
+<li>
+<p>Click Save and Publish</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_update_the_home_screen_of_your_application"><a class="anchor" href="#_update_the_home_screen_of_your_application"></a>5.2.2. Update the Home Screen of your Application</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the left menu select Page Designer → Page Settings</p>
+</li>
+<li>
+<p>In the top dropdown labeled Home page* select ../Task List</p>
+</li>
+<li>
+<p>Select Save</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_view_your_application"><a class="anchor" href="#_view_your_application"></a>5.2.3. View your Application</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the upper right of the application select Go to Homepage</p>
+</li>
+<li>
+<p>If there are human tasks available in your PAM process for the roles assigned to your PAM user they will show up in the table</p>
+</li>
+<li>
+<p>Clicking on a row in the table will take you to the task details page in a new tab</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -10110,6 +10432,25 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </dd>
 </dl>
 </div>
+<hr>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">java.lang.NoClassDefFoundError: javax/servlet/jsp/jstl/core/ConditionalTagSupport</dt>
+<dd>
+<p>This error can occur if you are trying to deploy entando 5.0.3 release on the latest version of Tomcat (Actually 8.5.39) and your project is missing the <em>jstl</em> dependency. To solve this issue just add this dependency to your <em>pom.xml</em> file.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+        &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+        &lt;version&gt;1.2&lt;/version&gt;
+    &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<hr>
 </div>
 <div class="sect2">
 <h3 id="_how_tos"><a class="anchor" href="#_how_tos"></a>14.2. HOW TOs</h3>
