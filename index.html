@@ -22,16 +22,20 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#current-release-notes">1. ENTANDO 5.0.2 RELEASE NOTES</a>
+<li><a href="#current-release-notes">1. 5.1.0 RELEASE NOTES</a>
 <ul class="sectlevel2">
-<li><a href="#_abstract">1.1. ABSTRACT</a></li>
-<li><a href="#_changes_in_5_0_2">1.2. CHANGES IN 5.0.2</a>
+<li><a href="#_new_capabilities_and_features">1.1. NEW CAPABILITIES AND FEATURES</a>
 <ul class="sectlevel3">
-<li><a href="#_known_issues">1.2.1. KNOWN ISSUES</a></li>
-<li><a href="#_versioning_information">1.2.2. VERSIONING INFORMATION</a></li>
-<li><a href="#_software_requirements">1.2.3. SOFTWARE REQUIREMENTS</a></li>
-<li><a href="#_legal_notice">1.2.4. LEGAL NOTICE</a></li>
-<li><a href="#_links_and_resources">1.2.5. LINKS AND RESOURCES</a></li>
+<li><a href="#_documentation_and_deployment">1.1.1. DOCUMENTATION AND DEPLOYMENT</a></li>
+<li><a href="#_content_management">1.1.2. CONTENT MANAGEMENT</a></li>
+<li><a href="#_apis_and_endpoints">1.1.3. APIs AND ENDPOINTS</a></li>
+<li><a href="#_fixes_and_updates">1.1.4. FIXES AND UPDATES</a></li>
+<li><a href="#_new_capabilities_in_integration_with_red_hat_pam">1.1.5. NEW CAPABILITIES IN INTEGRATION WITH RED HAT PAM</a></li>
+<li><a href="#_changes_and_updates_in_5_1_0_in_integration_with_red_hat_pam">1.1.6. CHANGES AND UPDATES IN 5.1.0 IN INTEGRATION WITH RED HAT PAM</a></li>
+<li><a href="#_known_issues">1.1.7. KNOWN ISSUES</a></li>
+<li><a href="#_software_requirements">1.1.8. SOFTWARE REQUIREMENTS</a></li>
+<li><a href="#_legal_notice">1.1.9. LEGAL NOTICE</a></li>
+<li><a href="#_links_and_resources">1.1.10. LINKS AND RESOURCES</a></li>
 </ul>
 </li>
 </ul>
@@ -444,8 +448,25 @@
 <li><a href="#_examples">EXAMPLES</a></li>
 </ul>
 </li>
-<li><a href="#_configure_the_de_to_provide_a_component">13.2.3. CONFIGURE THE DE TO PROVIDE A COMPONENT</a></li>
-<li><a href="#_disable_component_rating">13.2.4. Disable component rating</a></li>
+<li><a href="#_configure_the_de_to_provide_a_component">13.2.3. CONFIGURE THE DE TO PROVIDE A COMPONENT</a>
+<ul class="sectlevel4">
+<li><a href="#_setup_the_keypair">SETUP THE KEYPAIR</a></li>
+<li><a href="#_add_repository_information">ADD REPOSITORY INFORMATION</a></li>
+<li><a href="#_add_component_metadata">ADD COMPONENT METADATA</a></li>
+<li><a href="#_upload_component_image">UPLOAD COMPONENT IMAGE</a></li>
+<li><a href="#_demo_components">DEMO COMPONENTS</a></li>
+</ul>
+</li>
+<li><a href="#_disable_component_rating">13.2.4. DISABLE COMPONENT RATING</a></li>
+</ul>
+</li>
+<li><a href="#_troubleshooting_2">13.3. TROUBLESHOOTING</a>
+<ul class="sectlevel3">
+<li><a href="#_client_issues">13.3.1. Client issues</a>
+<ul class="sectlevel4">
+<li><a href="#_invalid_signature">Invalid signature</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -492,34 +513,45 @@
 <li><a href="#_widgets">15.3. WIDGETS</a></li>
 </ul>
 </li>
-<li><a href="#prior-release-notes">16. PRIOR ENTANDO RELEASE NOTES</a>
+<li><a href="#prior-release-notes">16. PRIOR ENTANDO RELEASE NOTES</a></li>
+<li><a href="#_entando_5_0_2_release_notes">17. ENTANDO 5.0.2 RELEASE NOTES</a>
 <ul class="sectlevel2">
-<li><a href="#_entando_5_0_1_release_notes">16.1. ENTANDO 5.0.1 RELEASE NOTES</a>
+<li><a href="#_abstract">17.1. ABSTRACT</a></li>
+<li><a href="#_changes_in_5_0_2">17.2. CHANGES IN 5.0.2</a>
 <ul class="sectlevel3">
-<li><a href="#_abstract_2">16.1.1. ABSTRACT</a></li>
-<li><a href="#_changes_in_5_0_1">16.1.2. CHANGES IN 5.0.1</a></li>
-<li><a href="#_defect_resolution_and_general_updates">16.1.3. Defect Resolution and General Updates</a></li>
-<li><a href="#_known_issues_2">16.1.4. Known Issues</a></li>
-<li><a href="#_software_requirements_2">16.1.5. Software Requirements</a></li>
-<li><a href="#_legal_notice_2">16.1.6. Legal Notice</a></li>
-<li><a href="#_links_and_resources_2">16.1.7. Links and Resources</a></li>
+<li><a href="#_known_issues_2">17.2.1. KNOWN ISSUES</a></li>
+<li><a href="#_versioning_information">17.2.2. VERSIONING INFORMATION</a></li>
+<li><a href="#_software_requirements_2">17.2.3. SOFTWARE REQUIREMENTS</a></li>
+<li><a href="#_legal_notice_2">17.2.4. LEGAL NOTICE</a></li>
+<li><a href="#_links_and_resources_2">17.2.5. LINKS AND RESOURCES</a></li>
 </ul>
 </li>
-<li><a href="#_entando_5_0_0_release_notes">16.2. ENTANDO 5.0.0 RELEASE NOTES</a>
+<li><a href="#_entando_5_0_1_release_notes">17.3. ENTANDO 5.0.1 RELEASE NOTES</a>
 <ul class="sectlevel3">
-<li><a href="#_abstract_3">16.2.1. ABSTRACT</a></li>
-<li><a href="#_preface_2">16.2.2. PREFACE</a></li>
-<li><a href="#_goal_of_entando_5">16.2.3. GOAL OF ENTANDO 5</a></li>
-<li><a href="#_about_entando_5">16.2.4. ABOUT ENTANDO 5</a></li>
-<li><a href="#_whats_new_with_entando_5">16.2.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
+<li><a href="#_abstract_2">17.3.1. ABSTRACT</a></li>
+<li><a href="#_changes_in_5_0_1">17.3.2. CHANGES IN 5.0.1</a></li>
+<li><a href="#_defect_resolution_and_general_updates">17.3.3. Defect Resolution and General Updates</a></li>
+<li><a href="#_known_issues_3">17.3.4. Known Issues</a></li>
+<li><a href="#_software_requirements_3">17.3.5. Software Requirements</a></li>
+<li><a href="#_legal_notice_3">17.3.6. Legal Notice</a></li>
+<li><a href="#_links_and_resources_3">17.3.7. Links and Resources</a></li>
+</ul>
+</li>
+<li><a href="#_entando_5_0_0_release_notes">17.4. ENTANDO 5.0.0 RELEASE NOTES</a>
+<ul class="sectlevel3">
+<li><a href="#_abstract_3">17.4.1. ABSTRACT</a></li>
+<li><a href="#_preface_2">17.4.2. PREFACE</a></li>
+<li><a href="#_goal_of_entando_5">17.4.3. GOAL OF ENTANDO 5</a></li>
+<li><a href="#_about_entando_5">17.4.4. ABOUT ENTANDO 5</a></li>
+<li><a href="#_whats_new_with_entando_5">17.4.5. WHAT&#8217;S NEW WITH ENTANDO 5</a>
 <ul class="sectlevel4">
-<li><a href="#_known_issues_3">KNOWN ISSUES</a></li>
+<li><a href="#_known_issues_4">KNOWN ISSUES</a></li>
 </ul>
 </li>
-<li><a href="#_versioning_information_2">16.2.6. VERSIONING INFORMATION</a></li>
-<li><a href="#_software_requirements_3">16.2.7. SOFTWARE REQUIREMENTS</a></li>
-<li><a href="#_legal_notice_3">16.2.8. LEGAL NOTICE</a></li>
-<li><a href="#_links_and_resources_3">16.2.9. LINKS AND RESOURCES</a></li>
+<li><a href="#_versioning_information_2">17.4.6. VERSIONING INFORMATION</a></li>
+<li><a href="#_software_requirements_4">17.4.7. SOFTWARE REQUIREMENTS</a></li>
+<li><a href="#_legal_notice_4">17.4.8. LEGAL NOTICE</a></li>
+<li><a href="#_links_and_resources_4">17.4.9. LINKS AND RESOURCES</a></li>
 </ul>
 </li>
 </ul>
@@ -529,67 +561,235 @@
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="current-release-notes">1. ENTANDO 5.0.2 RELEASE NOTES</h2>
+<h2 id="current-release-notes">1. 5.1.0 RELEASE NOTES</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_abstract">1.1. ABSTRACT</h3>
-<div class="paragraph">
-<p>This document contains release notes for Entando 5.0.2. See <a href="#prior-release-notes">previous Entando release notes</a> for notes on earlier versions.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_changes_in_5_0_2">1.2. CHANGES IN 5.0.2</h3>
-<div class="paragraph">
-<p>Resolved an incorrect dependency version in entando-core and entando-components that reference a SNAPSHOT rather than a released library.</p>
-</div>
+<h3 id="_new_capabilities_and_features">1.1. NEW CAPABILITIES AND FEATURES</h3>
 <div class="sect3">
-<h4 id="_known_issues">1.2.1. KNOWN ISSUES</h4>
-<div class="paragraph">
-<p>None</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_versioning_information">1.2.2. VERSIONING INFORMATION</h4>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Jars and artifacts included in this release:</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artifact</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">entando-core</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">entando-archetypes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">entando-ux-packages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">entando-components</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">app-builder</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_software_requirements">1.2.3. SOFTWARE REQUIREMENTS</h4>
+<h4 id="_documentation_and_deployment">1.1.1. DOCUMENTATION AND DEPLOYMENT</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Java 1.8+</p>
+<p>New OpenShift templates and documentation including a new getting started experience to deploy Entando applications on OpenShift</p>
+<div class="ulist">
+<ul>
+<li>
+<p>See: <a href="http://docs.entando.com/#entando-on-openshift" class="bare">http://docs.entando.com/#entando-on-openshift</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New examples, documentation, and templates to deploy Entando applications and AWS, Azure, and Google Cloud Engine using Kubernetes</p>
+<div class="ulist">
+<ul>
+<li>
+<p>See: <a href="http://docs.entando.com/#_cloud_deployments_on_aws_azure_and_gce" class="bare">http://docs.entando.com/#_cloud_deployments_on_aws_azure_and_gce</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added documentation and examples for deploying using an Oracle database</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_content_management">1.1.2. CONTENT MANAGEMENT</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The Entando CMS now gives the content editor the ability to crop, flip, and generally interact with an image uploaded to the application. This includes the ability to define pre-built crop ratios that are available to image editors</p>
+</li>
+<li>
+<p>The digital assets section of the CMS now allows for multiple images or attachments to be uploaded concurrently</p>
+</li>
+<li>
+<p>Metadata attached to images can now be stored attached to an image and that metadata can be used to
+automatically populate attributes defined in content types. For example, a description metadata tag on an image can be used to
+populate a caption or text in the content</p>
+</li>
+<li>
+<p>The Entando CMS now supports the manual upload of very large files via digital
+assets. The files are loaded in chunks using base 64</p>
+</li>
+<li>
+<p>The Entando CMS now allows for configuration to exclude content by id and
+by type from versioning plugin. Generally useful when high volume content
+delivered by API is generating large numbers of history records.</p>
+</li>
+<li>
+<p>For updated CMS documentation and how to use the new features see:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.entando.com/#_content_management_system" class="bare">http://docs.entando.com/#_content_management_system</a>
+=== DIGITAL EXCHANGE
+ The release of Entando 5.1.0 includes the tech preview release of the Entando Digital Exchange which is a new model for distributing and installing Entando components. This release includes the ability to install and manage all of the UI elements of an Entando application. Follow our blog and YouTube channels for more to come on the Digital Exchange.
+ For documentation and getting started see:
+ <a href="http://docs.entando.com/#_digital_exchange" class="bare">http://docs.entando.com/#_digital_exchange</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_apis_and_endpoints">1.1.3. APIs AND ENDPOINTS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Added new PATCH API capability to merge changes to page settings endpoints and established the framework for applying a PATCH in a custom API</p>
+</li>
+<li>
+<p>Added the refresh token flow for OAuth and implemented token refresh in the App Builder</p>
+</li>
+<li>
+<p>Added JSON REST APIs for content models and content types</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fixes_and_updates">1.1.4. FIXES AND UPDATES</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Resolved an issue where joinGroups weren’t updating on PUT calls</p>
+</li>
+<li>
+<p>Resolved an issue in App Builder where in some cases the locale of the App
+Builder was lost on a refresh</p>
+</li>
+<li>
+<p>Updated processing around category creation when creating a new category
+during the content creation workflow</p>
+</li>
+<li>
+<p>Updated errors in the Inspinia and PAM page models included in the PAM
+template</p>
+</li>
+<li>
+<p>Resolved an issue where datatype date attributes were not returned correctly
+in the app builder and updated data type actions in app builder</p>
+</li>
+<li>
+<p>Resolved an issue where page model titles were not displayed correctly in some
+cases</p>
+</li>
+<li>
+<p>Resolved an issue in the CMS where the action button could become replicated</p>
+</li>
+<li>
+<p>Resolved issues related to moving page nodes in the App Builder</p>
+</li>
+<li>
+<p>General locale and translation updates for App Builder in Italian</p>
+</li>
+<li>
+<p>Resolved CMS image category and search issues related to category join groups</p>
+</li>
+<li>
+<p>Updated file download flow in the CMS to correctly download files on all
+browsers</p>
+</li>
+<li>
+<p>Updated scripts and builds to resolve issues in Windows</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_new_capabilities_in_integration_with_red_hat_pam">1.1.5. NEW CAPABILITIES IN INTEGRATION WITH RED HAT PAM</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Added a new widget to display task details related to a selected task in Red Hat PAM. See PAM Process Task Detail widget in the app</p>
+</li>
+<li>
+<p>Added a new widget to allow a task form to be displayed independently on a page (the modal dialog functionality is unchanged.) See PAM-Task Form by DataType</p>
+</li>
+<li>
+<p>Added significant new configuration options to the PAM Datatable task list widget including</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Added configurable ability to claim a task directly from the task list</p>
+</li>
+<li>
+<p>Added configurable ability to open a new page with task details when clicking on a row in the task list</p>
+</li>
+<li>
+<p>Added the ability to include task variables as columns in the task list
+Added the ability to disable the complete button in the task list</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added process diagram widget to Inspinia BPM default widgets</p>
+</li>
+<li>
+<p>Updated case comment</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_changes_and_updates_in_5_1_0_in_integration_with_red_hat_pam">1.1.6. CHANGES AND UPDATES IN 5.1.0 IN INTEGRATION WITH RED HAT PAM</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Resolved an issue viewing the SVG for the process diagram based on browser updates</p>
+</li>
+<li>
+<p>Resolved an issue where task details wouldn’t populate in some forms</p>
+</li>
+<li>
+<p>Updated integration with PAM based on integration with additional process and task configurations in customer test cases</p>
+</li>
+<li>
+<p>Updated task buttons to be fixed on the left hand side of task table</p>
+</li>
+<li>
+<p>Resolved an issue rendering and selecting checkbox values in forms</p>
+</li>
+<li>
+<p>Updated and resolved issues in form submission process for complex forms</p>
+</li>
+<li>
+<p>Various updates to task list to support integration with additional PAM field types</p>
+</li>
+<li>
+<p>Fixed round tripping for null values in forms and checkboxes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_known_issues">1.1.7. KNOWN ISSUES</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>There is a known issue rendering the case comments widget independently. A patch will be provided to resolve this issue.</p>
+</li>
+<li>
+<p>On AWS and Azure there is a library missing to run the demo on Wildfly. A patch will be provided to resolve this issue.</p>
+</li>
+<li>
+<p>The process list widget will not render against PAM in some process definitions. To be patched in 5.1.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_software_requirements">1.1.8. SOFTWARE REQUIREMENTS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 1.8</p>
 </li>
 <li>
 <p>npm 5.6.0+ (for ReactJS front ends)</p>
@@ -604,11 +804,11 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_legal_notice">1.2.4. LEGAL NOTICE</h4>
+<h4 id="_legal_notice">1.1.9. LEGAL NOTICE</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>LGPL v2.1 License for the Entando Core</p>
+<p>LGPL v2.1 License for the Core</p>
 </li>
 <li>
 <p>MIT License for the components</p>
@@ -617,7 +817,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_and_resources">1.2.5. LINKS AND RESOURCES</h4>
+<h4 id="_links_and_resources">1.1.10. LINKS AND RESOURCES</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -630,7 +830,7 @@
 <p>See our Custom App Building guide: <a href="http://docs.entando.com/#_custom_app_building_with_entando" class="bare">http://docs.entando.com/#_custom_app_building_with_entando</a></p>
 </li>
 <li>
-<p>Contribute to the software: <a href="https://central.apps.entando.com/en/community.page" class="bare">https://central.apps.entando.com/en/community.page</a></p>
+<p>Contribute to the software: <a href="https://central.entando.com/en/community.page" class="bare">https://central.entando.com/en/community.page</a></p>
 </li>
 </ul>
 </div>
@@ -10462,46 +10662,228 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 <div class="sect4">
 <h5 id="_examples"><a class="anchor" href="#_examples"></a>EXAMPLES</h5>
 <div class="paragraph">
-<p>Some complete examples can be found here: <a href="https://github.com/entando/dev-scripts/tree/master/digital_exchange/components" class="bare">https://github.com/entando/dev-scripts/tree/master/digital_exchange/components</a></p>
+<p>Some complete examples can be found here: <a href="https://github.com/entando/de-cli/tree/master/demo_components/data" class="bare">https://github.com/entando/de-cli/tree/master/demo_components/data</a></p>
+</div>
+<div class="paragraph">
+<p>You can upload these demo components on your DE using the DE command line tool (see section below).</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_configure_the_de_to_provide_a_component"><a class="anchor" href="#_configure_the_de_to_provide_a_component"></a>13.2.3. CONFIGURE THE DE TO PROVIDE A COMPONENT</h4>
 <div class="paragraph">
-<p>Put your component folder on a git repository and then configure the DE to retrieve component data from that repository. A graphical interface for doing this has not been implemented yet, so it is necessary to call directly the DE API.</p>
+<p>Put your component folder on a git repository and then configure the DE to retrieve component data from that repository. A graphical interface for doing this has not been implemented yet, but we have implemented a command line tool that calls directly the DE API.</p>
 </div>
 <div class="paragraph">
-<p>An upload-components-metadata.sh script provides an example of the sequence of curl calls needed here:</p>
+<p>You can get the tool at this repository: <a href="https://github.com/entando/de-cli" class="bare">https://github.com/entando/de-cli</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/entando/dev-scripts/tree/master/digital_exchange" class="bare">https://github.com/entando/dev-scripts/tree/master/digital_exchange</a></p>
+<p>Follow the instructions provided in the README for installing the tool (npm and node are required).</p>
 </div>
 <div class="paragraph">
-<p>Following steps are performed:</p>
+<p>Type <code>./de-cli.js --help</code> to see the list of the supported components.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>git repository configuration is added to the DE (the system generates an id for the repository);</p>
-</li>
-<li>
-<p>component metadata is added to the DE; this metadata contains also the git repository id, a commit id (useful for supporting multiple versions of the same component) and a repository subdirectory (useful for providing multiple components using a single repository).</p>
-</li>
-<li>
-<p>component icons are uploaded</p>
-</li>
-</ol>
+<div class="sect4">
+<h5 id="_setup_the_keypair"><a class="anchor" href="#_setup_the_keypair"></a>SETUP THE KEYPAIR</h5>
+<div class="paragraph">
+<p>Each component package is signed after its creation using asymmetric cryptography, in order to prevent clients to install tampered packages.</p>
+</div>
+<div class="paragraph">
+<p>So, before adding any component metadata, it is necessary to create a keypair. This can be done using the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js create-keypair</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The private key is stored on disk and it is encrypted using the password set in the .env file (see <code>DE_COMPONENT_PASSWORD</code> property).</p>
+</div>
+<div class="paragraph">
+<p>If you want to verify the keypair existence you can obtain the public key using the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js print-public-key</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you need to delete the keypair you can use the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js delete-keypair</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a keypair is deleted all the component package signatures are set to null (so it is not possible to install the components). Signatures are generated again when a new keypair is created. <strong>WARNING</strong>: If you generate a new keypair you have to notify all your clients that the keypair is changed. A DE client retrieves the public key from the DE when its configuration is added, so clients need to delete their DE configuration and add it again in order to retrieve the updated public key.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_repository_information"><a class="anchor" href="#_add_repository_information"></a>ADD REPOSITORY INFORMATION</h5>
+<div class="paragraph">
+<p>DE components are retrieved from one or more git repositories. Add the repository configuration using the <code>add-repository</code> command and typing the asked information:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js add-repository
+Repository name: demo_repo
+Repository URL: https://github.com/entando/de-cli.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An unique identifier is generated for each repository and it is used for referencing the repository in other commands. Currently only public repositories are supported.</p>
+</div>
+<div class="paragraph">
+<p>To obtain the list of all configured repositories you can use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js list-repositories</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To delete a repository you can use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js delete-repository &lt;repo-id&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_component_metadata"><a class="anchor" href="#_add_component_metadata"></a>ADD COMPONENT METADATA</h5>
+<div class="paragraph">
+<p>After you have added a repository you can add component metadata in order to create a package.</p>
+</div>
+<div class="paragraph">
+<p>There are 2 ways to add component metadata: interactively and from a JSON file.</p>
+</div>
+<div class="paragraph">
+<p>The interactive mode asks you the component metadata (a list of available repository identifiers is provided):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js add-component
+Component name: hello_widget
+Component version: 5.2.0-V1
+Component id (hello_widget_5.2.0-V1): hello_widget_v1
+Component description: Hello Widget Description
+Component type: widget
+Repository id
+[Available 503 (demo_repo)]: 503
+Repository directory: demo_components/data/hello_widget
+Commit id (empty for last commit):
+Component hello_widget_v1 added</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The metadata can contain also a commit id (useful for supporting multiple versions of the same component) and a repository subdirectory (useful for providing multiple components using a single repository).</p>
+</div>
+<div class="paragraph">
+<p>Alternatively you can create a JSON file containing this information and pass it to the command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
+    "id": "hello_widget_v1",
+    "name": "hello_widget",
+    "description": "Hello Widget Description",
+    "type": "widget",
+    "version": "5.2.0-V1",
+    "repoId": 503,
+    "repoDirectory": "demo_components/data/hello_widget"
+}
+
+./de-cli.js add-component hello_widget.json</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The insertion of a component metadata triggers the retrieval of the component data from the configured git repository. The data is packed as a zip file and the signature of this package is generated. This process happens asynchronously, so it could take some time before the signature is initialized. You can use the command <code>list-components</code> to check the existence of the signature (a component without a signature can&#8217;t be installed):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js list-components
+┌─────────┬───────────────────┬──────────┬───────────┐
+│ (index) │        id         │   type   │ signature │
+├─────────┼───────────────────┼──────────┼───────────┤
+│    0    │ 'hello_widget_v1' │ 'widget' │   'YES'   │
+└─────────┴───────────────────┴──────────┴───────────┘</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To delete a component use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js delete-component &lt;component_id&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_upload_component_image"><a class="anchor" href="#_upload_component_image"></a>UPLOAD COMPONENT IMAGE</h5>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js add-component-image &lt;component_id&gt; &lt;file&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_demo_components"><a class="anchor" href="#_demo_components"></a>DEMO COMPONENTS</h5>
+<div class="paragraph">
+<p>To add the demo components and their icons use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js add-demo-components</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Keypair and demo repository are automatically added if they are missing.</p>
+</div>
+<div class="paragraph">
+<p>To delete the demo components and the demo repository use:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./de-cli.js cleanup-demo-components</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_disable_component_rating"><a class="anchor" href="#_disable_component_rating"></a>13.2.4. Disable component rating</h4>
+<h4 id="_disable_component_rating"><a class="anchor" href="#_disable_component_rating"></a>13.2.4. DISABLE COMPONENT RATING</h4>
 <div class="paragraph">
-<p>Component rating functinality can be disabled editing the file src/main/resources/digital-exchange.properties:</p>
+<p>Component rating functionality can be disabled editing the file src/main/resources/digital-exchange.properties:</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>enable-rating=false</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_troubleshooting_2"><a class="anchor" href="#_troubleshooting_2"></a>13.3. TROUBLESHOOTING</h3>
+<div class="sect3">
+<h4 id="_client_issues"><a class="anchor" href="#_client_issues"></a>13.3.1. Client issues</h4>
+<div class="sect4">
+<h5 id="_invalid_signature"><a class="anchor" href="#_invalid_signature"></a>Invalid signature</h5>
+<div class="paragraph">
+<p>As a security measure all the component packages are signed. If, installing a component, the installation job fails with the error "<em>SignatureMatchingException: Component signature not matching public key</em>", it means that signature verification has failed. This can have 2 different causes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the package has been tampered, so the system avoided you to install a broken/malicious package;</p>
+</li>
+<li>
+<p>the DE administrator regenerated the keypair used in the signature.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>So, ask to the DE administrator if he/she has just regenerated the keypair and in that case delete the DE configuration and add it again. This will trigger the retrieval of the new public key from the DE.</p>
 </div>
 </div>
 </div>
@@ -11098,16 +11480,127 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 <div class="sect1">
 <h2 id="prior-release-notes"><a class="anchor" href="#prior-release-notes"></a>16. PRIOR ENTANDO RELEASE NOTES</h2>
 <div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entando_5_0_2_release_notes"><a class="anchor" href="#_entando_5_0_2_release_notes"></a>17. ENTANDO 5.0.2 RELEASE NOTES</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_entando_5_0_1_release_notes"><a class="anchor" href="#_entando_5_0_1_release_notes"></a>16.1. ENTANDO 5.0.1 RELEASE NOTES</h3>
+<h3 id="_abstract"><a class="anchor" href="#_abstract"></a>17.1. ABSTRACT</h3>
+<div class="paragraph">
+<p>This document contains release notes for Entando 5.0.2. See <a href="#prior-release-notes">previous Entando release notes</a> for notes on earlier versions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changes_in_5_0_2"><a class="anchor" href="#_changes_in_5_0_2"></a>17.2. CHANGES IN 5.0.2</h3>
+<div class="paragraph">
+<p>Resolved an incorrect dependency version in entando-core and entando-components that reference a SNAPSHOT rather than a released library.</p>
+</div>
 <div class="sect3">
-<h4 id="_abstract_2"><a class="anchor" href="#_abstract_2"></a>16.1.1. ABSTRACT</h4>
+<h4 id="_known_issues_2"><a class="anchor" href="#_known_issues_2"></a>17.2.1. KNOWN ISSUES</h4>
+<div class="paragraph">
+<p>None</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_versioning_information"><a class="anchor" href="#_versioning_information"></a>17.2.2. VERSIONING INFORMATION</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Jars and artifacts included in this release:</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artifact</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entando-core</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entando-archetypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entando-ux-packages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entando-components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">app-builder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_software_requirements_2"><a class="anchor" href="#_software_requirements_2"></a>17.2.3. SOFTWARE REQUIREMENTS</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Java 1.8+</p>
+</li>
+<li>
+<p>npm 5.6.0+ (for ReactJS front ends)</p>
+</li>
+<li>
+<p>Maven 3.0.5+</p>
+</li>
+<li>
+<p>Ant 1.8.0+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_legal_notice_2"><a class="anchor" href="#_legal_notice_2"></a>17.2.4. LEGAL NOTICE</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>LGPL v2.1 License for the Entando Core</p>
+</li>
+<li>
+<p>MIT License for the components</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_links_and_resources_2"><a class="anchor" href="#_links_and_resources_2"></a>17.2.5. LINKS AND RESOURCES</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Explore the code on GitHub: <a href="https://github.com/entando" class="bare">https://github.com/entando</a></p>
+</li>
+<li>
+<p>See our Getting Started guide: <a href="http://docs.entando.com/#getting-started" class="bare">http://docs.entando.com/#getting-started</a></p>
+</li>
+<li>
+<p>See our Custom App Building guide: <a href="http://docs.entando.com/#_custom_app_building_with_entando" class="bare">http://docs.entando.com/#_custom_app_building_with_entando</a></p>
+</li>
+<li>
+<p>Contribute to the software: <a href="https://central.apps.entando.com/en/community.page" class="bare">https://central.apps.entando.com/en/community.page</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_entando_5_0_1_release_notes"><a class="anchor" href="#_entando_5_0_1_release_notes"></a>17.3. ENTANDO 5.0.1 RELEASE NOTES</h3>
+<div class="sect3">
+<h4 id="_abstract_2"><a class="anchor" href="#_abstract_2"></a>17.3.1. ABSTRACT</h4>
 <div class="paragraph">
 <p>This document contains release notes for Entando 5.0.1.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_changes_in_5_0_1"><a class="anchor" href="#_changes_in_5_0_1"></a>16.1.2. CHANGES IN 5.0.1</h4>
+<h4 id="_changes_in_5_0_1"><a class="anchor" href="#_changes_in_5_0_1"></a>17.3.2. CHANGES IN 5.0.1</h4>
 <div class="paragraph">
 <p><strong>Library and dependency updates</strong></p>
 </div>
@@ -11272,7 +11765,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_defect_resolution_and_general_updates"><a class="anchor" href="#_defect_resolution_and_general_updates"></a>16.1.3. Defect Resolution and General Updates</h4>
+<h4 id="_defect_resolution_and_general_updates"><a class="anchor" href="#_defect_resolution_and_general_updates"></a>17.3.3. Defect Resolution and General Updates</h4>
 <div class="paragraph">
 <p><strong>App Builder</strong></p>
 </div>
@@ -11340,7 +11833,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_known_issues_2"><a class="anchor" href="#_known_issues_2"></a>16.1.4. Known Issues</h4>
+<h4 id="_known_issues_3"><a class="anchor" href="#_known_issues_3"></a>17.3.4. Known Issues</h4>
 <div class="paragraph">
 <p>Some dependencies in 5.0.1 still reference snapshot versions of components and other related products. This will be resolved in 5.0.2.</p>
 </div>
@@ -11382,7 +11875,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </table>
 </div>
 <div class="sect3">
-<h4 id="_software_requirements_2"><a class="anchor" href="#_software_requirements_2"></a>16.1.5. Software Requirements</h4>
+<h4 id="_software_requirements_3"><a class="anchor" href="#_software_requirements_3"></a>17.3.5. Software Requirements</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11401,7 +11894,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_legal_notice_2"><a class="anchor" href="#_legal_notice_2"></a>16.1.6. Legal Notice</h4>
+<h4 id="_legal_notice_3"><a class="anchor" href="#_legal_notice_3"></a>17.3.6. Legal Notice</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11414,7 +11907,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_and_resources_2"><a class="anchor" href="#_links_and_resources_2"></a>16.1.7. Links and Resources</h4>
+<h4 id="_links_and_resources_3"><a class="anchor" href="#_links_and_resources_3"></a>17.3.7. Links and Resources</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11434,27 +11927,27 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect2">
-<h3 id="_entando_5_0_0_release_notes"><a class="anchor" href="#_entando_5_0_0_release_notes"></a>16.2. ENTANDO 5.0.0 RELEASE NOTES</h3>
+<h3 id="_entando_5_0_0_release_notes"><a class="anchor" href="#_entando_5_0_0_release_notes"></a>17.4. ENTANDO 5.0.0 RELEASE NOTES</h3>
 <div class="sect3">
-<h4 id="_abstract_3"><a class="anchor" href="#_abstract_3"></a>16.2.1. ABSTRACT</h4>
+<h4 id="_abstract_3"><a class="anchor" href="#_abstract_3"></a>17.4.1. ABSTRACT</h4>
 <div class="paragraph">
 <p>This document contains release notes for Entando 5.0.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_preface_2"><a class="anchor" href="#_preface_2"></a>16.2.2. PREFACE</h4>
+<h4 id="_preface_2"><a class="anchor" href="#_preface_2"></a>17.4.2. PREFACE</h4>
 <div class="paragraph">
 <p>These release notes highlight new features in Entando 5.0, list features that are in technical preview, and include any known issues.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_goal_of_entando_5"><a class="anchor" href="#_goal_of_entando_5"></a>16.2.3. GOAL OF ENTANDO 5</h4>
+<h4 id="_goal_of_entando_5"><a class="anchor" href="#_goal_of_entando_5"></a>17.4.3. GOAL OF ENTANDO 5</h4>
 <div class="paragraph">
 <p>The goal of Entando 5.0 is to fully engage our platform with the Modern Applications revolution by designing for a cloud-based infrastructure, adapting our architecture to be more distributed, and fully supporting DevOps methodologies.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_about_entando_5"><a class="anchor" href="#_about_entando_5"></a>16.2.4. ABOUT ENTANDO 5</h4>
+<h4 id="_about_entando_5"><a class="anchor" href="#_about_entando_5"></a>17.4.4. ABOUT ENTANDO 5</h4>
 <div class="paragraph">
 <p>Entando 5 represents a fundamental update to the Entando infrastructure to support modern application development processes including: new options for clustering, cloud native deployment, out of the box support for deploying apps in OpenShift, new UI technologies, and an updated widget development process.</p>
 </div>
@@ -11463,7 +11956,7 @@ It is possible to use a simple bean called <code>ModelParser</code> to do this i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_whats_new_with_entando_5"><a class="anchor" href="#_whats_new_with_entando_5"></a>16.2.5. WHAT&#8217;S NEW WITH ENTANDO 5</h4>
+<h4 id="_whats_new_with_entando_5"><a class="anchor" href="#_whats_new_with_entando_5"></a>17.4.5. WHAT&#8217;S NEW WITH ENTANDO 5</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11608,7 +12101,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </ul>
 </div>
 <div class="sect4">
-<h5 id="_known_issues_3"><a class="anchor" href="#_known_issues_3"></a>KNOWN ISSUES</h5>
+<h5 id="_known_issues_4"><a class="anchor" href="#_known_issues_4"></a>KNOWN ISSUES</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -11655,7 +12148,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_versioning_information_2"><a class="anchor" href="#_versioning_information_2"></a>16.2.6. VERSIONING INFORMATION</h4>
+<h4 id="_versioning_information_2"><a class="anchor" href="#_versioning_information_2"></a>17.4.6. VERSIONING INFORMATION</h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Jars and artifacts included in this release:</caption>
 <colgroup>
@@ -11697,7 +12190,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </table>
 </div>
 <div class="sect3">
-<h4 id="_software_requirements_3"><a class="anchor" href="#_software_requirements_3"></a>16.2.7. SOFTWARE REQUIREMENTS</h4>
+<h4 id="_software_requirements_4"><a class="anchor" href="#_software_requirements_4"></a>17.4.7. SOFTWARE REQUIREMENTS</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11716,7 +12209,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_legal_notice_3"><a class="anchor" href="#_legal_notice_3"></a>16.2.8. LEGAL NOTICE</h4>
+<h4 id="_legal_notice_4"><a class="anchor" href="#_legal_notice_4"></a>17.4.8. LEGAL NOTICE</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11729,7 +12222,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_and_resources_3"><a class="anchor" href="#_links_and_resources_3"></a>16.2.9. LINKS AND RESOURCES</h4>
+<h4 id="_links_and_resources_4"><a class="anchor" href="#_links_and_resources_4"></a>17.4.9. LINKS AND RESOURCES</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -11753,7 +12246,7 @@ We have performed security scans as part of the Entando 5 software release to en
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-05 09:55:51 +0200
+Last updated 2019-04-05 03:55:51 -0400
 </div>
 </div>
 </body>
