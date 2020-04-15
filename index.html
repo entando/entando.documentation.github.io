@@ -24,9 +24,19 @@
 <ul class="sectlevel1">
 <li><a href="#e6-new">1. Entando 6.1.0</a>
 <ul class="sectlevel2">
-<li><a href="#_app_builder">1.1. App Builder</a>
+<li><a href="#_getting_started">1.1. Getting Started</a>
 <ul class="sectlevel3">
-<li><a href="#_hello_world_for_a_widget_using_the_app_builder">1.1.1. Hello World for a Widget Using the App builder</a>
+<li><a href="#_getting_started_2">1.1.1. Getting Started</a>
+<ul class="sectlevel4">
+<li><a href="#_pre_requisites">Pre-Requisites</a></li>
+<li><a href="#_steps">Steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_app_builder">1.2. App Builder</a>
+<ul class="sectlevel3">
+<li><a href="#_hello_world_for_a_widget_using_the_app_builder">1.2.1. Hello World for a Widget Using the App builder</a>
 <ul class="sectlevel4">
 <li><a href="#_basic_widget_tutorial">Basic Widget Tutorial</a></li>
 <li><a href="#_simple_fragment_tutorial">Simple Fragment tutorial</a></li>
@@ -36,9 +46,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_freemarker_tags">1.2. Freemarker Tags</a>
+<li><a href="#_freemarker_tags">1.3. Freemarker Tags</a>
 <ul class="sectlevel3">
-<li><a href="#_aps_core_tag_library">1.2.1. Aps Core Tag Library</a>
+<li><a href="#_aps_core_tag_library">1.3.1. Aps Core Tag Library</a>
 <ul class="sectlevel4">
 <li><a href="#_tag_action">Tag <code>action</code></a></li>
 <li><a href="#_tag_categories">Tag <code>categories</code></a></li>
@@ -71,9 +81,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_micro_frontends">1.3. Micro Frontends</a>
+<li><a href="#_micro_frontends">1.4. Micro Frontends</a>
 <ul class="sectlevel3">
-<li><a href="#_tutorial_create_a_react_micro_frontend_widget">1.3.1. Tutorial: create a react micro frontend widget</a>
+<li><a href="#_tutorial_create_a_react_micro_frontend_widget">1.4.1. Tutorial: create a react micro frontend widget</a>
 <ul class="sectlevel4">
 <li><a href="#_prerequisites">Prerequisites</a></li>
 <li><a href="#_bootstrap_a_react_app">Bootstrap a react app</a></li>
@@ -82,14 +92,14 @@
 <li><a href="#_create_the_entando_6_widget_in_app_builder">Create the Entando 6 widget in App Builder</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_using_a_custom_event_for_widget_communication">1.3.2. Tutorial: Using a custom event for widget communication</a>
+<li><a href="#_tutorial_using_a_custom_event_for_widget_communication">1.4.2. Tutorial: Using a custom event for widget communication</a>
 <ul class="sectlevel4">
 <li><a href="#_fire_an_event_from_a_widget">Fire an event from a widget</a></li>
 <li><a href="#_consume_an_event_in_another_widget">Consume an event in another widget</a></li>
 <li><a href="#_make_both_widgets_work_in_entando">Make both widgets work in Entando</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_add_app_builder_configuration_screen_for_an_entando_6_widget">1.3.3. Tutorial: Add App Builder configuration screen for an Entando 6 widget</a>
+<li><a href="#_tutorial_add_app_builder_configuration_screen_for_an_entando_6_widget">1.4.3. Tutorial: Add App Builder configuration screen for an Entando 6 widget</a>
 <ul class="sectlevel4">
 <li><a href="#_generate_a_react_app">Generate a React app</a></li>
 <li><a href="#_edit_the_root_app_component">Edit the root app component</a></li>
@@ -97,7 +107,7 @@
 <li><a href="#_add_widget_config_screen_in_app_builder">Add widget config screen in App Builder</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_display_widget_configuration_data">1.3.4. Tutorial: Display widget configuration data</a>
+<li><a href="#_tutorial_display_widget_configuration_data">1.4.4. Tutorial: Display widget configuration data</a>
 <ul class="sectlevel4">
 <li><a href="#_add_an_attribute_to_the_custom_element">Add an attribute to the custom element</a></li>
 <li><a href="#_make_react_component_handle_the_input">Make react component handle the input</a></li>
@@ -105,7 +115,7 @@
 <li><a href="#_update_the_entando_6_widget_in_app_builder">Update the Entando 6 widget in App Builder</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_blueprint_generated_widgets_overview">1.3.5. Tutorial: Blueprint generated widgets' overview</a>
+<li><a href="#_tutorial_blueprint_generated_widgets_overview">1.4.5. Tutorial: Blueprint generated widgets' overview</a>
 <ul class="sectlevel4">
 <li><a href="#_common_parts">Common parts</a></li>
 <li><a href="#_form_widget">Form widget</a></li>
@@ -113,9 +123,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_entando_component_repository">1.4. Entando Component Repository</a>
+<li><a href="#_entando_component_repository">1.5. Entando Component Repository</a>
 <ul class="sectlevel3">
-<li><a href="#_entando_component_repository_overview">1.4.1. Entando Component Repository Overview</a>
+<li><a href="#_entando_component_repository_overview">1.5.1. Entando Component Repository Overview</a>
 <ul class="sectlevel4">
 <li><a href="#_introduction">Introduction</a></li>
 <li><a href="#_entando_component_repository_glossary">Entando Component Repository Glossary</a></li>
@@ -124,7 +134,7 @@
 <li><a href="#_ecre_bundle_and_component_details">ECRe bundle and component details</a></li>
 </ul>
 </li>
-<li><a href="#_create_a_local_npm_registry_for_testing">1.4.2. Create a local NPM registry for testing</a>
+<li><a href="#_create_a_local_npm_registry_for_testing">1.5.2. Create a local NPM registry for testing</a>
 <ul class="sectlevel4">
 <li><a href="#_start_local_nexus_as_a_docker_container">Start local nexus as a docker container</a></li>
 <li><a href="#_setup_a_private_npm_registry">Setup a private npm registry</a></li>
@@ -139,19 +149,19 @@
 <li><a href="#_set_the_publish_repository_at_package_json_level">Set the publish repository at package.json level</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_how_to_create_a_digital_exchange_bundle">1.4.3. Tutorial: How to create a digital-exchange bundle</a>
+<li><a href="#_tutorial_how_to_create_a_digital_exchange_bundle">1.5.3. Tutorial: How to create a digital-exchange bundle</a>
 <ul class="sectlevel4">
 <li><a href="#_purpose">Purpose</a></li>
 <li><a href="#_requirements">Requirements</a></li>
-<li><a href="#_steps">Steps</a></li>
+<li><a href="#_steps_2">Steps</a></li>
 <li><a href="#_conclusion">Conclusion</a></li>
 <li><a href="#resources">Resources</a></li>
 </ul>
 </li>
-<li><a href="#_from_blueprint_to_the_entando_component_repository_ecr_bundle">1.4.4. From Blueprint to the Entando Component Repository (ECR) bundle</a></li>
-<li><a href="#_purpose_2">1.4.5. Purpose</a></li>
-<li><a href="#_requirements_2">1.4.6. Requirements</a></li>
-<li><a href="#_steps_2">1.4.7. Steps</a>
+<li><a href="#_from_blueprint_to_the_entando_component_repository_ecr_bundle">1.5.4. From Blueprint to the Entando Component Repository (ECR) bundle</a></li>
+<li><a href="#_purpose_2">1.5.5. Purpose</a></li>
+<li><a href="#_requirements_2">1.5.6. Requirements</a></li>
+<li><a href="#_steps_3">1.5.7. Steps</a>
 <ul class="sectlevel4">
 <li><a href="#_1_generate_an_entity">1. Generate an entity</a></li>
 <li><a href="#_2_populate_the_bundle_with_the_micro_frontends">2. Populate the bundle with the micro frontends</a></li>
@@ -162,13 +172,13 @@
 <li><a href="#_7_deploy_the_entandodebundle_custom_resource_on_the_cluster">7. Deploy the EntandoDeBundle custom resource on the cluster</a></li>
 </ul>
 </li>
-<li><a href="#_conclusion_2">1.4.8. Conclusion</a></li>
-<li><a href="#_resources">1.4.9. Resources</a></li>
+<li><a href="#_conclusion_2">1.5.8. Conclusion</a></li>
+<li><a href="#_resources">1.5.9. Resources</a></li>
 </ul>
 </li>
-<li><a href="#_blueprint">1.5. Blueprint</a>
+<li><a href="#_blueprint">1.6. Blueprint</a>
 <ul class="sectlevel3">
-<li><a href="#_objective">1.5.1. Objective</a>
+<li><a href="#_objective">1.6.1. Objective</a>
 <ul class="sectlevel4">
 <li><a href="#_prerequisites_2">Prerequisites</a></li>
 <li><a href="#_setup_for_blueprint_dev_mode">Setup for Blueprint Dev mode</a></li>
@@ -177,9 +187,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_core_app">1.6. Core App</a>
+<li><a href="#_core_app">1.7. Core App</a>
 <ul class="sectlevel3">
-<li><a href="#_the_entando_core_apis">1.6.1. The Entando Core APIs</a>
+<li><a href="#_the_entando_core_apis">1.7.1. The Entando Core APIs</a>
 <ul class="sectlevel4">
 <li><a href="#_prerequisites_3">Prerequisites</a></li>
 <li><a href="#_setup">Setup</a></li>
@@ -187,14 +197,14 @@
 <li><a href="#_tutorial">Tutorial:</a></li>
 </ul>
 </li>
-<li><a href="#_adding_a_new_api_to_the_core_app">1.6.2. Adding a new API to the core app</a>
+<li><a href="#_adding_a_new_api_to_the_core_app">1.7.2. Adding a new API to the core app</a>
 <ul class="sectlevel4">
 <li><a href="#_prerequisites_4">Prerequisites</a></li>
 <li><a href="#_overview_2">Overview</a></li>
 <li><a href="#_tutorial_2">Tutorial</a></li>
 </ul>
 </li>
-<li><a href="#_building_a_docker_image_for_the_entando_core">1.6.3. Building a Docker Image for the Entando Core</a>
+<li><a href="#_building_a_docker_image_for_the_entando_core">1.7.3. Building a Docker Image for the Entando Core</a>
 <ul class="sectlevel4">
 <li><a href="#_prerequisites_5">Prerequisites</a></li>
 <li><a href="#_introduction_2">Introduction</a></li>
@@ -203,9 +213,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_kubernetes_and_operator">1.7. Kubernetes and Operator</a>
+<li><a href="#_kubernetes_and_operator">1.8. Kubernetes and Operator</a>
 <ul class="sectlevel3">
-<li><a href="#_entando_6_cluster_citizens">1.7.1. Entando 6 cluster citizens</a>
+<li><a href="#_entando_6_cluster_citizens">1.8.1. Entando 6 cluster citizens</a>
 <ul class="sectlevel4">
 <li><a href="#_purpose_3">Purpose</a></li>
 <li><a href="#_prerequisites_6">Prerequisites</a></li>
@@ -214,20 +224,20 @@
 <li><a href="#_references">References</a></li>
 </ul>
 </li>
-<li><a href="#_tutorial_how_to_connect_entando_6_to_an_external_keycloak_instance">1.7.2. Tutorial: How to connect Entando 6 to an external Keycloak instance</a>
+<li><a href="#_tutorial_how_to_connect_entando_6_to_an_external_keycloak_instance">1.8.2. Tutorial: How to connect Entando 6 to an external Keycloak instance</a>
 <ul class="sectlevel4">
 <li><a href="#_purpose_4">Purpose</a></li>
 <li><a href="#_requirements_3">Requirements</a></li>
-<li><a href="#_steps_3">Steps</a></li>
+<li><a href="#_steps_4">Steps</a></li>
 <li><a href="#_conclusion_3">Conclusion</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_process_driven_apps">1.8. Process Driven Apps</a>
+<li><a href="#_process_driven_apps">1.9. Process Driven Apps</a>
 <ul class="sectlevel3">
-<li><a href="#_business_objective">1.8.1. Business Objective</a></li>
-<li><a href="#_terminology">1.8.2. Terminology</a>
+<li><a href="#_business_objective">1.9.1. Business Objective</a></li>
+<li><a href="#_terminology">1.9.2. Terminology</a>
 <ul class="sectlevel4">
 <li><a href="#_micro_frontend">Micro Frontend</a></li>
 <li><a href="#_process_automation_manager_pam">Process Automation Manager (PAM)</a></li>
@@ -236,7 +246,7 @@
 <li><a href="#_back_end_for_front_end_bff">Back End for Front End (BFF)</a></li>
 </ul>
 </li>
-<li><a href="#_pda_micro_frontends">1.8.3. PDA Micro Frontends</a>
+<li><a href="#_pda_micro_frontends">1.9.3. PDA Micro Frontends</a>
 <ul class="sectlevel4">
 <li><a href="#_task_list">Task List</a></li>
 <li><a href="#_task_details">Task Details</a></li>
@@ -248,7 +258,7 @@
 <li><a href="#_totals_over_time">Totals Over Time</a></li>
 </ul>
 </li>
-<li><a href="#_customizing_the_process_driven_application">1.8.4. Customizing the Process Driven Application</a>
+<li><a href="#_customizing_the_process_driven_application">1.9.4. Customizing the Process Driven Application</a>
 <ul class="sectlevel4">
 <li><a href="#_styling">Styling</a></li>
 <li><a href="#_implementing_a_new_engine_or_integrating_a_new_task_source">Implementing a New Engine or Integrating a New Task Source</a></li>
@@ -257,7 +267,7 @@
 <li><a href="#_communication_between_mfes">Communication between MFEs</a></li>
 </ul>
 </li>
-<li><a href="#_technical_documentation">1.8.5. Technical Documentation</a>
+<li><a href="#_technical_documentation">1.9.5. Technical Documentation</a>
 <ul class="sectlevel4">
 <li><a href="#_micro_frontend_overview">Micro Frontend Overview</a></li>
 <li><a href="#_widgets">Widgets</a></li>
@@ -268,9 +278,9 @@
 </li>
 </ul>
 </li>
-<li><a href="#_cms">1.9. CMS</a>
+<li><a href="#_cms">1.10. CMS</a>
 <ul class="sectlevel3">
-<li><a href="#_publish_a_content_in_your_application_page_tutorial">1.9.1. Publish a Content in your Application Page_Tutorial</a>
+<li><a href="#_publish_a_content_in_your_application_page_tutorial">1.10.1. Publish a Content in your Application Page_Tutorial</a>
 <ul class="sectlevel4">
 <li><a href="#_objective_2">Objective</a></li>
 <li><a href="#_content_templates">Content Templates</a></li>
@@ -784,9 +794,177 @@
 <h2 id="e6-new">1. Entando 6.1.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_app_builder">1.1. App Builder</h3>
+<h3 id="_getting_started">1.1. Getting Started</h3>
 <div class="sect3">
-<h4 id="_hello_world_for_a_widget_using_the_app_builder">1.1.1. Hello World for a Widget Using the App builder</h4>
+<h4 id="_getting_started_2">1.1.1. Getting Started</h4>
+<div class="sect4">
+<h5 id="_pre_requisites">Pre-Requisites</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Java 1.8</p>
+</li>
+<li>
+<p>node LTS</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use nvm to setup your node and npm install (or manually install node LTS)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Maven 3.0.5+</p>
+</li>
+<li>
+<p>Git</p>
+</li>
+<li>
+<p>Docker</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Install: <a href="https://docs.docker.com/install/" class="bare">https://docs.docker.com/install/</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Access to a Docker images repository</p>
+</li>
+<li>
+<p>Docker hub works great and is free</p>
+</li>
+<li>
+<p>Helm 2.x (2.x only- 3.x is not currently compatible or supported)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Install: <a href="https://github.com/helm/helm/releases/tag/v2.16.3" class="bare">https://github.com/helm/helm/releases/tag/v2.16.3</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_steps">Steps</h5>
+<div class="sect5">
+<h6 id="_kubernetes_setup_instructions">Kubernetes Setup Instructions</h6>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Enable ingress in your kubernetes installation</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>For minikube this is done with the command : minikube addons enable ingress</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Make sure you have at least 4 CPUs and 8GB of ram allocated to your kubernetes client</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>minikube start --cpus 4 --memory 8192</code></p>
+</li>
+<li>
+<p>Or set globally</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>minikube config set cpus 4</code></p>
+</li>
+<li>
+<p><code>minikube config set memory 8192</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Install a helm2 client for your environment.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>You only need the client - no need to install Tiller, the server side component. We use the client to process templates. Doesn’t require cluster changes</p>
+</li>
+<li>
+<p>Note that it is important that it is helm2. The current default is 3.</p>
+</li>
+<li>
+<p><a href="https://helm.sh/docs/intro/install/" class="bare">https://helm.sh/docs/intro/install/</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Clone this project locally to a development environment of your choice</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>git clone <a href="https://github.com/entando-k8s/entando-helm-quickstart" class="bare">https://github.com/entando-k8s/entando-helm-quickstart</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In the values.yaml file you need to update the configuration for your environment and deployment.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If you are deploying in Openshift, set the operator.supportOpenshift = true , otherwise set it to false</p>
+</li>
+<li>
+<p>Set ENTANDO_DEFAULT_ROUTING_SUFFIX to the value that matches the env you&#8217;re going to deploy to. For local clusters (MicroK8S, Minikube) that would be your local cluster IP address (e.g. minikube ip) with the suffix nip.io, e.g. 192.168.1.9.nip.io. On a shared cluster you may need to consult your cluster admin.</p>
+</li>
+<li>
+<p>If you want to deploy the Process Driven Applications Plugin (PDA), set deployPDA = true, otherwise leave it as false</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Ensure you have a namespace in the cluster you can use, and the current user has admin permissions on the namespace.</p>
+</li>
+<li>
+<p>Ensure the Entando CRDs are installed on your cluster. Follow this guide to learn how to do so: <a href="https://github.com/entando-k8s/entando-k8s-custom-model/tree/v6.1.0/src/main/resources/crd" class="bare">https://github.com/entando-k8s/entando-k8s-custom-model/tree/v6.1.0/src/main/resources/crd</a></p>
+</li>
+<li>
+<p>On a command line go into the directory of the entando-helm-quickstart you cloned in step 2</p>
+</li>
+<li>
+<p>Process the template and deploy the output using your favorite Kubernetes client, e.g</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>helm template --name=my-app  --namespace=my-namespace ./ | kubectl create -f</code></p>
+</li>
+<li>
+<p>Or use helm to create and save the deployment descriptor to a file of your choice <code>helm template --name=&lt;name-of-resources&gt; --namespace=&lt;namespace-where-to-deploy&gt;  ./ &gt; some-template.yaml</code></p>
+</li>
+<li>
+<p>And deploy it with kubectl create -f some-template.yaml</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_app_builder">1.2. App Builder</h3>
+<div class="sect3">
+<h4 id="_hello_world_for_a_widget_using_the_app_builder">1.2.1. Hello World for a Widget Using the App builder</h4>
 <div class="paragraph">
 <p>This tutorial will take you through the basics of creating an Entando widget and placing it on a page.
 This document will also review the basics of fragments which are re-usable pieces of a user interface.</p>
@@ -937,9 +1115,9 @@ You can include conditional logic, inject information from the backend, check fo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_freemarker_tags">1.2. Freemarker Tags</h3>
+<h3 id="_freemarker_tags">1.3. Freemarker Tags</h3>
 <div class="sect3">
-<h4 id="_aps_core_tag_library">1.2.1. Aps Core Tag Library</h4>
+<h4 id="_aps_core_tag_library">1.3.1. Aps Core Tag Library</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2315,9 +2493,9 @@ You can include conditional logic, inject information from the backend, check fo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_micro_frontends">1.3. Micro Frontends</h3>
+<h3 id="_micro_frontends">1.4. Micro Frontends</h3>
 <div class="sect3">
-<h4 id="_tutorial_create_a_react_micro_frontend_widget">1.3.1. Tutorial: create a react micro frontend widget</h4>
+<h4 id="_tutorial_create_a_react_micro_frontend_widget">1.4.1. Tutorial: create a react micro frontend widget</h4>
 <div class="sect4">
 <h5 id="_prerequisites">Prerequisites</h5>
 <div class="paragraph">
@@ -2639,7 +2817,7 @@ You can also embed the widget directly in a local copy of an Entando app. Copy i
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_using_a_custom_event_for_widget_communication">1.3.2. Tutorial: Using a custom event for widget communication</h4>
+<h4 id="_tutorial_using_a_custom_event_for_widget_communication">1.4.2. Tutorial: Using a custom event for widget communication</h4>
 <div class="paragraph">
 <p>Entando 6 widgets can communicate through <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent">Custom Events</a>, an established web standard.</p>
 </div>
@@ -2973,7 +3151,7 @@ window.dispatchEvent(widgetEvent);</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_add_app_builder_configuration_screen_for_an_entando_6_widget">1.3.3. Tutorial: Add App Builder configuration screen for an Entando 6 widget</h4>
+<h4 id="_tutorial_add_app_builder_configuration_screen_for_an_entando_6_widget">1.4.3. Tutorial: Add App Builder configuration screen for an Entando 6 widget</h4>
 <div class="paragraph">
 <p>Entando 6 widgets can be customized through an App Builder configuration screen so the citizen developers can avoid writing ad-hoc additional code.</p>
 </div>
@@ -3262,7 +3440,7 @@ the web component tag name (<code>my-widget-config</code> in this tutorial) <em>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_display_widget_configuration_data">1.3.4. Tutorial: Display widget configuration data</h4>
+<h4 id="_tutorial_display_widget_configuration_data">1.4.4. Tutorial: Display widget configuration data</h4>
 <div class="paragraph">
 <p>So, we already created a react micro frontend widget and configuration screen to customize a <em>name</em> field.</p>
 </div>
@@ -3467,7 +3645,7 @@ you could keep the original names in order to avoid potential caching issues, bu
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_blueprint_generated_widgets_overview">1.3.5. Tutorial: Blueprint generated widgets' overview</h4>
+<h4 id="_tutorial_blueprint_generated_widgets_overview">1.4.5. Tutorial: Blueprint generated widgets' overview</h4>
 <div class="paragraph">
 <p>When you create an entity using Entando blueprint, it generates a few premade widgets. In this section we will review them.</p>
 </div>
@@ -3578,9 +3756,9 @@ export default ConferenceDetails;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_entando_component_repository">1.4. Entando Component Repository</h3>
+<h3 id="_entando_component_repository">1.5. Entando Component Repository</h3>
 <div class="sect3">
-<h4 id="_entando_component_repository_overview">1.4.1. Entando Component Repository Overview</h4>
+<h4 id="_entando_component_repository_overview">1.5.1. Entando Component Repository Overview</h4>
 <div class="sect4">
 <h5 id="_introduction">Introduction</h5>
 <div class="paragraph">
@@ -4042,7 +4220,7 @@ contentShape: &gt;-
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_a_local_npm_registry_for_testing">1.4.2. Create a local NPM registry for testing</h4>
+<h4 id="_create_a_local_npm_registry_for_testing">1.5.2. Create a local NPM registry for testing</h4>
 <div class="paragraph">
 <p>As a registry you can use whatever technology you prefer. Some examples are the [NPM official registry](<a href="https://npmjs.org" class="bare">https://npmjs.org</a>), [Verdaccio](<a href="https://github.com/verdaccio/verdaccio" class="bare">https://github.com/verdaccio/verdaccio</a>) or [Nexus](<a href="https://github.com/sonatype/nexus-public" class="bare">https://github.com/sonatype/nexus-public</a>)</p>
 </div>
@@ -4236,7 +4414,7 @@ make the private repository the default for publishing. Add this to your package
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_how_to_create_a_digital_exchange_bundle">1.4.3. Tutorial: How to create a digital-exchange bundle</h4>
+<h4 id="_tutorial_how_to_create_a_digital_exchange_bundle">1.5.3. Tutorial: How to create a digital-exchange bundle</h4>
 <div class="sect4">
 <h5 id="_purpose">Purpose</h5>
 <div class="paragraph">
@@ -4256,7 +4434,7 @@ To share the bundle you will need:
 </div>
 </div>
 <div class="sect4">
-<h5 id="_steps">Steps</h5>
+<h5 id="_steps_2">Steps</h5>
 <div class="sect5">
 <h6 id="_1_create_a_bundle_folder">1. Create a bundle folder</h6>
 <div class="paragraph">
@@ -4448,17 +4626,17 @@ We assume you have a namespace in a Kubernetes cluster which is readable from th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_from_blueprint_to_the_entando_component_repository_ecr_bundle">1.4.4. From Blueprint to the Entando Component Repository (ECR) bundle</h4>
+<h4 id="_from_blueprint_to_the_entando_component_repository_ecr_bundle">1.5.4. From Blueprint to the Entando Component Repository (ECR) bundle</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_purpose_2">1.4.5. Purpose</h4>
+<h4 id="_purpose_2">1.5.5. Purpose</h4>
 <div class="paragraph">
 <p>In this tutorial you will learn how to generate an ECR bundle from a microservice generated using the JHipster&#8217;s Entando Blueprint.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_requirements_2">1.4.6. Requirements</h4>
+<h4 id="_requirements_2">1.5.6. Requirements</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -4477,7 +4655,7 @@ We assume you have a namespace in a Kubernetes cluster which is readable from th
 </div>
 </div>
 <div class="sect3">
-<h4 id="_steps_2">1.4.7. Steps</h4>
+<h4 id="_steps_3">1.5.7. Steps</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4654,13 +4832,13 @@ Make sure both the NPM registry where you published the bundle and the Docker re
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conclusion_2">1.4.8. Conclusion</h4>
+<h4 id="_conclusion_2">1.5.8. Conclusion</h4>
 <div class="paragraph">
 <p>You should now have the bundle available in your cluster and accessible from App Builder.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_resources">1.4.9. Resources</h4>
+<h4 id="_resources">1.5.9. Resources</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -4677,9 +4855,9 @@ Make sure both the NPM registry where you published the bundle and the Docker re
 </div>
 </div>
 <div class="sect2">
-<h3 id="_blueprint">1.5. Blueprint</h3>
+<h3 id="_blueprint">1.6. Blueprint</h3>
 <div class="sect3">
-<h4 id="_objective">1.5.1. Objective</h4>
+<h4 id="_objective">1.6.1. Objective</h4>
 <div class="paragraph">
 <p>The objective of this lab is to briefly introduce the Entand JHipster Blueprint and to provide an introduction to using the blueprint to generate a microservice and micro-frontends for deployment into an Entando application.</p>
 </div>
@@ -4863,9 +5041,9 @@ The micro frontends are in the ui folder. Each entity gets an MFE for details, t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_core_app">1.6. Core App</h3>
+<h3 id="_core_app">1.7. Core App</h3>
 <div class="sect3">
-<h4 id="_the_entando_core_apis">1.6.1. The Entando Core APIs</h4>
+<h4 id="_the_entando_core_apis">1.7.1. The Entando Core APIs</h4>
 <div class="sect4">
 <h5 id="_prerequisites_3">Prerequisites</h5>
 <div class="ulist">
@@ -5031,7 +5209,7 @@ all of the model classes returned by the API endpoints can be found.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_adding_a_new_api_to_the_core_app">1.6.2. Adding a new API to the core app</h4>
+<h4 id="_adding_a_new_api_to_the_core_app">1.7.2. Adding a new API to the core app</h4>
 <div class="sect4">
 <h5 id="_prerequisites_4">Prerequisites</h5>
 <div class="ulist">
@@ -5165,7 +5343,7 @@ algo.default.key=changeit</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_building_a_docker_image_for_the_entando_core">1.6.3. Building a Docker Image for the Entando Core</h4>
+<h4 id="_building_a_docker_image_for_the_entando_core">1.7.3. Building a Docker Image for the Entando Core</h4>
 <div class="sect4">
 <h5 id="_prerequisites_5">Prerequisites</h5>
 <div class="ulist">
@@ -5264,9 +5442,9 @@ A more detailed guide with additional commands and configuration can be found he
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kubernetes_and_operator">1.7. Kubernetes and Operator</h3>
+<h3 id="_kubernetes_and_operator">1.8. Kubernetes and Operator</h3>
 <div class="sect3">
-<h4 id="_entando_6_cluster_citizens">1.7.1. Entando 6 cluster citizens</h4>
+<h4 id="_entando_6_cluster_citizens">1.8.1. Entando 6 cluster citizens</h4>
 <div class="sect4">
 <h5 id="_purpose_3">Purpose</h5>
 <div class="paragraph">
@@ -5412,7 +5590,7 @@ All the members of an Entando 6 cluster interact with keycloak to verify user/se
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tutorial_how_to_connect_entando_6_to_an_external_keycloak_instance">1.7.2. Tutorial: How to connect Entando 6 to an external Keycloak instance</h4>
+<h4 id="_tutorial_how_to_connect_entando_6_to_an_external_keycloak_instance">1.8.2. Tutorial: How to connect Entando 6 to an external Keycloak instance</h4>
 <div class="sect4">
 <h5 id="_purpose_4">Purpose</h5>
 <div class="paragraph">
@@ -5436,7 +5614,7 @@ All the members of an Entando 6 cluster interact with keycloak to verify user/se
 </div>
 </div>
 <div class="sect4">
-<h5 id="_steps_3">Steps</h5>
+<h5 id="_steps_4">Steps</h5>
 <div class="sect5">
 <h6 id="_1_get_keycloak_information">1. Get keycloak information</h6>
 <div class="paragraph">
@@ -5522,16 +5700,16 @@ To encode your values, in bash, you can do <code>echo &lt;your-value&gt; | base6
 </div>
 </div>
 <div class="sect2">
-<h3 id="_process_driven_apps">1.8. Process Driven Apps</h3>
+<h3 id="_process_driven_apps">1.9. Process Driven Apps</h3>
 <div class="sect3">
-<h4 id="_business_objective">1.8.1. Business Objective</h4>
+<h4 id="_business_objective">1.9.1. Business Objective</h4>
 <div class="paragraph">
 <p>The Entando Process Driven Applications plugin is built to provide a rich and full featured user experience to allow for the management and completion of business processes and automation. The UX is delivered a general purpose UX layer built using micro frontends that can be utilized for any business process or task engine. Customers drive the UX layer by utilizing a pre-developed Entando integration or by implementing a set of interfaces on the server side. The backend is a Spring Boot microservice that provides a pluggable interface allowing for the injection of any underlying process or automation toolkit. The interfaces and steps for creating a new PDA backend implementation are provided below.
 This document provides an overview of the Entando Process Driven Apps (PDA) plugin. The initial section covers the business functionality and user facing micro frontends. The second section covers the architecture and the points of extension for the PDA plugin. The third provides a detailed technical overview for developers to add new functionality to a PDA implementation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_terminology">1.8.2. Terminology</h4>
+<h4 id="_terminology">1.9.2. Terminology</h4>
 <div class="sect4">
 <h5 id="_micro_frontend">Micro Frontend</h5>
 <div class="paragraph">
@@ -5565,7 +5743,7 @@ Process Driven Application</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pda_micro_frontends">1.8.3. PDA Micro Frontends</h4>
+<h4 id="_pda_micro_frontends">1.9.3. PDA Micro Frontends</h4>
 <div class="paragraph">
 <p>This section provides an overview of each of the micro frontends (MFE) that are available as part of the Entando PDA plugin.
 In cases below where there are details specific to the PAM implementation they are provided for that MFE. When extending the integration layer to other engines or custom implementations it will be up to the integrating team to define behavior and datasource for each MFE.</p>
@@ -5666,7 +5844,7 @@ In the application there is a properties file that allows the implementer to pro
 </div>
 </div>
 <div class="sect3">
-<h4 id="_customizing_the_process_driven_application">1.8.4. Customizing the Process Driven Application</h4>
+<h4 id="_customizing_the_process_driven_application">1.9.4. Customizing the Process Driven Application</h4>
 <div class="sect4">
 <h5 id="_styling">Styling</h5>
 <div class="paragraph">
@@ -5856,7 +6034,7 @@ connectedCallback() {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_technical_documentation">1.8.5. Technical Documentation</h4>
+<h4 id="_technical_documentation">1.9.5. Technical Documentation</h4>
 <div class="sect4">
 <h5 id="_micro_frontend_overview">Micro Frontend Overview</h5>
 <div class="sect5">
@@ -6086,9 +6264,9 @@ downpayment: {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cms">1.9. CMS</h3>
+<h3 id="_cms">1.10. CMS</h3>
 <div class="sect3">
-<h4 id="_publish_a_content_in_your_application_page_tutorial">1.9.1. Publish a Content in your Application Page_Tutorial</h4>
+<h4 id="_publish_a_content_in_your_application_page_tutorial">1.10.1. Publish a Content in your Application Page_Tutorial</h4>
 <div class="sect4">
 <h5 id="_objective_2">Objective</h5>
 <div class="paragraph">
